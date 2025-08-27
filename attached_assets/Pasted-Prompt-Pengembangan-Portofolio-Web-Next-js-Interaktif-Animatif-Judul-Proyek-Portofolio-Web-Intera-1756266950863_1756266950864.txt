@@ -1,0 +1,128 @@
+Prompt Pengembangan Portofolio Web Next.js Interaktif & Animatif
+Judul Proyek: Portofolio Web Interaktif "Hans Gunawan" dengan Next.js dan Animasi Berbasis Data
+
+Tujuan:
+Membangun sebuah website portofolio personal yang modern, responsif, dan sangat interaktif menggunakan Next.js. Website ini harus menonjolkan proyek, keahlian, dan pengalaman Hans Gunawan sebagai seorang Software Engineer, Web Developer, dan Data Analyst, dengan penekanan pada animasi yang menarik, relevan, dan tidak mengganggu pengalaman pengguna. Desain harus profesional, minimalis namun berkarakter, serta mengkomunikasikan passion terhadap teknologi dan data.
+
+Target Audiens: Rekruter, manajer perekrutan, kolega industri, dan calon kolaborator di bidang teknologi.
+
+Bagian 1: Struktur & Teknologi Dasar
+Framework Utama: Next.js (dengan React.js) untuk performa optimal, SEO, dan pengalaman developer yang baik.
+
+Styling: Tailwind CSS atau Styled Components untuk kemudahan kustomisasi dan konsistensi desain.
+
+Animasi: Framer Motion atau GSAP untuk animasi yang halus dan performant.
+
+Deployment: Vercel (disarankan karena integrasi Next.js yang mulus) atau Netlify.
+
+Responsivitas: Desain harus fully responsive dan mobile-first, memastikan tampilan sempurna di berbagai perangkat (desktop, tablet, mobile).
+
+Bagian 2: Desain & User Experience (UX)
+Estetika Desain:
+
+Profesional & Modern: Bersih, minimalis, dengan sentuhan warna aksen yang konsisten.
+
+Warna: Palet warna dominan (misalnya, abu-abu gelap, putih, navy) dengan satu atau dua warna aksen cerah (misalnya, teal, oranye, ungu) untuk menyoroti elemen interaktif atau penting.
+
+Tipografi: Gunakan kombinasi font modern yang mudah dibaca (misalnya, Poppins, Montserrat, Open Sans) untuk heading dan body text.
+
+Ikonografi: Gunakan ikon yang relevan dan konsisten (misalnya, dari Font Awesome, Feather Icons).
+
+Animasi yang Menarik & Relevan:
+
+Micro-interaksi: Animasi halus pada hover tombol, transisi antar bagian, atau saat scroll.
+
+Animasi Pemuatan (Loading): Animasi yang elegan saat halaman atau konten dimuat pertama kali.
+
+Animasi Teks: Efek ketik (typewriter effect) atau fade-in untuk headline atau ringkasan.
+
+Visualisasi Skill: Representasi visual animasi dari progress bar atau ikon yang "hidup" saat menampilkan keahlian.
+
+Proyek: Animasi saat mengarahkan kursor ke kartu proyek atau saat membuka detail proyek.
+
+Tidak Berlebihan: Animasi harus menambah nilai dan tidak mengganggu atau memperlambat performa.
+
+Navigasi: Intuitif, jelas, dan mudah diakses (sticky header/navbar, scroll-to-section).
+
+Feedback Visual: Berikan umpan balik visual (misalnya, efek hover, klik) untuk elemen interaktif.
+
+Bagian 3: Konten & Integrasi Data
+Integrasikan data dari tautan yang diberikan ke dalam bagian-bagian website berikut:
+
+Halaman Utama (Home/Hero Section):
+
+Headline: Hans Gunawan | Full-Stack Developer & Aspiring Data Analyst atau sejenisnya.
+
+Pengantar Singkat: Kutipan dari ringkasan LinkedIn yang telah disetujui, menonjolkan passion pada rekayasa perangkat lunak dan data.
+
+CTA (Call-to-Action): Tombol "Lihat Proyek" dan "Hubungi Saya".
+
+Animasi: Efek fade-in atau typing untuk headline, parallax scrolling untuk background.
+
+Tentang Saya (About Me Section):
+
+Ringkasan Diri: Adaptasi dari ringkasan LinkedIn (termasuk pengalaman coach gym untuk menonjolkan soft skills).
+
+Keahlian (Skills):
+
+Tampilkan dalam format yang menarik, mungkin dengan kartu beranimasi atau progress bar visual.
+
+Sertakan semua Keahlian Utama yang sudah kita bahas:
+
+Front-End: React.js, HTML, CSS, JavaScript, Blade
+
+Back-End: Node.js, Express.js, PHP
+
+Framework Full-Stack: Laravel, MERN Stack
+
+Database: MongoDB, MySQL/SQL
+
+Tools: Git, Docker, Figma
+
+Edukasi & Pengalaman: Cuplikan penting dari CV.
+
+Animasi: Skill bar yang mengisi saat terlihat, ikon skill yang berinteraksi saat hover.
+
+Proyek (Projects Section):
+
+Tampilan: Grid kartu proyek yang responsif.
+
+Setiap Kartu Proyek:
+
+Judul Proyek: (misal: "Fit AI IBM App")
+
+Deskripsi Singkat: Tujuan utama proyek.
+
+Teknologi Digunakan: Ikon atau tag untuk setiap teknologi.
+
+Tombol: "Lihat Proyek" (link ke https://fit-ai-ibm.netlify.app), "Lihat Detail" (opsional, untuk halaman detail proyek terpisah).
+
+Animasi: Kartu proyek muncul dengan efek fade-in atau slide-up saat discroll, efek hover yang menarik pada kartu.
+
+CV/Resume Section:
+
+Tombol: "Unduh CV" yang mengarah ke https://l1nk.dev/CurriculumVitaeHans.
+
+Tampilan: Mungkin pratinjau singkat CV dalam format gambar atau iframe (opsional).
+
+Animasi: Tombol yang "memantul" atau grow saat hover.
+
+Kontak (Contact Section):
+
+Form Kontak: Sederhana (Nama, Email, Pesan) dengan validasi.
+
+Link Sosial Media: LinkedIn, GitHub, Email, dll.
+
+Animasi: Form input yang berinteraksi saat focus, ikon sosial media yang beranimasi saat hover.
+
+Bagian 4: Hal Lain yang Perlu Diperhatikan
+SEO (Search Engine Optimization): Pastikan meta-deskripsi, judul halaman, dan struktur URL ramah SEO.
+
+Aksesibilitas: Pertimbangkan aksesibilitas (misalnya, kontras warna yang baik, navigasi keyboard).
+
+Performa: Optimalkan gambar dan kode untuk waktu muat yang cepat.
+
+Favicon: Ikon khusus untuk tab browser.
+
+Output yang Diharapkan:
+Sebuah website portofolio yang fungsional, estetik, dan interaktif yang secara efektif menampilkan kemampuan teknis dan profesional Hans Gunawan kepada calon rekruter.
