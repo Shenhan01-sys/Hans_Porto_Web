@@ -17,13 +17,13 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Development",
-    icon: "fab fa-react",
+    title: "Programming Languages",
+    icon: "fas fa-code",
     iconColor: "text-primary",
     skills: [
-      { name: "React.js", level: 90, color: "primary" },
-      { name: "HTML/CSS", level: 95, color: "primary" },
-      { name: "JavaScript", level: 88, color: "primary" },
+      { name: "C#", level: 90, color: "primary" },
+      { name: "HTML/CSS/JS", level: 80, color: "primary" },
+      { name: "SQL", level: 90, color: "primary" },
     ]
   },
   {
@@ -37,13 +37,13 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "Database & Tools",
-    icon: "fas fa-database",
+    title: "Soft Skills & Design",
+    icon: "fas fa-lightbulb",
     iconColor: "text-primary",
     skills: [
-      { name: "MongoDB", level: 83, color: "primary" },
-      { name: "MySQL", level: 87, color: "primary" },
-      { name: "Git/Docker", level: 78, color: "primary" },
+      { name: "Communication", level: 95, color: "primary" },
+      { name: "Customer Relations", level: 88, color: "primary" },
+      { name: "Designing", level: 85, color: "primary" },
     ]
   }
 ];

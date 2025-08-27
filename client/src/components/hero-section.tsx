@@ -55,8 +55,8 @@ export default function HeroSection() {
             transition={{ delay: 3.5, duration: 0.8 }}
             data-testid="hero-subtitle"
           >
-            <span className="gradient-text font-semibold">Full-Stack Developer</span> & 
-            <span className="gradient-text font-semibold"> Aspiring Data Analyst</span>
+            <span className="gradient-text font-semibold">Information System Student</span> & 
+            <span className="gradient-text font-semibold"> Data Management Enthusiast</span>
           </motion.div>
           
           <motion.p 
@@ -67,8 +67,8 @@ export default function HeroSection() {
             transition={{ delay: 4, duration: 0.8 }}
             data-testid="hero-description"
           >
-            Passionate about crafting innovative software solutions and extracting meaningful insights from data. 
-            Combining technical expertise with analytical thinking to solve complex problems.
+            Mahasiswa Sistem Informasi UKDW yang passionate dalam manajemen data dan pengembangan solusi inovatif 
+            berbasis teknologi informasi untuk meningkatkan efisiensi masyarakat, khususnya UMKM.
           </motion.p>
           
           <motion.div 

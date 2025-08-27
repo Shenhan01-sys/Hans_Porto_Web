@@ -21,7 +21,7 @@ export default function Navigation() {
       animate="animate"
       data-testid="main-navigation"
     >
-      <ul className="flex space-x-8 text-sm font-medium">
+      <ul className="flex space-x-6 text-sm font-medium">
         <li>
           <a 
             href="#home" 
@@ -44,12 +44,32 @@ export default function Navigation() {
         </li>
         <li>
           <a 
+            href="#education" 
+            className="hover:text-primary transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, "#education")}
+            data-testid="nav-education"
+          >
+            Education
+          </a>
+        </li>
+        <li>
+          <a 
             href="#skills" 
             className="hover:text-primary transition-colors duration-300"
             onClick={(e) => handleNavClick(e, "#skills")}
             data-testid="nav-skills"
           >
             Skills
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#experience" 
+            className="hover:text-primary transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, "#experience")}
+            data-testid="nav-experience"
+          >
+            Experience
           </a>
         </li>
         <li>

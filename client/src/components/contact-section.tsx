@@ -17,22 +17,22 @@ const socialLinks = [
     icon: "fas fa-envelope",
     color: "bg-primary/20 text-primary",
     title: "Email",
-    value: "hans.gunawan@example.com",
-    href: "mailto:hans.gunawan@example.com"
+    value: "hansgunawan775@gmail.com",
+    href: "mailto:hansgunawan775@gmail.com"
   },
   {
-    icon: "fab fa-linkedin",
+    icon: "fas fa-phone",
     color: "bg-accent/20 text-accent",
-    title: "LinkedIn",
-    value: "linkedin.com/in/hansgunawan",
-    href: "https://linkedin.com/in/hansgunawan"
+    title: "Phone",
+    value: "+6289-673-280-495",
+    href: "tel:+6289673280495"
   },
   {
     icon: "fab fa-github",
     color: "bg-primary/20 text-primary",
     title: "GitHub",
-    value: "github.com/hansgunawan",
-    href: "https://github.com/hansgunawan"
+    value: "github.com/Shenhan01-sys",
+    href: "https://github.com/Shenhan01-sys"
   },
 ];
 

@@ -43,13 +43,15 @@ export default function AboutSection() {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-1">
-                Saya adalah seorang Software Engineer dan Web Developer yang passionate dalam membangun solusi teknologi inovatif. 
-                Dengan latar belakang yang kuat dalam pengembangan full-stack dan minat mendalam pada analisis data.
+                Saya adalah mahasiswa Sistem Informasi di Universitas Kristen Duta Wacana yang memiliki minat besar dalam 
+                manajemen data dan pengembangan solusi inovatif berbasis teknologi informasi. Sebagai individu dengan nilai moral,
+                saya berkomitmen untuk berkontribusi dalam menciptakan solusi digital yang dapat meningkatkan efisiensi dan produktivitas masyarakat.
               </p>
               
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="about-paragraph-2">
-                Pengalaman saya sebagai coach gym telah mengasah kemampuan komunikasi, leadership, dan problem-solving 
-                yang saya terapkan dalam setiap proyek teknologi yang saya kerjakan.
+                Dengan prinsip hidup 1L + 5C (Leadership, Competence, Compassion, Consistency, Conscience, Commitment), 
+                saya siap mengembangkan teknologi informasi untuk menjawab tantangan masa kini dengan dampak positif bagi masyarakat luas.
+                Pengalaman saya sebagai coach gym dan staff operasional telah mengasah kemampuan komunikasi, leadership, dan problem-solving.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
