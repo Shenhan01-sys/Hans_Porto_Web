@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 20%, 8%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(220, 20%, 10%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(220, 20%, 10%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(175, 80%, 55%);
+  --primary-foreground: hsl(220, 20%, 8%);
+  --secondary: hsl(220, 15%, 15%);
+  --secondary-foreground: hsl(210, 40%, 90%);
+  --muted: hsl(220, 15%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(28, 85%, 60%);
+  --accent-foreground: hsl(220, 20%, 8%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(220, 15%, 18%);
+  --input: hsl(220, 15%, 15%);
+  --ring: hsl(175, 80%, 55%);
+  --chart-1: hsl(175, 80%, 55%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 92%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(220, 20%, 10%);
+  --sidebar-foreground: hsl(210, 40%, 98%);
+  --sidebar-primary: hsl(175, 80%, 55%);
+  --sidebar-primary-foreground: hsl(220, 20%, 8%);
+  --sidebar-accent: hsl(220, 15%, 15%);
+  --sidebar-accent-foreground: hsl(210, 40%, 90%);
+  --sidebar-border: hsl(220, 15%, 18%);
+  --sidebar-ring: hsl(175, 80%, 55%);
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-heading: "Poppins", ui-sans-serif, system-ui;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius: 0.75rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00), 0px 1px 2px -1px hsl(175, 80%, 55%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00), 0px 1px 2px -1px hsl(175, 80%, 55%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00), 0px 2px 4px -1px hsl(175, 80%, 55%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00), 0px 4px 6px -1px hsl(175, 80%, 55%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00), 0px 8px 10px -1px hsl(175, 80%, 55%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(175, 80%, 55%, 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    line-height: 1.6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .heading-font {
+    font-family: var(--font-heading);
+  }
+
+  .mono-font {
+    font-family: var(--font-mono);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(175, 80%, 55%), hsl(28, 85%, 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .skill-bar {
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -12px hsla(175, 80%, 55%, 0.25);
+  }
+
+  .floating-nav {
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(220, 15%, 18%, 0.5);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px hsla(175, 80%, 55%, 0.3);
+  }
+
+  .contact-input:focus {
+    outline: none;
+    border-color: hsl(175, 80%, 55%);
+    box-shadow: 0 0 0 3px hsla(175, 80%, 55%, 0.1);
+  }
+
+  .social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: hsl(175, 80%, 55%);
+  }
+
+  .loading-skeleton {
+    background: linear-gradient(90deg, hsl(220, 15%, 12%), hsl(220, 15%, 18%), hsl(220, 15%, 12%));
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
