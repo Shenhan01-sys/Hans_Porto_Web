@@ -17,13 +17,14 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Programming Languages",
-    icon: "fas fa-code",
+    title: "Frontend Development",
+    icon: "fab fa-react",
     iconColor: "text-primary",
     skills: [
-      { name: "C#", level: 90, color: "primary" },
-      { name: "HTML/CSS/JS", level: 80, color: "primary" },
-      { name: "SQL", level: 90, color: "primary" },
+      { name: "React.js", level: 88, color: "primary" },
+      { name: "HTML/CSS", level: 80, color: "primary" },
+      { name: "JavaScript", level: 85, color: "primary" },
+      { name: "Blade", level: 75, color: "primary" },
     ]
   },
   {
@@ -33,17 +34,46 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Node.js", level: 85, color: "accent" },
       { name: "Express.js", level: 82, color: "accent" },
-      { name: "PHP/Laravel", level: 80, color: "accent" },
+      { name: "PHP", level: 80, color: "accent" },
+      { name: "C#", level: 90, color: "accent" },
     ]
   },
   {
-    title: "Soft Skills & Design",
-    icon: "fas fa-lightbulb",
+    title: "Full-Stack Frameworks",
+    icon: "fas fa-layer-group",
     iconColor: "text-primary",
     skills: [
-      { name: "Communication", level: 95, color: "primary" },
-      { name: "Customer Relations", level: 88, color: "primary" },
-      { name: "Designing", level: 85, color: "primary" },
+      { name: "Laravel", level: 80, color: "primary" },
+      { name: "MERN Stack", level: 83, color: "primary" },
+    ]
+  },
+  {
+    title: "Database & Storage",
+    icon: "fas fa-database",
+    iconColor: "text-accent",
+    skills: [
+      { name: "MongoDB", level: 78, color: "accent" },
+      { name: "MySQL/SQL", level: 90, color: "accent" },
+    ]
+  },
+  {
+    title: "Tools & Technologies",
+    icon: "fas fa-tools",
+    iconColor: "text-primary",
+    skills: [
+      { name: "Git", level: 85, color: "primary" },
+      { name: "Docker", level: 75, color: "primary" },
+      { name: "Figma", level: 80, color: "primary" },
+    ]
+  },
+  {
+    title: "Soft Skills",
+    icon: "fas fa-lightbulb",
+    iconColor: "text-accent",
+    skills: [
+      { name: "Communication", level: 95, color: "accent" },
+      { name: "Customer Relations", level: 88, color: "accent" },
+      { name: "Fast Adaptation", level: 90, color: "accent" },
     ]
   }
 ];
@@ -52,6 +82,10 @@ const techIcons = [
   { icon: "fab fa-react", color: "hover:text-primary" },
   { icon: "fab fa-node-js", color: "hover:text-accent" },
   { icon: "fab fa-laravel", color: "hover:text-primary" },
+  { icon: "fab fa-php", color: "hover:text-accent" },
+  { icon: "fab fa-js-square", color: "hover:text-primary" },
+  { icon: "fab fa-html5", color: "hover:text-accent" },
+  { icon: "fab fa-css3-alt", color: "hover:text-primary" },
   { icon: "fab fa-docker", color: "hover:text-accent" },
   { icon: "fab fa-git-alt", color: "hover:text-primary" },
   { icon: "fab fa-figma", color: "hover:text-accent" },
@@ -94,7 +128,7 @@ export default function SkillsSection() {
           </motion.h2>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
