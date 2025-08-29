@@ -15,15 +15,15 @@ app.post("/api/contact", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "hansgunawan775@gmail.com", // Ganti dengan email Anda
-      pass: "22Des_01",    // Ganti dengan App Password Gmail
+      user: process.env.EMAIL_USER, // Ganti dengan email Anda
+      pass: process.env.EMAIL_PASS,    // Ganti dengan App Password Gmail
     },
   });
 
   try {
     await transporter.sendMail({
       from: email,
-      to: "hansgunawan775@gmail.com", // Ganti dengan email Anda
+      to: process.env.EMAIL_USER, // Ganti dengan email Anda
       subject: `Pesan dari ${name}`,
       text: message,
     });
