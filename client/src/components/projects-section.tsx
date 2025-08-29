@@ -115,7 +115,7 @@ export default function ProjectsSection() {
                       </motion.a>
                     )}
                     <motion.button 
-                      className="flex-1 border border-border text-foreground py-2 px-4 rounded-lg font-medium hover:bg-secondary transition-colors duration-300 text-center"
+                      className="flex-1 border border-gray-700 text-foreground py-2 px-4 rounded-lg font-medium hover:bg-secondary transition-colors duration-300 text-center"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       data-testid={`project-details-${index}`}

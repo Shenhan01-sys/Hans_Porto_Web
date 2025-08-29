@@ -90,7 +90,7 @@ export default function HeroSection() {
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="border border-border text-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
+              className="border border-gray-700 text-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
               onClick={handleScrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

@@ -3,7 +3,7 @@ import { fadeInVariants } from "@/lib/animations";
 
 export default function Footer() {
   return (
-    <footer className="bg-card py-8 border-t border-border">
+  <footer className="bg-card py-8 border-t border-gray-700">
       <div className="container mx-auto px-6 text-center">
         <motion.p 
           className="text-muted-foreground"
