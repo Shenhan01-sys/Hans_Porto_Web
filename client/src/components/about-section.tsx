@@ -17,18 +17,18 @@ export default function AboutSection() {
             Tentang Saya
           </motion.h2>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <motion.div
               variants={fadeInVariants}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="relative">
+              <div className="relative items-start gap-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=800" 
+                  src="/images/profile_image.png" 
                   alt="Hans Gunawan - Professional Portrait" 
-                  className="rounded-2xl shadow-2xl w-full max-w-sm mx-auto lg:max-w-none"
+                  className="rounded-2xl shadow-2xl w-full max-w-sm self-start lg:max-w-none"
                   data-testid="profile-image"
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -68,8 +68,8 @@ export default function AboutSection() {
                   whileHover={{ scale: 1.05 }}
                   data-testid="stat-projects"
                 >
-                  <div className="text-3xl font-bold text-accent mb-2">15+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                  <div className="text-3xl font-bold text-accent mb-2">10+</div>
+                  <div className="text-sm text-muted-foreground">Projects & Events Completed</div>
                 </motion.div>
               </div>
             </motion.div>

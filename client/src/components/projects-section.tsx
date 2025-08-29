@@ -17,7 +17,7 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
     technologies: [
       { name: "React", color: "primary" },
-      { name: "IBM Watson", color: "accent" },
+      { name: "IBM Replicate", color: "accent" },
       { name: "Node.js", color: "primary" },
     ],
     liveUrl: "https://fit-ai-ibm.netlify.app",
@@ -31,6 +31,7 @@ const projects: Project[] = [
       { name: "MySQL", color: "primary" },
       { name: "Chart.js", color: "accent" },
     ],
+    liveUrl: "coming soon!",
   },
   {
     title: "Data Insights Platform",
@@ -41,6 +42,7 @@ const projects: Project[] = [
       { name: "D3.js", color: "accent" },
       { name: "MongoDB", color: "primary" },
     ],
+    liveUrl: "coming soon!",
   },
 ];
 
@@ -109,7 +111,7 @@ export default function ProjectsSection() {
                         whileTap={{ scale: 0.95 }}
                         data-testid={`project-live-demo-${index}`}
                       >
-                        Live Demo
+                        {project.liveUrl === "coming soon!" ? "Coming Soon" : "Live Demo"}
                       </motion.a>
                     )}
                     <motion.button 
@@ -143,7 +145,7 @@ export default function ProjectsSection() {
                 Unduh CV lengkap untuk melihat detail pengalaman dan pendidikan saya.
               </p>
               <motion.a 
-                href="https://l1nk.dev/CurriculumVitaeHans" 
+                href="https://drive.google.com/file/d/1sk8y2GaBj8-Fex0JA_puzeUxf5Ir78-H/view" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect"

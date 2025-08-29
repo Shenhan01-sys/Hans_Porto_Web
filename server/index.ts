@@ -1,10 +1,37 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import nodemailer from "nodemailer";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Endpoint untuk menerima pesan kontak dan mengirim ke email
+app.post("/api/contact", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  // Konfigurasi transporter (contoh Gmail, gunakan App Password untuk keamanan)
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "hansgunawan775@gmail.com", // Ganti dengan email Anda
+      pass: "22Des_01",    // Ganti dengan App Password Gmail
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: email,
+      to: "hansgunawan775@gmail.com", // Ganti dengan email Anda
+      subject: `Pesan dari ${name}`,
+      text: message,
+    });
+    res.json({ message: "Pesan berhasil dikirim ke email!" });
+  } catch (error) {
+    res.status(500).json({ message: "Gagal mengirim email.", error });
+  }
+});
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -64,7 +91,6 @@ app.use((req, res, next) => {
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
   });

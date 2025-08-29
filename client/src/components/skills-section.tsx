@@ -32,10 +32,10 @@ const skillCategories: SkillCategory[] = [
     icon: "fas fa-server",
     iconColor: "text-accent",
     skills: [
-      { name: "Node.js", level: 85, color: "accent" },
-      { name: "Express.js", level: 82, color: "accent" },
-      { name: "PHP", level: 80, color: "accent" },
-      { name: "C#", level: 90, color: "accent" },
+      { name: "Node.js", level: 85, color: "primary" },
+      { name: "Express.js", level: 82, color: "primary" },
+      { name: "PHP", level: 80, color: "primary" },
+      { name: "C#", level: 90, color: "primary" },
     ]
   },
   {
@@ -52,8 +52,8 @@ const skillCategories: SkillCategory[] = [
     icon: "fas fa-database",
     iconColor: "text-accent",
     skills: [
-      { name: "MongoDB", level: 78, color: "accent" },
-      { name: "MySQL/SQL", level: 90, color: "accent" },
+      { name: "MongoDB", level: 78, color: "primary" },
+      { name: "MySQL/SQL", level: 90, color: "primary" },
     ]
   },
   {
@@ -71,9 +71,9 @@ const skillCategories: SkillCategory[] = [
     icon: "fas fa-lightbulb",
     iconColor: "text-accent",
     skills: [
-      { name: "Communication", level: 95, color: "accent" },
-      { name: "Customer Relations", level: 88, color: "accent" },
-      { name: "Fast Adaptation", level: 90, color: "accent" },
+      { name: "Communication", level: 95, color: "primary" },
+      { name: "Customer Relations", level: 88, color: "primary" },
+      { name: "Fast Adaptation", level: 90, color: "primary" },
     ]
   }
 ];
