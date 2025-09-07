@@ -145,7 +145,7 @@ export default function ProjectsSection() {
                 Unduh CV lengkap untuk melihat detail pengalaman dan pendidikan saya.
               </p>
               <motion.a 
-                href="https://drive.google.com/file/d/1sk8y2GaBj8-Fex0JA_puzeUxf5Ir78-H/view" 
+                href="https://drive.google.com/file/d/11NjqPWMcTskm_PxPUueqnDPp76Ah_UiK/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect"
