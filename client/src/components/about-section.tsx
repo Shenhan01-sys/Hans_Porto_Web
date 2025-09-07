@@ -45,7 +45,7 @@ export default function AboutSection() {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-1">
                 Saya adalah mahasiswa Sistem Informasi di Universitas Kristen Duta Wacana yang memiliki minat besar dalam 
                 manajemen data dan pengembangan solusi inovatif berbasis teknologi informasi. Sebagai individu dengan nilai moral,
-                saya berkomitmen untuk berkontribusi dalam menciptakan solusi digital yang dapat meningkatkan efisiensi dan produktivitas masyarakat.
+                saya berkomitmen untuk berkontribusi dalam menciptakan solusi digital yang dapat meningkatkan efisiensi bisnis.
               </p>
               
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="about-paragraph-2">

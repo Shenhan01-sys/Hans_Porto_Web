@@ -68,7 +68,7 @@ export default function HeroSection() {
             data-testid="hero-description"
           >
             Mahasiswa Sistem Informasi UKDW yang passionate dalam manajemen data dan pengembangan solusi inovatif 
-            berbasis teknologi informasi untuk meningkatkan efisiensi masyarakat, khususnya UMKM.
+            berbasis teknologi informasi untuk meningkatkan efisiensi bisnis.
           </motion.p>
           
           <motion.div 
