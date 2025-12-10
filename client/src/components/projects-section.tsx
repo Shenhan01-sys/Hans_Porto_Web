@@ -25,7 +25,7 @@ const projects: Project[] = [
   {
     title: "SmartDev Academic",
     description: "Interactive platform for academic research and collaboration between students, parents, and educators.",
-    image: "/SmartDevAcademic-profile.png",
+    image: "/images/SmartDevAcademic-profile.png",
     technologies: [
       { name: "Laravel", color: "accent" },
       { name: "MySQL", color: "primary" },
