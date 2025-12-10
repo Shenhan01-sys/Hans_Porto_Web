@@ -23,15 +23,15 @@ const projects: Project[] = [
     liveUrl: "https://fit-ai-ibm.netlify.app",
   },
   {
-    title: "E-Commerce Analytics",
-    description: "Comprehensive analytics dashboard for e-commerce platforms with real-time data visualization and reporting.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
+    title: "SmartDev Academic",
+    description: "Interactive platform for academic research and collaboration between students, parents, and educators.",
+    image: "/SmartDevAcademic-profile.png",
     technologies: [
       { name: "Laravel", color: "accent" },
       { name: "MySQL", color: "primary" },
       { name: "Chart.js", color: "accent" },
     ],
-    liveUrl: "coming soon!",
+    liveUrl: "https://portohansgunawan.my.id/docs/frontend-guiding/testing_landingPage/index.html",
   },
   {
     title: "Data Insights Platform",
