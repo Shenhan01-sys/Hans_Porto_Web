@@ -170,7 +170,7 @@ export default function ProjectsSection() {
                 saya.
               </p>
               <motion.a
-                href="https://drive.google.com/file/d/11NjqPWMcTskm_PxPUueqnDPp76Ah_UiK/view?usp=sharing"
+                href="https://drive.google.com/file/d/10KxoV-i8PL1Oqxmv_-iZ2spQk1kv_pno/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect"
