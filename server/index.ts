@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import nodemailer from "nodemailer";
+import { chatWithGemini, getProfileContext } from "./gemini-service";
 
 const app = express();
 app.use(express.json());
@@ -30,6 +31,48 @@ app.post("/api/contact", async (req, res) => {
     res.json({ message: "Pesan berhasil dikirim ke email!" });
   } catch (error) {
     res.status(500).json({ message: "Gagal mengirim email.", error });
+  }
+});
+
+// Gemini Chat Endpoint with SSE streaming
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { message, history = [] } = req.body;
+
+    if (!message) {
+      return res.status(400).json({ error: "Message is required" });
+    }
+
+    // Set headers for Server-Sent Events
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache");
+    res.setHeader("Connection", "keep-alive");
+
+    // Get streaming response from Gemini
+    const stream = await chatWithGemini(message, history);
+
+    // Stream chunks to client
+    for await (const chunk of stream) {
+      res.write(`data: ${JSON.stringify({ chunk })}\n\n`);
+    }
+
+    // Send done signal
+    res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+    res.end();
+  } catch (error: any) {
+    console.error("Chat error:", error);
+    res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
+    res.end();
+  }
+});
+
+// Debug endpoint to view loaded context
+app.get("/api/chat/context", async (req, res) => {
+  try {
+    const context = await getProfileContext();
+    res.json({ context });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
   }
 });
 
