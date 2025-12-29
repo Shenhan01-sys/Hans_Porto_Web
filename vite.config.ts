@@ -1,4 +1,7 @@
 import { defineConfig } from "vite";
+import { fileURLToPath } from "url";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
