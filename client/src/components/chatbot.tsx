@@ -241,7 +241,7 @@ export default function Chatbot() {
                                             : "bg-muted text-foreground"
                                             }`}
                                     >
-                                        <div className="text-sm prose prose-sm dark:prose-invert max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-0">
+                                        <div className="text-sm prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-0 prose-headings:text-inherit prose-p:text-inherit prose-strong:text-inherit prose-li:text-inherit prose-a:text-inherit">
                                             <ReactMarkdown>{msg.parts}</ReactMarkdown>
                                         </div>
                                         <span className="text-xs opacity-60 mt-1 block">
