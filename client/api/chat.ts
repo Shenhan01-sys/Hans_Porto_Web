@@ -83,7 +83,16 @@ SmartDev Academic LMS adalah sistem manajemen pembelajaran (Learning Management 
 **DevOps:**
 - Git/GitHub
 - Vercel Deployment
-- Database Migration`
+- Database Migration
+
+## Publications
+
+Hans Gunawan telah mempublikasikan 2 research paper di jurnal ilmiah:
+
+1. **"Metaverse Pro-Environmental Behavior"** - Penelitian tentang perilaku pro-lingkungan dalam metaverse
+2. **"Repetition on Virtual Tourism"** - Penelitian tentang pengulangan dalam pariwisata virtual
+
+Kedua publikasi ini menunjukkan minat Hans dalam teknologi emerging (metaverse, virtual reality) dan dampaknya terhadap perilaku manusia serta industri pariwisata.`
 };
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
