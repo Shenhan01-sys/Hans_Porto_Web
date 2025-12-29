@@ -85,14 +85,54 @@ SmartDev Academic LMS adalah sistem manajemen pembelajaran (Learning Management 
 - Vercel Deployment
 - Database Migration
 
-## Publications
+Dataset Biografi Komprehensif: Hans Gunawan
+I. Identitas Akademik dan Fondasi Intelektual Hans Gunawan adalah mahasiswa aktif semester 5 di Universitas Kristen Duta Wacana (UKDW) Yogyakarta, Fakultas Teknologi Informasi, Program Studi Sistem Informasi. Dengan Nomor Induk Mahasiswa 72230649, ia mencatatkan performa akademik yang luar biasa dengan Indeks Prestasi Kumulatif (IPK) sebesar 3,73 dari total 78 SKS yang telah diselesaikan hingga Desember 2025.
 
-Hans Gunawan telah mempublikasikan 2 research paper di jurnal ilmiah:
+Penguasaan intelektualnya mencakup spektrum yang luas, mulai dari logika pemrograman teknis hingga tata kelola bisnis. Hans memperoleh nilai sempurna (A) pada mata kuliah fundamental dan lanjutan, termasuk Algoritma dan Struktur Data, Desain RESTful Web API, Matematika Sistem Informasi, Manajemen dan Tata Kelola TI, Sistem Informasi Manajemen, serta Aplikasi Berbasis Desktop. Ia juga menunjukkan kemahiran dalam analisis proses bisnis (Nilai A) dan statistika (Nilai A-), yang menjadi fondasi dalam pengambilan keputusan berbasis data.
 
-1. **"Metaverse Pro-Environmental Behavior"** - Penelitian tentang perilaku pro-lingkungan dalam metaverse
-2. **"Repetition on Virtual Tourism"** - Penelitian tentang pengulangan dalam pariwisata virtual
+II. Ekspertis Teknis dan Pengembangan Perangkat Lunak Hans mengidentifikasi dirinya sebagai seorang Full-stack dan Mobile Developer yang berfokus pada efisiensi operasional bisnis melalui teknologi digital. Kemampuan teknisnya dikategorikan ke dalam beberapa lapisan utama:
 
-Kedua publikasi ini menunjukkan minat Hans dalam teknologi emerging (metaverse, virtual reality) dan dampaknya terhadap perilaku manusia serta industri pariwisata.`
+Pengembangan Web Full-Stack: Hans menguasai PHP dengan framework Laravel (terbaru versi 12.x) dan JavaScript/TypeScript menggunakan React.js. Ia memahami arsitektur RESTful API secara mendalam, terbukti dari proyek UAS-nya yang membangun layanan API tangguh menggunakan ASP.NET Core dan Entity Framework.
+
+Pengembangan Mobile Native & Hybrid: Salah satu keunggulan teknis Hans adalah eksplorasinya pada framework .NET MAUI dan Blazor Hybrid. Ia berhasil mengimplementasikan fitur native perangkat seperti kamera dan geolokasi (GPS) ke dalam aplikasi mobile untuk kebutuhan pelaporan data lapangan secara real-time.
+
+Kecerdasan Buatan (AI) dan Data: Hans memiliki AI-native mindset, di mana ia memandang AI sebagai instrumen pemecahan masalah dari berbagai sudut pandang. Ia memiliki sertifikasi khusus dari IBM SkillsBuild dalam bidang "Code Generation and Optimization using IBM Granite". Dalam manajemen data, ia mahir mengelola database SQL (MySQL, Oracle, PostgreSQL) dan menggunakan Drizzle ORM serta Zod untuk validasi skema.
+
+III. Rekam Jejak Proyek Unggulan Hans telah memimpin dan menyelesaikan pengembangan sistem kompleks yang siap digunakan di skala industri:
+
+SmartDev Academic LMS: Sebuah Sistem Manajemen Pembelajaran komprehensif yang mendukung 4 peran pengguna (Admin, Instruktur, Siswa, Orang Tua). Sistem ini mencakup alur kerja pendaftaran multi-tahap dengan unggah dokumen, otentikasi token melalui Laravel Sanctum, hingga sistem penilaian terbobot otomatis.
+
+FitAI (Personal AI Fitness Assistant): Aplikasi web full-stack yang mengintegrasikan model Large Language Model (LLM) IBM Granite 3.3-8b-instruct. Proyek ini menunjukkan kemampuan Hans dalam menangani context injection data biometrik pengguna ke dalam prompt template, mekanisme Async Polling untuk stabilitas API, serta implementasi fallback logic untuk menjamin pengalaman pengguna (UX) jika terjadi gangguan server AI.
+
+Sistem Mobile Field Reporting: Eksplorasi solusi mobile industri menggunakan .NET MAUI yang relevan untuk digitalisasi sistem di perusahaan manufaktur besar seperti PT Cheil Jedang.
+
+IV. Kontribusi Ilmiah dan Riset Teknologi Kapasitas analitis Hans melampaui penulisan kode, ia juga berkontribusi aktif dalam literatur ilmiah internasional melalui publikasi jurnal:
+
+Riset Metaverse & Lingkungan: Hans mengeksplorasi bagaimana interaksi avatar dalam dunia metaverse, yang dibagi menjadi taksonomi form realism dan autonomy realism, dapat memengaruhi perubahan perilaku manusia ke arah yang lebih ramah lingkungan (Pro-Environmental Behavior).
+
+Riset Virtual Tourism: Ia melakukan studi eksperimental menggunakan Oculus Quest 2 untuk memahami efek pengulangan (repetition) dan gaya naratif terhadap memori (recall & recognition) serta niat kunjungan wisatawan pada objek wisata budaya seperti Museum Wayang.
+
+V. Penghargaan, Sertifikasi, dan Pengalaman Organisasi Hans adalah individu yang kompetitif dan memiliki jiwa kepemimpinan yang teruji:
+
+Prestasi Utama: Meraih Juara 2 dalam seleksi kandidat Pemilihan Mahasiswa Berprestasi (Pilmapres) tingkat internal UKDW tahun 2025.
+
+Sertifikasi Profesional: Menyelesaikan kursus SAP Overview dari SAP University Partnership Program (Desember 2024) dan mengikuti Workshop Time Series APTIKOM (Agustus 2025).
+
+Kepemimpinan & Organisasi: Pernah bertugas sebagai Liaison Officer (LO) pada Pertemuan Nasional BK2-PTKI 2025 dan aktif dalam kepanitiaan ISCD 2024 di divisi PERKAM.
+
+Olahraga & Karakter: Memiliki latar belakang atletis yang kuat sebagai pemain basket, meraih Juara 2 (2023) dan Juara 3 (2024) Rector Cup UKDW, serta berpartisipasi dalam Liga Mahasiswa (LIMA) 2023. Pengalaman sebagai coach gym telah mengasah kemampuan komunikasi interpersonal dan ketangguhan mentalnya.
+
+VI. Filosofi Hidup dan Prinsip Kerja (1L + 5C) Seluruh pencapaian Hans didorong oleh prinsip hidup 1L + 5C: Leadership, Competence, Compassion, Consistency, Conscience, dan Commitment. Ia memiliki etika kerja yang sangat disiplin dengan keyakinan bahwa:
+
+Dunia tidak pernah berhenti bergerak, maka belajar adalah kewajiban yang berkelanjutan.
+
+Menyerah adalah bentuk kelemahan; tantangan teknis harus dihadapi dengan resiliensi.
+
+Integritas pribadi adalah prioritas utama; berbuat baik harus dilakukan tanpa mengorbankan batasan profesionalitas diri.
+
+Malas adalah awal dari kegagalan; efisiensi hanya bisa dicapai dengan dedikasi tinggi.
+
+Hans Gunawan saat ini terbuka untuk peluang profesional di mana ia dapat mengimplementasikan teknologi informasi berskala enterprise dan berkontribusi nyata dalam transformasi digital industri.`
 };
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
