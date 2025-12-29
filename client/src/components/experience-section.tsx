@@ -49,6 +49,16 @@ const experienceData: Experience[] = [
       "Provide solutions to customers regarding what products to buy",
       "Negotiation with customers"
     ]
+  },
+  {
+    company: "FTI UKDW",
+    position: "Teacher Assistant - Database System Design",
+    period: "August 2025 - December 2025",
+    responsibilities: [
+      "Guided students in advanced SQL implementations and PL/SQL development",
+      "Designed technical modules for relational modeling and database objects",
+      "Managed database security and integrity during lab sessions and exams"
+    ]
   }
 ];
 
@@ -57,7 +67,7 @@ export default function ExperienceSection() {
     <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
+          <motion.h2
             className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
@@ -68,7 +78,7 @@ export default function ExperienceSection() {
             Pengalaman Kerja
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             className="space-y-8"
             variants={staggerContainer}
             initial="initial"

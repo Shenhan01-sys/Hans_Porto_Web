@@ -9,6 +9,7 @@ interface Achievement {
   description?: string;
   icon: string;
   color: string;
+  fileUrl?: string; // Menambahkan properti fileUrl untuk link PDF
 }
 
 const achievementsData: Achievement[] = [
@@ -17,63 +18,128 @@ const achievementsData: Achievement[] = [
     category: "Academic Excellence",
     description: "2nd Place at university level, represented at LLDIKTI Region V",
     icon: "fas fa-trophy",
-    color: "primary"
+    color: "primary",
+    fileUrl: "/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
   },
   {
-    title: "Outstanding student at Unit Klinik Tani Scientific Festival 2022",
+    title: "Outstanding Student - Unit Klinik Tani 2022",
     category: "Paper Competition",
-    description: "2nd place at central Java level scientific paper competition",
+    description: "2nd Place scientific paper competition",
     icon: "fas fa-trophy",
-    color: "accent"
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat Juara 2 Lomba Karya Tulis Ilmiah_Hans Gunawan.pdf"
   },
   {
-    title: "Outstanding student at PHI 2021 (Paket Hari Ilmiah)",
+    title: "Outstanding Student - PHI 2021",
     category: "Paper Competition",
-    description: "3nd place at central Java level scientific paper competition",
+    description: "3rd Place scientific paper competition",
     icon: "fas fa-trophy",
-    color: "accent"
+    color: "accent",
+    fileUrl: "/achievements/Piagam Penghargaan Lomba Karya Tulis Ilmiah PHI 2021_Hans Gunawan.pdf"
   },
   {
-    title: "Basketball Achievements",
-    category: "Sports",
-    description: "2nd Place RECTOR CUP 2023, 3rd Place RECTOR CUP 2024, Player LIGA MAHASISWA Basketball 2023",
-    icon: "fas fa-basketball-ball",
-    color: "accent"
+    title: "Publications: Repetition on Virtual Tourism",
+    category: "Academic Research",
+    description: "Co-Author, Understanding the Effect on Memory and Visit Intention",
+    icon: "fas fa-book",
+    color: "primary",
+    fileUrl: "https://ieeexplore.ieee.org/document/11101036/authors#authors"
   },
   {
-    title: "SAP Course Completion Certificate",
+    title: "Maju Bareng AI",
+    category: "Technology",
+    description: "Certificate of Participation",
+    icon: "fas fa-robot",
+    color: "accent",
+    fileUrl: "/achievements/Maju Bareng AI -  Hans Gunawan.pdf"
+  },
+  {
+    title: "IBM SkillsBuild: Code Gen & Optimization",
     category: "Professional Development",
-    description: "SAP Overview from EDUGATE",
+    description: "Using IBM Granite",
+    icon: "fas fa-code-branch",
+    color: "primary",
+    fileUrl: "/achievements/Sertifikat IBM SkillsBuild - Code Generation and Optimization Using IBM Granite_Hans Gunawan.pdf"
+  },
+  {
+    title: "SAP Overview EDUGATE",
+    category: "Professional Development",
+    description: "Course Completion Certificate",
     icon: "fas fa-certificate",
-    color: "primary"
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat SAP Overview EDUGATE_Hans Gunawan.pdf"
   },
   {
-    title: "Liaison Officer (LO)",
+    title: "Workshop Time Series APTIKOM 2025",
+    category: "Professional Development",
+    description: "Participant",
+    icon: "fas fa-chart-line",
+    color: "primary",
+    fileUrl: "/achievements/Workshop Time Series APTIKOM 2025 - Sertifikat Hans Gunawan.pdf"
+  },
+  {
+    title: "Liaison Officer - BK2-PTKI 2025",
     category: "Leadership",
-    description: "BK2-PTKI National Meeting 2025",
+    description: "National Meeting Committee",
     icon: "fas fa-handshake",
-    color: "accent"
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat Liaison Officer Pertemuan Nasional BK2-PTKI 2025_Hans Gunawan.pdf"
   },
   {
-    title: "PERKAM Division",
+    title: "PERKAM Division - ISCD 2024",
     category: "Event Organization",
-    description: "ISCD 2024 event ('Python Coding Adventure...')",
-    icon: "fas fa-code",
-    color: "primary"
+    description: "Committee Member",
+    icon: "fas fa-users-cog",
+    color: "primary",
+    fileUrl: "/achievements/Sertifikat Divisi PERKAM ISCD 2024_Hans Gunawan.pdf"
   },
   {
-    title: "Research Publications",
-    category: "Academic Research",
-    description: "Co-Author, Metaverse and Behavioral Change Toward a ProEnvironmental Behavior: the Role of Avatar",
-    icon: "fas fa-book",
-    color: "accent"
+    title: "2nd Place - Rector Cup 2023",
+    category: "Sports (Basketball)",
+    description: "Achievement in University Basketball Tournament",
+    icon: "fas fa-basketball-ball",
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf"
   },
   {
-    title: "Research Publications",
-    category: "Academic Research",
-    description: "CO-Author, A Study of Repetition on Virtual Tourism: Understanding the Effect on Memory and Visit Intention",
-    icon: "fas fa-book",
-    color: "accent"
+    title: "3rd Place - Rector Cup 2024",
+    category: "Sports (Basketball)",
+    description: "Achievement in University Basketball Tournament",
+    icon: "fas fa-basketball-ball",
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf"
+  },
+  {
+    title: "LIGA MAHASISWA Basketball 2023",
+    category: "Sports (Basketball)",
+    description: "Player Participation",
+    icon: "fas fa-basketball-ball",
+    color: "primary",
+    fileUrl: "/achievements/Sertifikat Liga Mahasiswa Basket 2023_Hans Gunawan.pdf"
+  },
+  {
+    title: "Biofair 2022",
+    category: "Participation",
+    description: "Certificate of Participation",
+    icon: "fas fa-leaf",
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat Peserta Biofair 2022_Hans Gunawan.pdf"
+  },
+  {
+    title: "Science Film Festival 2021",
+    category: "Participation",
+    description: "Certificate of Participation",
+    icon: "fas fa-film",
+    color: "primary",
+    fileUrl: "/achievements/Sertifikat Partisipasi Science Film Festival 2021_Hans Gunawan.pdf"
+  },
+  {
+    title: "School Visit UNY Münster",
+    category: "International Exposure",
+    description: "Visit Certificate",
+    icon: "fas fa-plane",
+    color: "accent",
+    fileUrl: "/achievements/Sertifikat School Visit UNY Münster_Hans Gunawan.pdf"
   }
 ];
 
@@ -148,9 +214,22 @@ export default function AchievementsSection() {
                       {achievement.title}
                     </h3>
                     {achievement.description && (
-                      <p className="text-muted-foreground text-sm text-center leading-relaxed" data-testid={`achievement-description-${index}`}>
+                      <p className="text-muted-foreground text-sm text-center leading-relaxed mb-4" data-testid={`achievement-description-${index}`}>
                         {achievement.description}
                       </p>
+                    )}
+
+                    {achievement.fileUrl && (
+                      <div className="flex justify-center mt-auto">
+                        <a
+                          href={achievement.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`text-xs font-medium text-${achievement.color} border border-${achievement.color} px-4 py-2 rounded-full hover:bg-${achievement.color} hover:text-background transition-colors duration-300 flex items-center gap-2`}
+                        >
+                          <i className="fas fa-eye"></i> View Certificate
+                        </a>
+                      </div>
                     )}
                   </motion.div>
                 ))}
