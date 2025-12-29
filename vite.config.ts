@@ -29,16 +29,6 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  css: {
-    postcss: {
-      plugins: [
-        tailwindcss({
-          config: path.resolve(__dirname, "tailwind.config.cjs"),
-        }),
-        autoprefixer(),
-      ],
-    },
-  },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
