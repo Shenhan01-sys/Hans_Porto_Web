@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { z } from "zod";
-import { chatWithGemini, getProfileContext } from "./gemini-service";
+import { chatWithGroq, getProfileContext } from "./groq-service";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -56,7 +56,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.setHeader("Connection", "keep-alive");
 
       // Get streaming response from Gemini
-      const stream = await chatWithGemini(message, history);
+      const stream = await chatWithGroq(message, history);
 
       // Stream chunks to client
       for await (const chunk of stream) {

@@ -1,9 +1,31 @@
-import { VercelRequest, VercelResponse } from "@vercel/node";
 import Groq from "groq-sdk";
 
-// Inline context data (JSON import doesn't work well in Vercel serverless)
-const contextData = {
-    context: `# Hans Gunawan - Portfolio Data
+// Initialize Groq AI
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "" });
+
+interface Message {
+    role: "user" | "assistant";
+    content: string;
+}
+
+const systemInstruction = `Kamu adalah asisten AI untuk portfolio Hans Gunawan, mahasiswa Sistem Informasi UKDW yang passionate di full-stack development dan AI integration.
+
+PERSONALITAS:
+- Ramah, profesional, dan antusias
+- Jawab dalam bahasa yang sama dengan pertanyaan (Indonesia/English)
+- Gunakan emoji secukupnya untuk kesan friendly 😊
+
+ATURAN PENTING:
+1. HANYA gunakan informasi dari CONTEXT DATA yang diberikan
+2. Jika tidak tahu jawabannya, katakan: "Maaf, informasi itu belum tersedia di portfolio saya"
+3. JANGAN buat-buat informasi yang tidak ada
+4. Highlight achievement dan project yang relevan
+5. Kalau ditanya "Siapa Hans?", berikan overview singkat dan ajak bertanya lebih spesifik
+
+Selalu akhiri jawaban dengan pertanyaan follow-up yang relevan untuk mendorong conversation.`;
+
+// Context - same as production for consistency
+const profileContext = `# Hans Gunawan - Portfolio Data
 
 ## Projects
 
@@ -158,108 +180,56 @@ Sertifikat School Visit UNY Münster.
 Partisipan Science Film Festival 2021.
 Peserta Biofair 2022.
 VI. Filosofi Hidup dan Prinsip Kerja
-Hans memegang teguh filosofi 1L + 5C (Leadership, Competence, Compassion, Consistency, Conscience, Commitment). Ia adalah pribadi yang sangat disiplin dan resilien dengan keyakinan bahwa "menyerah berarti lemah" dan "malas adalah awal kegagalan". Pengalamannya sebagai coach gym dan staf operasional telah membentuk kemampuan kepemimpinan, komunikasi, dan ketangguhan mental yang siap diimplementasikan di dunia profesional berskala global.`
-};
+Hans memegang teguh filosofi 1L + 5C (Leadership, Competence, Compassion, Consistency, Conscience, Commitment). Ia adalah pribadi yang sangat disiplin dan resilien dengan keyakinan bahwa "menyerah berarti lemah" dan "malas adalah awal kegagalan". Pengalamannya sebagai coach gym dan staf operasional telah membentuk kemampuan kepemimpinan, komunikasi, dan ketangguhan mental yang siap diimplementasikan di dunia profesional berskala global.`;
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "" });
-
-const systemInstruction = `Kamu adalah asisten AI untuk portfolio Hans Gunawan, mahasiswa Sistem Informasi UKDW yang passionate di full-stack development dan AI integration.
-
-PERSONALITAS:
-- Ramah, profesional, dan antusias
-- Jawab dalam bahasa yang sama dengan pertanyaan (Indonesia/English)
-- Gunakan emoji secukupnya untuk kesan friendly 😊
-
-ATURAN PENTING:
-1. HANYA gunakan informasi dari CONTEXT DATA yang diberikan
-2. Jika tidak tahu jawabannya, katakan: "Maaf, informasi itu belum tersedia di portfolio saya"
-3. JANGAN buat-buat informasi yang tidak ada
-4. Highlight achievement dan project yang relevan
-5. Kalau ditanya "Siapa Hans?", berikan overview singkat dan ajak bertanya lebih spesifik
-
-CONTOH PERTANYAAN YANG BISA DIJAWAB:
-- "Apa proyek terbaik Hans?"
-- "Teknologi apa yang Hans kuasai?"
-- "Ceritakan tentang project FITAI"
-- "Hans pernah publish research paper apa?"
-- "Apa achievement Hans?"
-
-Selalu akhiri jawaban dengan pertanyaan follow-up yang relevan untuk mendorong conversation.`;
-
-interface Message {
-    role: "user" | "assistant";
-    content: string;
-}
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-    // Only allow POST
-    if (req.method !== "POST") {
-        return res.status(405).json({ error: "Method not allowed" });
-    }
-
-    try {
-        const { message, history = [] } = req.body as {
-            message: string;
-            history: Message[];
-        };
-
-        if (!message) {
-            return res.status(400).json({ error: "Message is required" });
+export async function chatWithGroq(
+    userMessage: string,
+    chatHistory: Message[] = []
+): Promise<AsyncIterable<string>> {
+    // Build messages array
+    const messages: any[] = [
+        {
+            role: "system",
+            content: systemInstruction
+        },
+        {
+            role: "user",
+            content: `CONTEXT DATA:\n\n${profileContext}`
+        },
+        {
+            role: "assistant",
+            content: "Terima kasih! Saya sudah memuat semua informasi tentang Hans Gunawan. Ada yang ingin kamu tanyakan?"
+        },
+        ...chatHistory.map((msg: any) => ({
+            role: msg.role,
+            content: msg.parts || msg.content // Support both formats
+        })),
+        {
+            role: "user",
+            content: userMessage
         }
+    ];
 
-        // Set headers for Server-Sent Events streaming
-        res.setHeader("Content-Type", "text/event-stream");
-        res.setHeader("Cache-Control", "no-cache");
-        res.setHeader("Connection", "keep-alive");
-        res.setHeader("Access-Control-Allow-Origin", "*");
+    // Call Groq API with streaming
+    const completion = await groq.chat.completions.create({
+        model: "llama-3.3-70b-versatile",
+        messages: messages,
+        temperature: 0.7,
+        max_tokens: 1024,
+        stream: true,
+    });
 
-        // Build messages array for Groq
-        const messages: any[] = [
-            {
-                role: "system",
-                content: systemInstruction
-            },
-            {
-                role: "user",
-                content: `CONTEXT DATA:\n\n${contextData.context}`
-            },
-            {
-                role: "assistant",
-                content: "Terima kasih! Saya sudah memuat semua informasi tentang Hans Gunawan. Saya siap menjawab pertanyaan tentang profil, proyek, achievement, dan publikasinya. Ada yang ingin kamu tanyakan? 😊"
-            },
-            ...history.map((msg: any) => ({
-                role: msg.role,
-                content: msg.parts || msg.content // Support both formats
-            })),
-            {
-                role: "user",
-                content: message
-            }
-        ];
-
-        // Call Groq API with streaming
-        const completion = await groq.chat.completions.create({
-            model: "llama-3.3-70b-versatile",
-            messages: messages,
-            temperature: 0.7,
-            max_tokens: 1024,
-            stream: true,
-        });
-
-        // Stream response to client
+    // Return async iterable
+    return (async function* () {
         for await (const chunk of completion) {
             const content = chunk.choices[0]?.delta?.content;
             if (content) {
-                res.write(`data: ${JSON.stringify({ chunk: content })}\n\n`);
+                yield content;
             }
         }
+    })();
+}
 
-        // Send done signal
-        res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
-        res.end();
-    } catch (error: any) {
-        console.error("Chat error:", error);
-        res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
-        res.end();
-    }
+export async function getProfileContext(): Promise<string> {
+    return profileContext;
 }

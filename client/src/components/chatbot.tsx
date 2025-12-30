@@ -4,7 +4,7 @@ import { MessageCircle, X, Send, Sparkles } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 interface Message {
-    role: "user" | "model";
+    role: "user" | "assistant";
     parts: string;
     timestamp: Date;
 }
@@ -13,7 +13,7 @@ export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
-            role: "model",
+            role: "assistant",
             parts: "Halo! 👋 Saya asisten AI untuk portfolio Hans Gunawan. Ada yang ingin kamu tanyakan tentang Hans? 😊",
             timestamp: new Date(),
         },
@@ -91,7 +91,7 @@ export default function Chatbot() {
             setMessages((prev) => [
                 ...prev,
                 {
-                    role: "model",
+                    role: "assistant",
                     parts: "",
                     timestamp: new Date(),
                 },
@@ -115,7 +115,7 @@ export default function Chatbot() {
                                     setMessages((prev) => {
                                         const newMessages = [...prev];
                                         newMessages[aiMessageIndex] = {
-                                            role: "model",
+                                            role: "assistant",
                                             parts: fullResponse,
                                             timestamp: new Date(),
                                         };
@@ -139,7 +139,7 @@ export default function Chatbot() {
             setMessages((prev) => [
                 ...prev,
                 {
-                    role: "model",
+                    role: "assistant",
                     parts: "Maaf, terjadi kesalahan. Silakan coba lagi. 😔",
                     timestamp: new Date(),
                 },
