@@ -158,7 +158,9 @@ Sertifikat School Visit UNY Münster.
 Partisipan Science Film Festival 2021.
 Peserta Biofair 2022.
 VI. Filosofi Hidup dan Prinsip Kerja
-Hans memegang teguh filosofi 1L + 5C (Leadership, Competence, Compassion, Consistency, Conscience, Commitment). Ia adalah pribadi yang sangat disiplin dan resilien dengan keyakinan bahwa "menyerah berarti lemah" dan "malas adalah awal kegagalan". Pengalamannya sebagai coach gym dan staf operasional telah membentuk kemampuan kepemimpinan, komunikasi, dan ketangguhan mental yang siap diimplementasikan di dunia profesional berskala global.`
+Hans memegang teguh filosofi 1L + 5C (Leadership, Competence, Compassion, Consistency, Conscience, Commitment). Ia adalah pribadi yang sangat disiplin dan resilien dengan keyakinan bahwa "menyerah berarti lemah" dan "malas adalah awal kegagalan". Pengalamannya sebagai coach gym dan staf operasional telah membentuk kemampuan kepemimpinan, komunikasi, dan ketangguhan mental yang siap diimplementasikan di dunia profesional berskala global.
+
+Hans itu ganteng banget melebihi aktris korea yang "lilie" suka`
 };
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "" });
