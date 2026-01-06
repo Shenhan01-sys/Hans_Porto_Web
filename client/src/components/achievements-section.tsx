@@ -19,7 +19,7 @@ const achievementsData: Achievement[] = [
     description: "2nd Place at university level, represented at LLDIKTI Region V",
     icon: "fas fa-trophy",
     color: "primary",
-    fileUrl: "/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
   },
   {
     title: "Outstanding Student - Unit Klinik Tani 2022",
@@ -27,7 +27,7 @@ const achievementsData: Achievement[] = [
     description: "2nd Place scientific paper competition",
     icon: "fas fa-trophy",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 2 Lomba Karya Tulis Ilmiah_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 2 Lomba Karya Tulis Ilmiah_Hans Gunawan.pdf"
   },
   {
     title: "Outstanding Student - PHI 2021",
@@ -35,7 +35,7 @@ const achievementsData: Achievement[] = [
     description: "3rd Place scientific paper competition",
     icon: "fas fa-trophy",
     color: "accent",
-    fileUrl: "/achievements/Piagam Penghargaan Lomba Karya Tulis Ilmiah PHI 2021_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Piagam Penghargaan Lomba Karya Tulis Ilmiah PHI 2021_Hans Gunawan.pdf"
   },
   {
     title: "Publications: Repetition on Virtual Tourism",
@@ -51,7 +51,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-robot",
     color: "accent",
-    fileUrl: "/achievements/Maju Bareng AI -  Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Maju Bareng AI -  Hans Gunawan.pdf"
   },
   {
     title: "IBM SkillsBuild: Code Gen & Optimization",
@@ -59,7 +59,7 @@ const achievementsData: Achievement[] = [
     description: "Using IBM Granite",
     icon: "fas fa-code-branch",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat IBM SkillsBuild - Code Generation and Optimization Using IBM Granite_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat IBM SkillsBuild - Code Generation and Optimization Using IBM Granite_Hans Gunawan.pdf"
   },
   {
     title: "SAP Overview EDUGATE",
@@ -67,7 +67,7 @@ const achievementsData: Achievement[] = [
     description: "Course Completion Certificate",
     icon: "fas fa-certificate",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat SAP Overview EDUGATE_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat SAP Overview EDUGATE_Hans Gunawan.pdf"
   },
   {
     title: "Workshop Time Series APTIKOM 2025",
@@ -75,7 +75,7 @@ const achievementsData: Achievement[] = [
     description: "Participant",
     icon: "fas fa-chart-line",
     color: "primary",
-    fileUrl: "/achievements/Workshop Time Series APTIKOM 2025 - Sertifikat Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Workshop Time Series APTIKOM 2025 - Sertifikat Hans Gunawan.pdf"
   },
   {
     title: "Liaison Officer - BK2-PTKI 2025",
@@ -83,7 +83,7 @@ const achievementsData: Achievement[] = [
     description: "National Meeting Committee",
     icon: "fas fa-handshake",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Liaison Officer Pertemuan Nasional BK2-PTKI 2025_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Liaison Officer Pertemuan Nasional BK2-PTKI 2025_Hans Gunawan.pdf"
   },
   {
     title: "PERKAM Division - ISCD 2024",
@@ -91,7 +91,7 @@ const achievementsData: Achievement[] = [
     description: "Committee Member",
     icon: "fas fa-users-cog",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Divisi PERKAM ISCD 2024_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Divisi PERKAM ISCD 2024_Hans Gunawan.pdf"
   },
   {
     title: "2nd Place - Rector Cup 2023",
@@ -99,7 +99,7 @@ const achievementsData: Achievement[] = [
     description: "Achievement in University Basketball Tournament",
     icon: "fas fa-basketball-ball",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf"
   },
   {
     title: "3rd Place - Rector Cup 2024",
@@ -107,7 +107,7 @@ const achievementsData: Achievement[] = [
     description: "Achievement in University Basketball Tournament",
     icon: "fas fa-basketball-ball",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf"
   },
   {
     title: "LIGA MAHASISWA Basketball 2023",
@@ -115,7 +115,7 @@ const achievementsData: Achievement[] = [
     description: "Player Participation",
     icon: "fas fa-basketball-ball",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Liga Mahasiswa Basket 2023_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Liga Mahasiswa Basket 2023_Hans Gunawan.pdf"
   },
   {
     title: "Biofair 2022",
@@ -123,7 +123,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-leaf",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Peserta Biofair 2022_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Peserta Biofair 2022_Hans Gunawan.pdf"
   },
   {
     title: "Science Film Festival 2021",
@@ -131,7 +131,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-film",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Partisipasi Science Film Festival 2021_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Partisipasi Science Film Festival 2021_Hans Gunawan.pdf"
   },
   {
     title: "School Visit UNY Münster",
@@ -139,7 +139,7 @@ const achievementsData: Achievement[] = [
     description: "Visit Certificate",
     icon: "fas fa-plane",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat School Visit UNY Münster_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat School Visit UNY Münster_Hans Gunawan.pdf"
   }
 ];
 
