@@ -57,7 +57,7 @@ const projects: Project[] = [
   {
     title: "Payshield - Progressive Escrow",
     description:
-      "Interactive data visualization platform for business intelligence and predictive analytics.",
+      "Secure milestone-based payments powered by Sui blockchain & escrow features. Using privy to authenticate users if you don't have a wallet yet.",
     image:
       "/images/EscrowProfilePicture.png",
     technologies: [
