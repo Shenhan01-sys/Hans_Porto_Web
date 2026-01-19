@@ -54,6 +54,22 @@ const projects: Project[] = [
     ],
     liveUrl: "coming soon!",
   },
+  {
+    title: "Payshield - Progressive Escrow",
+    description:
+      "Interactive data visualization platform for business intelligence and predictive analytics.",
+    image:
+      "/images/EscrowProfilePicture.png",
+    technologies: [
+      { name: "React", color: "primary" },
+      { name: "Move Smart Contract", color: "accent" },
+      { name: "Node.js", color: "primary" },
+      { name: "Turso (SqLite cloud)", color: "accent" },
+      { name: "Sui Blockchain", color: "primary" },
+      { name: "Tailwind CSS", color: "accent" },
+    ],
+    liveUrl: "https://pixel-perfect-hans.vercel.app/",
+  },
 ];
 
 export default function ProjectsSection() {
