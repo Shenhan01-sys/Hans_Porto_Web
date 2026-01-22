@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Experience Timeline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .mono {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .glass-morph {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    
+    .experience-card {
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #6366f1, #ec4899, #06b6d4, #10b981);
+      border-radius: 24px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+    
+    .experience-card:hover::before {
+      opacity: 1;
+      animation: borderRotate 4s linear infinite;
+    }
+    
+    .experience-card:hover {
+      transform: translateY(-12px) scale(1.02) rotate(1deg);
+      box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+    }
+    
+    @keyframes borderRotate {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    
+    .timeline-connector {
+      background: linear-gradient(180deg, 
+        rgba(99, 102, 241, 0) 0%,
+        rgba(99, 102, 241, 0.8) 15%,
+        rgba(236, 72, 153, 0.8) 40%,
+        rgba(6, 182, 212, 0.8) 65%,
+        rgba(16, 185, 129, 0.8) 85%,
+        rgba(16, 185, 129, 0) 100%
+      );
+      animation: flowDown 3s ease-in-out infinite;
+    }
+    
+    @keyframes flowDown {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    
+    .timeline-node {
+      position: relative;
+      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #06b6d4 100%);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .timeline-node::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      background: inherit;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: ripple 2s ease-out infinite;
+    }
+    
+    .timeline-node::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      background: inherit;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: ripple 2s ease-out infinite 0.5s;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+      }
+      50% { 
+        transform: scale(1.15);
+        box-shadow: 0 0 20px 8px rgba(236, 72, 153, 0.4);
+      }
+    }
+    
+    @keyframes ripple {
+      0% { 
+        transform: scale(1); 
+        opacity: 0.4; 
+      }
+      100% { 
+        transform: scale(2.5); 
+        opacity: 0; 
+      }
+    }
+    
+    .floating-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: floatAround 25s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+      top: -150px;
+      left: -150px;
+      animation-delay: 0s;
+    }
+    
+    .orb-2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.35) 0%, transparent 70%);
+      bottom: -200px;
+      right: -200px;
+      animation-delay: 8s;
+    }
+    
+    .orb-3 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+      top: 40%;
+      left: 60%;
+      animation-delay: 16s;
+    }
+    
+    @keyframes floatAround {
+      0%, 100% { 
+        transform: translate(0, 0) rotate(0deg) scale(1); 
+      }
+      25% { 
+        transform: translate(120px, -120px) rotate(90deg) scale(1.1); 
+      }
+      50% { 
+        transform: translate(-100px, 120px) rotate(180deg) scale(0.9); 
+      }
+      75% { 
+        transform: translate(100px, 100px) rotate(270deg) scale(1.05); 
+      }
+    }
+    
+    .glowing-text {
+      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s ease-in-out infinite;
+      background-size: 200% 200%;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .skill-badge {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .skill-badge:hover {
+      background: rgba(99, 102, 241, 0.25);
+      border-color: rgba(99, 102, 241, 0.7);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+    }
+    
+    .company-icon {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+      backdrop-filter: blur(10px);
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .experience-card:hover .company-icon {
+      transform: rotate(360deg) scale(1.15);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3));
+    }
+    
+    .appear-left {
+      opacity: 0;
+      transform: translateX(-100px) rotate(-3deg);
+      animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    
+    .appear-right {
+      opacity: 0;
+      transform: translateX(100px) rotate(3deg);
+      animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+      }
+    }
+    
+    .appear-left:nth-child(1) { animation-delay: 0.1s; }
+    .appear-right:nth-child(2) { animation-delay: 0.3s; }
+    .appear-left:nth-child(3) { animation-delay: 0.5s; }
+    .appear-right:nth-child(4) { animation-delay: 0.7s; }
+    
+    .stats-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .stats-card:hover {
+      transform: translateY(-6px) scale(1.05);
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+    
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 30s linear infinite;
+    }
+    
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+    
+    .date-badge {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15));
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+    
+    .connector-left {
+      background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.3) 100%);
+    }
+    
+    .connector-right {
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.3) 0%, transparent 100%);
+    }
+    
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.5);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #6366f1, #ec4899);
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #818cf8, #f472b6);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-slate-950 text-white overflow-auto">
+  <div class="min-h-full w-full relative grid-pattern"><!-- Floating Orbs -->
+   <div class="floating-orb orb-1"></div>
+   <div class="floating-orb orb-2"></div>
+   <div class="floating-orb orb-3"></div>
+   <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-20"><!-- Header -->
+    <header class="text-center mb-16 sm:mb-24">
+     <div class="inline-block mb-4 sm:mb-6"><span class="mono text-xs sm:text-sm text-indigo-400 tracking-wider">{'{ portfolio.experiences }'}</span>
+     </div>
+     <h1 id="main-title" class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 sm:mb-6 glowing-text leading-tight px-4">Work Experience</h1>
+     <p id="subtitle" class="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 sm:mb-12 px-4">My Professional Journey</p><!-- Stats -->
+     <div class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 px-4">
+      <div class="stats-card px-5 sm:px-8 py-3 sm:py-4 rounded-2xl backdrop-blur-sm">
+       <div class="text-2xl sm:text-3xl md:text-4xl font-bold glowing-text">
+        8+
+       </div>
+       <div class="mono text-xs sm:text-sm text-slate-400 mt-1">
+        Years
+       </div>
+      </div>
+      <div class="stats-card px-5 sm:px-8 py-3 sm:py-4 rounded-2xl backdrop-blur-sm">
+       <div class="text-2xl sm:text-3xl md:text-4xl font-bold glowing-text">
+        4
+       </div>
+       <div class="mono text-xs sm:text-sm text-slate-400 mt-1">
+        Companies
+       </div>
+      </div>
+      <div class="stats-card px-5 sm:px-8 py-3 sm:py-4 rounded-2xl backdrop-blur-sm">
+       <div class="text-2xl sm:text-3xl md:text-4xl font-bold glowing-text">
+        15+
+       </div>
+       <div class="mono text-xs sm:text-sm text-slate-400 mt-1">
+        Projects
+       </div>
+      </div>
+     </div>
+    </header><!-- Timeline -->
+    <div id="timeline" class="relative max-w-7xl mx-auto"><!-- Timeline Line - Center on large screens -->
+     <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 timeline-connector rounded-full"></div><!-- Timeline Items -->
+     <div class="space-y-8 sm:space-y-12 lg:space-y-20"><!-- Experience 1 - RIGHT on desktop -->
+      <div class="appear-right relative lg:grid lg:grid-cols-2 lg:gap-16 items-center"><!-- Empty space on left for desktop -->
+       <div class="hidden lg:block"></div><!-- Timeline Node - Center on desktop -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full timeline-node z-20"></div><!-- Connecting line from center to card -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 w-16 h-1 connector-right transform -translate-y-1/2"></div><!-- Content -->
+       <div class="experience-card glass-morph rounded-3xl p-6 sm:p-8 lg:p-10">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+         <div class="flex items-start gap-4 sm:gap-6">
+          <div class="company-icon w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center text-3xl sm:text-4xl flex-shrink-0">
+           🚀
+          </div>
+          <div>
+           <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Senior Software Engineer</h3>
+           <p class="text-base sm:text-lg text-indigo-400 font-medium">TechCorp Innovation</p>
+          </div>
+         </div>
+         <div class="date-badge mono text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap self-start">
+          2022 - Present
+         </div>
+        </div>
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-6 leading-relaxed">Leading the frontend architecture team, implementing scalable solutions for enterprise clients. Spearheaded the migration to micro-frontends, reducing load time by 40%.</p>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">⚛️ React</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">📘 TypeScript</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">☁️ AWS</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🟢 Node.js</span>
+        </div>
+       </div>
+      </div><!-- Experience 2 - LEFT on desktop -->
+      <div class="appear-left relative lg:grid lg:grid-cols-2 lg:gap-16 items-center"><!-- Content on left for desktop -->
+       <div class="experience-card glass-morph rounded-3xl p-6 sm:p-8 lg:p-10 lg:text-right">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 lg:flex-row-reverse">
+         <div class="flex items-start gap-4 sm:gap-6 lg:flex-row-reverse lg:text-right">
+          <div class="company-icon w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center text-3xl sm:text-4xl flex-shrink-0">
+           💡
+          </div>
+          <div>
+           <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Full Stack Developer</h3>
+           <p class="text-base sm:text-lg text-pink-400 font-medium">StartupX Labs</p>
+          </div>
+         </div>
+         <div class="date-badge mono text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap self-start lg:self-end">
+          2019 - 2022
+         </div>
+        </div>
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-6 leading-relaxed">Built and maintained multiple SaaS products from scratch. Collaborated with cross-functional teams to deliver features that increased user engagement by 60%.</p>
+        <div class="flex flex-wrap gap-2 sm:gap-3 lg:justify-end"><span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">💚 Vue.js</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🐍 Python</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🐘 PostgreSQL</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🐳 Docker</span>
+        </div>
+       </div><!-- Timeline Node - Center on desktop -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full timeline-node z-20"></div><!-- Connecting line from center to card -->
+       <div class="hidden lg:block absolute right-1/2 top-1/2 w-16 h-1 connector-left transform -translate-y-1/2"></div><!-- Empty space on right for desktop -->
+       <div class="hidden lg:block"></div>
+      </div><!-- Experience 3 - RIGHT on desktop -->
+      <div class="appear-right relative lg:grid lg:grid-cols-2 lg:gap-16 items-center"><!-- Empty space on left for desktop -->
+       <div class="hidden lg:block"></div><!-- Timeline Node - Center on desktop -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full timeline-node z-20"></div><!-- Connecting line from center to card -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 w-16 h-1 connector-right transform -translate-y-1/2"></div><!-- Content -->
+       <div class="experience-card glass-morph rounded-3xl p-6 sm:p-8 lg:p-10">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+         <div class="flex items-start gap-4 sm:gap-6">
+          <div class="company-icon w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center text-3xl sm:text-4xl flex-shrink-0">
+           🎨
+          </div>
+          <div>
+           <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Frontend Developer</h3>
+           <p class="text-base sm:text-lg text-cyan-400 font-medium">DesignStudio Pro</p>
+          </div>
+         </div>
+         <div class="date-badge mono text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap self-start">
+          2017 - 2019
+         </div>
+        </div>
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-6 leading-relaxed">Developed responsive web applications with focus on UI/UX excellence. Created reusable component libraries that reduced development time by 30%.</p>
+        <div class="flex flex-wrap gap-2 sm:gap-3"><span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">⚡ JavaScript</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">💅 Sass</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🎨 Figma</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">📦 Webpack</span>
+        </div>
+       </div>
+      </div><!-- Experience 4 - LEFT on desktop -->
+      <div class="appear-left relative lg:grid lg:grid-cols-2 lg:gap-16 items-center"><!-- Content on left for desktop -->
+       <div class="experience-card glass-morph rounded-3xl p-6 sm:p-8 lg:p-10 lg:text-right">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 lg:flex-row-reverse">
+         <div class="flex items-start gap-4 sm:gap-6 lg:flex-row-reverse lg:text-right">
+          <div class="company-icon w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center text-3xl sm:text-4xl flex-shrink-0">
+           🎓
+          </div>
+          <div>
+           <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Junior Developer</h3>
+           <p class="text-base sm:text-lg text-emerald-400 font-medium">CodeAcademy Inc</p>
+          </div>
+         </div>
+         <div class="date-badge mono text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap self-start lg:self-end">
+          2016 - 2017
+         </div>
+        </div>
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 mb-6 leading-relaxed">Started my professional journey here, learning best practices and contributing to educational platform development. Mentored by senior developers.</p>
+        <div class="flex flex-wrap gap-2 sm:gap-3 lg:justify-end"><span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🌐 HTML/CSS</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">📜 jQuery</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🐘 PHP</span> <span class="skill-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium">🗄️ MySQL</span>
+        </div>
+       </div><!-- Timeline Node - Center on desktop -->
+       <div class="hidden lg:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full timeline-node z-20"></div><!-- Connecting line from center to card -->
+       <div class="hidden lg:block absolute right-1/2 top-1/2 w-16 h-1 connector-left transform -translate-y-1/2"></div><!-- Empty space on right for desktop -->
+       <div class="hidden lg:block"></div>
+      </div>
+     </div>
+    </div><!-- Footer -->
+    <footer class="mt-16 sm:mt-24 text-center px-4">
+     <div class="glass-morph inline-block px-6 sm:px-10 py-4 sm:py-6 rounded-3xl">
+      <p class="text-sm sm:text-base text-slate-300 mono"><span class="text-indigo-400 text-lg sm:text-xl">&lt;</span> <span class="mx-2 sm:mx-3">Open to new opportunities</span> <span class="text-indigo-400 text-lg sm:text-xl">/&gt;</span></p>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: 'Work Experience',
+      subtitle: 'My Professional Journey'
+    };
+    
+    async function onConfigChange(newConfig) {
+      const mainTitle = document.getElementById('main-title');
+      const subtitle = document.getElementById('subtitle');
+      
+      if (mainTitle) {
+        mainTitle.textContent = newConfig.main_title || defaultConfig.main_title;
+      }
+      if (subtitle) {
+        subtitle.textContent = newConfig.subtitle || defaultConfig.subtitle;
+      }
+    }
+    
+    function mapToCapabilities() {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+    
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['subtitle', config.subtitle || defaultConfig.subtitle]
+      ]);
+    }
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c20aae84586a3e6',t:'MTc2OTEwMTg1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

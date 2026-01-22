@@ -161,44 +161,6 @@ export default function ProjectsSection() {
               </motion.div>
             ))}
           </motion.div>
-
-          {/* CV Download Section */}
-          <motion.div
-            className="mt-16 text-center"
-            variants={fadeInVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: 0.5 }}
-          >
-            <div className="bg-background rounded-xl p-8 max-w-md mx-auto">
-              <h3
-                className="heading-font text-xl font-semibold mb-4"
-                data-testid="cv-section-title"
-              >
-                Curriculum Vitae
-              </h3>
-              <p
-                className="text-muted-foreground mb-6"
-                data-testid="cv-section-description"
-              >
-                Unduh CV lengkap untuk melihat detail pengalaman dan pendidikan
-                saya.
-              </p>
-              <motion.a
-                href="https://drive.google.com/file/d/1P0FPfOsv6XAQIibwTxa2dTPqIbZ_F7vu/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                data-testid="button-download-cv"
-              >
-                <i className="fas fa-download"></i>
-                Unduh CV
-              </motion.a>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

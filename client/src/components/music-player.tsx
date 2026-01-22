@@ -21,15 +21,19 @@ export default function MusicPlayer({
     const [hasInteracted, setHasInteracted] = useState(false);
     const [showPrompt, setShowPrompt] = useState(false);
     const [autoPlayBlocked, setAutoPlayBlocked] = useState(false);
+    const [userDismissed, setUserDismissed] = useState(false); // Track if user dismissed the prompt
+    const [userManuallyPaused, setUserManuallyPaused] = useState(false); // Track if user manually paused
+    const [hasAutoPlayed, setHasAutoPlayed] = useState(false); // Track if auto-play already happened
 
-    // Try to play audio
-    const tryPlay = useCallback(async () => {
-        if (audioRef.current && !isPlaying) {
+    // Try to play audio (only for auto-play, not manual)
+    const tryAutoPlay = useCallback(async () => {
+        if (audioRef.current && !isPlaying && !userManuallyPaused && !hasAutoPlayed) {
             try {
                 await audioRef.current.play();
                 setIsPlaying(true);
                 setShowPrompt(false);
                 setAutoPlayBlocked(false);
+                setHasAutoPlayed(true);
                 return true;
             } catch (error) {
                 console.log("Autoplay blocked by browser:", error);
@@ -37,14 +41,14 @@ export default function MusicPlayer({
             }
         }
         return false;
-    }, [isPlaying]);
+    }, [isPlaying, userManuallyPaused, hasAutoPlayed]);
 
     // Attempt autoplay on mount
     useEffect(() => {
-        if (autoPlay && audioRef.current) {
+        if (autoPlay && audioRef.current && !hasAutoPlayed) {
             // Small delay to ensure audio is loaded
             const timer = setTimeout(async () => {
-                const success = await tryPlay();
+                const success = await tryAutoPlay();
                 if (!success) {
                     setAutoPlayBlocked(true);
                     setShowPrompt(true);
@@ -53,34 +57,25 @@ export default function MusicPlayer({
 
             return () => clearTimeout(timer);
         }
-    }, [autoPlay, tryPlay]);
+    }, [autoPlay, tryAutoPlay, hasAutoPlayed]);
 
-    // Listen for first user interaction on the page
+    // Listen for first user interaction on the page (only scroll, not click)
+    // Only works ONCE and only if user hasn't manually paused
     useEffect(() => {
-        if (!autoPlayBlocked) return;
+        if (!autoPlayBlocked || userDismissed || userManuallyPaused || hasAutoPlayed) return;
 
-        const handleInteraction = async () => {
-            if (!isPlaying && autoPlayBlocked) {
-                const success = await tryPlay();
-                if (success) {
-                    // Remove listeners after successful play
-                    document.removeEventListener('click', handleInteraction);
-                    document.removeEventListener('scroll', handleInteraction);
-                    document.removeEventListener('keydown', handleInteraction);
-                }
+        const handleScroll = async () => {
+            if (!isPlaying && autoPlayBlocked && !userDismissed && !userManuallyPaused && !hasAutoPlayed) {
+                await tryAutoPlay();
             }
         };
 
-        document.addEventListener('click', handleInteraction);
-        document.addEventListener('scroll', handleInteraction, { once: true });
-        document.addEventListener('keydown', handleInteraction, { once: true });
+        document.addEventListener('scroll', handleScroll, { once: true });
 
         return () => {
-            document.removeEventListener('click', handleInteraction);
-            document.removeEventListener('scroll', handleInteraction);
-            document.removeEventListener('keydown', handleInteraction);
+            document.removeEventListener('scroll', handleScroll);
         };
-    }, [autoPlayBlocked, isPlaying, tryPlay]);
+    }, [autoPlayBlocked, isPlaying, tryAutoPlay, userDismissed, userManuallyPaused, hasAutoPlayed]);
 
     // Load user preference from localStorage
     useEffect(() => {
@@ -119,10 +114,13 @@ export default function MusicPlayer({
                 if (isPlaying) {
                     audioRef.current.pause();
                     setIsPlaying(false);
+                    setUserManuallyPaused(true); // User chose to pause - don't auto-play again
                 } else {
                     await audioRef.current.play();
                     setIsPlaying(true);
                     setAutoPlayBlocked(false);
+                    setUserManuallyPaused(false); // User chose to play
+                    setHasAutoPlayed(true); // Prevent future auto-plays
                 }
             } catch (error) {
                 console.log("Audio playback failed:", error);
@@ -147,8 +145,16 @@ export default function MusicPlayer({
     };
 
     const dismissPrompt = (e: React.MouseEvent) => {
+        e.preventDefault();
         e.stopPropagation();
         setShowPrompt(false);
+        setUserDismissed(true); // Mark that user chose not to play music
+    };
+
+    const handlePromptClick = async (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        await togglePlay();
     };
 
     return (
@@ -172,12 +178,12 @@ export default function MusicPlayer({
                         className="fixed bottom-24 left-6 z-[9997] max-w-[280px]"
                     >
                         <div 
-                            onClick={togglePlay}
+                            onClick={handlePromptClick}
                             className="bg-card/95 backdrop-blur-md border border-primary/30 rounded-2xl p-4 shadow-xl cursor-pointer hover:border-primary/60 transition-all group"
                         >
                             <button
                                 onClick={dismissPrompt}
-                                className="absolute -top-2 -right-2 w-6 h-6 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+                                className="absolute -top-2 -right-2 w-6 h-6 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors z-10"
                             >
                                 <X size={14} />
                             </button>

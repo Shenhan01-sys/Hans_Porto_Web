@@ -6,6 +6,7 @@ interface Education {
   degree: string;
   period: string;
   location?: string;
+  image?: string;
 }
 
 const educationData: Education[] = [
@@ -13,13 +14,15 @@ const educationData: Education[] = [
     institution: "Universitas Kristen Duta Wacana",
     degree: "Information Systems Major",
     period: "2023 - Present",
-    location: "Yogyakarta"
+    location: "Yogyakarta",
+    image: "/images/ukdwLogo.png"
   },
   {
     institution: "SMA Kolese De Britto",
     degree: "Mathematics Major",
     period: "2020 - 2023",
-    location: "Yogyakarta"
+    location: "Yogyakarta",
+    image: "/images/debrittoLogo.png"  
   }
 ];
 
@@ -54,7 +57,21 @@ export default function EducationSection() {
                 whileHover={{ scale: 1.02 }}
                 data-testid={`education-item-${index}`}
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  {/* Institution Logo */}
+                  {edu.image && (
+                    <div className="flex-shrink-0">
+                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-card border border-border p-3 flex items-center justify-center overflow-hidden">
+                        <img 
+                          src={edu.image} 
+                          alt={`${edu.institution} logo`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Institution Info */}
                   <div className="flex-1">
                     <h3 className="heading-font text-xl font-semibold mb-2" data-testid={`education-institution-${index}`}>
                       {edu.institution}
@@ -64,11 +81,13 @@ export default function EducationSection() {
                     </p>
                     {edu.location && (
                       <p className="text-muted-foreground text-sm" data-testid={`education-location-${index}`}>
-                        {edu.location}
+                        📍 {edu.location}
                       </p>
                     )}
                   </div>
-                  <div className="mt-4 md:mt-0">
+                  
+                  {/* Period Badge */}
+                  <div className="md:mt-0">
                     <span className="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium" data-testid={`education-period-${index}`}>
                       {edu.period}
                     </span>

@@ -12,6 +12,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
+// X (Twitter) SVG Icon Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    className={className}
+    fill="currentColor"
+    width="16"
+    height="16"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
 const socialLinks = [
   {
     icon: "fas fa-envelope",
@@ -37,9 +50,9 @@ const socialLinks = [
 ];
 
 const socialMediaLinks = [
-  { icon: "fab fa-twitter", href: "#" },
-  { icon: "fab fa-instagram", href: "#" },
-  { icon: "fab fa-youtube", href: "#" },
+  { icon: "x-twitter", href: "https://x.com/HGunawan07" },
+  { icon: "fab fa-instagram", href: "https://www.instagram.com/shen_han01/" },
+  { icon: "fab fa-linkedin", href: "https://www.linkedin.com/in/hans-gunawan01/" },
 ];
 
 export default function ContactSection() {
@@ -147,6 +160,8 @@ export default function ContactSection() {
                     <motion.a
                       key={index}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="social-icon w-12 h-12 bg-card rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                       whileHover={{ 
                         scale: 1.2,
@@ -155,7 +170,11 @@ export default function ContactSection() {
                       }}
                       data-testid={`social-link-${index}`}
                     >
-                      <i className={social.icon}></i>
+                      {social.icon === "x-twitter" ? (
+                        <XIcon className="w-4 h-4" />
+                      ) : (
+                        <i className={social.icon}></i>
+                      )}
                     </motion.a>
                   ))}
                 </div>
@@ -172,11 +191,11 @@ export default function ContactSection() {
             >
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" data-testid="contact-form">
                 <div>
-                  <Label htmlFor="name">Nama Lengkap</Label>
+                  <Label htmlFor="name">Full Name</Label>
                   <Input
                     id="name"
                     {...register("name")}
-                    placeholder="Masukkan nama lengkap Anda"
+                    placeholder="Enter your full name"
                     className="contact-input mt-2"
                     data-testid="input-name"
                   />
@@ -193,7 +212,7 @@ export default function ContactSection() {
                     id="email"
                     type="email"
                     {...register("email")}
-                    placeholder="nama@example.com"
+                    placeholder="name@example.com"
                     className="contact-input mt-2"
                     data-testid="input-email"
                   />
@@ -205,12 +224,12 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Pesan</Label>
+                  <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
                     {...register("message")}
                     rows={5}
-                    placeholder="Ceritakan tentang proyek atau kolaborasi yang Anda inginkan..."
+                    placeholder="Tell me about the project or collaboration you have in mind..."
                     className="contact-input mt-2 resize-none"
                     data-testid="input-message"
                   />
@@ -230,17 +249,17 @@ export default function ContactSection() {
                   {contactMutation.isPending ? (
                     <>
                       <i className="fas fa-spinner fa-spin mr-2"></i>
-                      Mengirim...
+                      Sending...
                     </>
                   ) : isSubmitted ? (
                     <>
                       <i className="fas fa-check mr-2"></i>
-                      Terkirim!
+                      Sent!
                     </>
                   ) : (
                     <>
                       <i className="fas fa-paper-plane mr-2"></i>
-                      Kirim Pesan
+                      Send Message
                     </>
                   )}
                 </Button>

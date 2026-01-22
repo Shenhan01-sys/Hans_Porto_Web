@@ -33,6 +33,42 @@ export default function AboutSection() {
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>
+
+              {/* CV Download Section */}
+              <motion.div
+                className="mt-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="bg-muted rounded-xl p-6 text-center">
+                  <h3
+                    className="heading-font text-lg font-semibold mb-3"
+                    data-testid="cv-section-title"
+                  >
+                    Curriculum Vitae
+                  </h3>
+                  <p
+                    className="text-muted-foreground text-sm mb-4"
+                    data-testid="cv-section-description"
+                  >
+                    Download my full CV to view details of my experience and education
+                  </p>
+                  <motion.a
+                    href="https://drive.google.com/file/d/1P0FPfOsv6XAQIibwTxa2dTPqIbZ_F7vu/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    data-testid="button-download-cv"
+                  >
+                    <i className="fas fa-download"></i>
+                    Unduh CV
+                  </motion.a>
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
