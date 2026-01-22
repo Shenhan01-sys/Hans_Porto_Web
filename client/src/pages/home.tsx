@@ -6,6 +6,7 @@ import SkillsSection from "@/components/skills-section";
 import ExperienceSection from "@/components/experience-section";
 import AchievementsSection from "@/components/achievements-section";
 import ProjectsSection from "@/components/projects-section";
+import NewsSection from "@/components/news-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <ExperienceSection />
         <AchievementsSection />
         <ProjectsSection />
+        <NewsSection />
         <ContactSection />
       </main>
       <Footer />

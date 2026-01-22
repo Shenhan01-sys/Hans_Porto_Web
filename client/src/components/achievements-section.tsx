@@ -9,7 +9,7 @@ interface Achievement {
   description?: string;
   icon: string;
   color: string;
-  fileUrl?: string; // Menambahkan properti fileUrl untuk link PDF
+  fileUrl?: string; // Add fileUrl property for PDF links
 }
 
 const achievementsData: Achievement[] = [
@@ -154,7 +154,7 @@ export default function AchievementsSection() {
     if (!emblaApi) return;
     const interval = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 2500); // Ganti 2500 ke ms yang diinginkan
+    }, 2500); // Change 2500 to desired ms
     return () => clearInterval(interval);
   }, [emblaApi]);
 
@@ -170,24 +170,24 @@ export default function AchievementsSection() {
             viewport={{ once: true, margin: "-100px" }}
             data-testid="achievements-title"
           >
-            Prestasi & Penghargaan
+            Achievements & Awards
           </motion.h2>
 
           {/* Slider dengan tombol navigasi kiri-kanan */}
           <div className="relative mb-4">
-            {/* Tombol kiri */}
+            {/* Left Button */}
             <button
               onClick={scrollPrev}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
-              aria-label="Sebelumnya"
+              aria-label="Previous"
             >
               {"<"}
             </button>
-            {/* Tombol kanan */}
+            {/* Right Button */}
             <button
               onClick={scrollNext}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
-              aria-label="Berikutnya"
+              aria-label="Next"
             >
               {">"}
             </button>

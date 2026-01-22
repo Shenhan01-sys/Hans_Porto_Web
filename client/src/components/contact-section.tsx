@@ -101,7 +101,7 @@ export default function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             data-testid="contact-title"
           >
-            Mari Berkolaborasi
+            Let's Collaborate
           </motion.h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -113,10 +113,10 @@ export default function ContactSection() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h3 className="heading-font text-2xl font-semibold mb-6" data-testid="contact-info-title">
-                Hubungi Saya
+                Get In Touch
               </h3>
               <p className="text-lg text-muted-foreground mb-8" data-testid="contact-info-description">
-                Saya selalu terbuka untuk membahas peluang kolaborasi, proyek menarik, atau sekadar berbincang tentang teknologi dan data.
+                I'm always open to discussing collaboration opportunities, interesting projects, or simply having a conversation about technology and data.
               </p>
 
               <div className="space-y-6">

@@ -67,8 +67,8 @@ export default function HeroSection() {
             transition={{ delay: 4, duration: 0.8 }}
             data-testid="hero-description"
           >
-            Mahasiswa Sistem Informasi UKDW yang passionate dalam manajemen data dan pengembangan solusi inovatif 
-            berbasis teknologi informasi untuk meningkatkan efisiensi bisnis.
+            An Information Systems student at UKDW, passionate about data management and developing innovative 
+            technology-driven solutions to enhance business efficiency.
           </motion.p>
           
           <motion.div 
@@ -86,7 +86,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               data-testid="button-view-projects"
             >
-              Lihat Proyek
+              View Projects
             </motion.a>
             <motion.a 
               href="#contact" 
@@ -96,7 +96,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               data-testid="button-contact-me"
             >
-              Hubungi Saya
+              Contact Me
             </motion.a>
           </motion.div>
         </div>

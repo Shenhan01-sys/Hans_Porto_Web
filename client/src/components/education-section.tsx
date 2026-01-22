@@ -36,7 +36,7 @@ export default function EducationSection() {
             viewport={{ once: true, margin: "-100px" }}
             data-testid="education-title"
           >
-            Pendidikan
+            Education
           </motion.h2>
 
           <motion.div 

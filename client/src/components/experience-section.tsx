@@ -75,7 +75,7 @@ export default function ExperienceSection() {
             viewport={{ once: true, margin: "-100px" }}
             data-testid="experience-title"
           >
-            Pengalaman Kerja
+            Work Experience
           </motion.h2>
 
           <motion.div

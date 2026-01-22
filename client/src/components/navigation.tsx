@@ -84,6 +84,16 @@ export default function Navigation() {
         </li>
         <li>
           <a 
+            href="#news" 
+            className="hover:text-primary transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, "#news")}
+            data-testid="nav-news"
+          >
+            News
+          </a>
+        </li>
+        <li>
+          <a 
             href="#contact" 
             className="hover:text-primary transition-colors duration-300"
             onClick={(e) => handleNavClick(e, "#contact")}

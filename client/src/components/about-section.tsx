@@ -14,7 +14,7 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "-100px" }}
             data-testid="about-title"
           >
-            Tentang Saya
+            About Me
           </motion.h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -43,18 +43,18 @@ export default function AboutSection() {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-1">
-                Saya adalah mahasiswa Sistem Informasi di Universitas Kristen Duta Wacana yang berfokus pada implementasi bisnis
-                nyata melalui pengembangan solusi teknologi informasi. Sebagai pengembang dengan AI-native mindset, saya percaya
-                bahwa di era transformasi digital, teknologi bukan sekadar alat bantu, melainkan solusi strategis untuk meningkatkan
-                efisiensi operasional dari berbagai sudut pandang data.
+                I am an Information Systems student at Universitas Kristen Duta Wacana, focused on real-world business implementation
+                through IT solution development. As a developer with an AI-native mindset, I believe that in the era of digital
+                transformation, technology is not just a tool, but a strategic solution to enhance operational efficiency from
+                various data perspectives.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="about-paragraph-2">
-                Keahlian teknis saya mencakup Full-stack Development (Laravel/React) serta eksplorasi framework .NET MAUI untuk
-                solusi mobile yang terintegrasi dengan fitur native (Kamera & GPS). Dengan prinsip hidup 1L + 5C, saya berkomitmen
-                untuk terus berevolusi melampaui teori akademis guna menjawab tantangan industri masa kini. Pengalaman saya sebagai
-                coach gym dan staf operasional telah membentuk karakter yang resilien, disiplin, dan adaptif dalam kepemimpinan maupun
-                pemecahan masalah teknis.
+                My technical expertise includes Full-stack Development (Laravel/React) and exploration of the .NET MAUI framework
+                for mobile solutions integrated with native features (Camera & GPS). With the life principle of 1L + 5C, I am committed
+                to continuously evolving beyond academic theory to address today's industry challenges. My experience as a gym coach
+                and operational staff has shaped a resilient, disciplined, and adaptive character in both leadership and technical
+                problem-solving.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
