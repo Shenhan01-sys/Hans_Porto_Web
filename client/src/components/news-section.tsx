@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { fadeInVariants, staggerContainer } from "@/lib/animations";
 import { Calendar, ExternalLink, Newspaper } from "lucide-react";
 
-// Declare Twitter and Instagram widget types
+// Declare Twitter, Instagram, and TikTok widget types
 declare global {
     interface Window {
         twttr?: {
@@ -16,12 +16,16 @@ declare global {
                 process: (element?: HTMLElement) => void;
             };
         };
+        TikTok?: {
+            init: () => void;
+        };
     }
 }
 
 interface TwitterEmbed {
     type: "twitter";
     tweetHtml: string; // Raw HTML blockquote from Twitter
+    date: string; // Date for sorting (format: "YYYY-MM-DD")
 }
 
 interface YouTubeEmbed {
@@ -35,25 +39,34 @@ interface InstagramEmbed {
     type: "instagram";
     postUrl: string; // Instagram post URL
     embedHtml?: string; // Optional: Raw HTML blockquote from Instagram
+    date: string; // Date for sorting (format: "YYYY-MM-DD")
 }
 
 interface LinkedInEmbed {
     type: "linkedin";
     postUrn: string; // LinkedIn post URN (e.g., "urn:li:ugcPost:7417940591713443840")
     title?: string; // Optional title for the post
+    date: string; // Date for sorting (format: "YYYY-MM-DD")
+}
+
+interface TikTokEmbed {
+    type: "tiktok";
+    videoId: string; // TikTok video ID
+    username: string; // TikTok username (without @)
+    date: string; // Date for sorting (format: "YYYY-MM-DD")
 }
 
 interface CustomNews {
     type: "custom";
     title: string;
     description: string;
-    date: string;
+    date: string; // Date for sorting (format: "YYYY-MM-DD") and display
     image?: string;
     link?: string;
     tags?: string[];
 }
 
-type NewsItem = TwitterEmbed | YouTubeEmbed | InstagramEmbed | LinkedInEmbed | CustomNews;
+type NewsItem = TwitterEmbed | YouTubeEmbed | InstagramEmbed | LinkedInEmbed | TikTokEmbed | CustomNews;
 
 // News data - add new items here
 const newsItems: NewsItem[] = [
@@ -72,27 +85,39 @@ const newsItems: NewsItem[] = [
     {
         type: "instagram",
         postUrl: "https://www.instagram.com/p/DTuce7zEw_b/",
+        date: "2026-01-21",
     },
     {
         type: "instagram",
         postUrl: "https://www.instagram.com/p/DPibpu4EgUO/",
+        date: "2025-10-08",
     },
     {
         type: "instagram",
         postUrl: "https://www.instagram.com/reel/DLjsVoXvwW3/",
+        date: "2025-07-01",
     },
     {
         type: "instagram",
         postUrl: "https://www.instagram.com/p/C_8f3ZtTYyf/",
+        date: "2024-09-20",
     },
     {
         type: "instagram",
         postUrl: "https://www.instagram.com/p/DCHfEK2z786/",
+        date: "2024-09-15",
     },
     {
         type: "linkedin",
         postUrn: "urn:li:ugcPost:7417940591713443840",
         title: "LinkedIn Update",
+        date: "2026-01-16",
+    },
+    {
+        type: "tiktok",
+        videoId: "7481493441654836485",
+        username: "pmbukdw",
+        date: "2025-03-14",
     },
     {
         type: "twitter",
@@ -109,39 +134,97 @@ const newsItems: NewsItem[] = [
             &mdash; cokri.btc (@Moving_03)
             <a href="https://twitter.com/Moving_03/status/2013842227274108993?ref_src=twsrc%5Etfw">January 21, 2026</a>
         </blockquote>`,
+        date: "2026-01-21",
     },
     {
         type: "custom",
         title: "🎉 Payshield - Progressive Escrow Launched!",
         description:
             "Successfully deployed Payshield, a milestone-based payment platform powered by Sui blockchain. Features include secure escrow, privy authentication, and progressive payment releases.",
-        date: "January 2026",
+        date: "2026-01-20",
         image: "/images/EscrowProfilePicture.png",
         link: "https://pixel-perfect-hans.vercel.app/",
         tags: ["Blockchain", "Sui", "Web3", "DeFi"],
     },
     {
         type: "custom",
-        title: "🏆 Sui Dev Workshop @ UGM",
-        description:
-            "Participated in the Sui Developer Workshop at Gadjah Mada University, building innovative blockchain solutions and networking with fellow developers.",
-        date: "January 2026",
-        tags: ["Workshop", "Sui", "Blockchain", "Networking"],
-    },
-    {
-        type: "custom",
         title: "📚 SmartDev Academic LMS Update",
         description:
             "Major update to SmartDev Academic LMS with new features including real-time notifications, enhanced grading system, and parent dashboard improvements.",
-        date: "December 2025",
+        date: "2025-12-15",
         image: "/images/SmartDevAcademic-profile.png",
-        link: "https://portohansgunawan.my.id/docs/frontend-guiding/testing_landingPage/index.html",
+        link: "https://github.com/Shenhan01-sys/Project_lmsRPL3_SmartDev-Academic?tab=readme-ov-file#-smartdev-academic-lms",
         tags: ["Laravel", "LMS", "Education"],
     },
 ];
 
+// Helper function to format date for display
+function formatDate(dateStr: string): string {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+}
+
+// Get non-YouTube items sorted by date (newest first)
+function getSortedNonYouTubeItems(): NewsItem[] {
+    return newsItems
+        .filter(item => item.type !== 'youtube')
+        .sort((a, b) => {
+            const dateA = 'date' in a ? new Date(a.date).getTime() : 0;
+            const dateB = 'date' in b ? new Date(b.date).getTime() : 0;
+            return dateB - dateA; // Newest first
+        });
+}
+
+// TikTok Embed Component
+function TikTokCard({ video }: { video: TikTokEmbed }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        // Load TikTok embed script
+        const existingScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]');
+        
+        if (!existingScript) {
+            const script = document.createElement("script");
+            script.src = "https://www.tiktok.com/embed.js";
+            script.async = true;
+            document.body.appendChild(script);
+        } else if (window.TikTok) {
+            // Script already loaded, reinitialize
+            window.TikTok.init();
+        }
+    }, [video.videoId]);
+
+    const embedHtml = `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@${video.username}/video/${video.videoId}" data-video-id="${video.videoId}" style="max-width: 605px; min-width: 325px;"><section><a target="_blank" title="@${video.username}" href="https://www.tiktok.com/@${video.username}?refer=embed">@${video.username}</a></section></blockquote>`;
+
+    return (
+        <motion.div
+            className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-4 hover:border-primary/50 transition-all duration-300"
+            whileHover={{ y: -5 }}
+        >
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <span>TikTok</span>
+                <span className="mx-1">•</span>
+                <Calendar size={14} />
+                <span>{formatDate(video.date)}</span>
+            </div>
+            <div
+                ref={containerRef}
+                className="tiktok-embed-container [&_.tiktok-embed]:!mx-auto [&_.tiktok-embed]:!my-0"
+                dangerouslySetInnerHTML={{ __html: embedHtml }}
+            />
+        </motion.div>
+    );
+}
+
 // Twitter Embed Component
-function TwitterCard({ tweetHtml }: { tweetHtml: string }) {
+function TwitterCard({ tweet }: { tweet: TwitterEmbed }) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -164,17 +247,26 @@ function TwitterCard({ tweetHtml }: { tweetHtml: string }) {
                 window.twttr.widgets.load(containerRef.current);
             }
         }
-    }, [tweetHtml]);
+    }, [tweet.tweetHtml]);
 
     return (
         <motion.div
             className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-4 hover:border-primary/50 transition-all duration-300"
             whileHover={{ y: -5 }}
         >
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>X / Twitter</span>
+                <span className="mx-1">•</span>
+                <Calendar size={14} />
+                <span>{formatDate(tweet.date)}</span>
+            </div>
             <div
                 ref={containerRef}
                 className="twitter-embed-container [&_.twitter-tweet]:!mx-auto [&_.twitter-tweet]:!my-0"
-                dangerouslySetInnerHTML={{ __html: tweetHtml }}
+                dangerouslySetInnerHTML={{ __html: tweet.tweetHtml }}
             />
         </motion.div>
     );
@@ -218,6 +310,9 @@ function InstagramCard({ post }: { post: InstagramEmbed }) {
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
                 <span>Instagram</span>
+                <span className="mx-1">•</span>
+                <Calendar size={14} />
+                <span>{formatDate(post.date)}</span>
             </div>
             <div
                 ref={containerRef}
@@ -242,6 +337,9 @@ function LinkedInCard({ post }: { post: LinkedInEmbed }) {
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
                 <span>LinkedIn</span>
+                <span className="mx-1">•</span>
+                <Calendar size={14} />
+                <span>{formatDate(post.date)}</span>
             </div>
             <div className="relative w-full overflow-hidden rounded-lg" style={{ minHeight: '400px' }}>
                 <iframe
@@ -314,7 +412,7 @@ function CustomNewsCard({ news }: { news: CustomNews }) {
             <div className="p-6">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
                     <Calendar size={14} />
-                    <span>{news.date}</span>
+                    <span>{formatDate(news.date)}</span>
                 </div>
 
                 <h3 className="text-lg font-semibold text-foreground mb-3">
@@ -405,14 +503,14 @@ export default function NewsSection() {
                         whileInView="animate"
                         viewport={{ once: true, margin: "-100px" }}
                     >
-                        {newsItems.map((item, index) =>
+                        {getSortedNonYouTubeItems().map((item, index) =>
                             item.type === "twitter" ? (
                                 <motion.div
                                     key={`tw-${index}`}
                                     variants={fadeInVariants}
                                     className="break-inside-avoid"
                                 >
-                                    <TwitterCard tweetHtml={item.tweetHtml} />
+                                    <TwitterCard tweet={item} />
                                 </motion.div>
                             ) : item.type === "instagram" ? (
                                 <motion.div
@@ -429,6 +527,14 @@ export default function NewsSection() {
                                     className="break-inside-avoid"
                                 >
                                     <LinkedInCard post={item} />
+                                </motion.div>
+                            ) : item.type === "tiktok" ? (
+                                <motion.div
+                                    key={`tt-${index}`}
+                                    variants={fadeInVariants}
+                                    className="break-inside-avoid"
+                                >
+                                    <TikTokCard video={item} />
                                 </motion.div>
                             ) : item.type === "custom" ? (
                                 <motion.div

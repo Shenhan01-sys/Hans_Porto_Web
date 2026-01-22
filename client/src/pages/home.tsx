@@ -9,11 +9,14 @@ import ProjectsSection from "@/components/projects-section";
 import NewsSection from "@/components/news-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import MusicPlayer from "@/components/music-player";
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
       <Navigation />
+      {/* Background Music Player - Place your audio file in /public/music/ */}
+      <MusicPlayer audioSrc="/music/background.mp3" defaultVolume={0.3} />
       <main>
         <HeroSection />
         <AboutSection />
