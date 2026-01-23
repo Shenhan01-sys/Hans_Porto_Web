@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeInVariants, slideUpVariants } from "@/lib/animations";
+import ProfileCard from "@/components/ui/ProfileCard";
 
 export default function AboutSection() {
   return (
@@ -24,15 +25,11 @@ export default function AboutSection() {
               whileInView="animate"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="relative items-start gap-8">
-                <img
-                  src="/images/profile_image.png"
-                  alt="Hans Gunawan - Professional Portrait"
-                  className="rounded-2xl shadow-2xl w-full max-w-sm self-start lg:max-w-none"
-                  data-testid="profile-image"
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
-              </div>
+              {/* Interactive Profile Card with Tech Orbit */}
+              <ProfileCard 
+                imageSrc="/images/profile_image.png" 
+                name="Hans Gunawan" 
+              />
 
               {/* CV Download Section */}
               <motion.div
@@ -79,36 +76,40 @@ export default function AboutSection() {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-1">
-                I am an Information Systems student at Universitas Kristen Duta Wacana, focused on real-world business implementation
-                through IT solution development. As a developer with an AI-native mindset, I believe that in the era of digital
-                transformation, technology is not just a tool, but a strategic solution to enhance operational efficiency from
-                various data perspectives.
+                I am a Management student (HRM) and 2nd Winner of PILMAPRES UKDW 2025, dedicated to bridging organizational strategy with cutting-edge IT. 
+                I have evolved from Full-stack development (React/TS/Laravel) to engineering Agentic AI systems using the Model Context Protocol (MCP) to build modular, 
+                intelligent agents.
               </p>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="about-paragraph-2">
-                My technical expertise includes Full-stack Development (Laravel/React) and exploration of the .NET MAUI framework
-                for mobile solutions integrated with native features (Camera & GPS). With the life principle of 1L + 5C, I am committed
-                to continuously evolving beyond academic theory to address today's industry challenges. My experience as a gym coach
-                and operational staff has shaped a resilient, disciplined, and adaptive character in both leadership and technical
-                problem-solving.
+                As the Technical Coordinator of the DutaWacana Web3 Community, I specialize in Web3 Engineering (Move/Sui & Base L2), 
+                developing decentralized solutions like Progressive Escrow, 
+                Fit-AI Evolution, and Secure Onchain Vault (utilizing x402 and Privy).
               </p>
 
-              <div className="grid grid-cols-2 gap-6">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-3">
+                My leadership is proven through roles as Project Manager for SmartDev Academic and Dabminton, 
+                a National Liaison Officer for BK2-PTKI, and an Assistant Lecturer for Database Design. 
+                Guided by the 1L + 5C principle and the discipline of a Fitness Coach, 
+                I create transformative technology strategically designed for the future of work and finance.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
                 <motion.div
-                  className="text-center p-6 bg-muted rounded-xl hover:bg-secondary transition-colors duration-300"
+                  className="text-center p-4 bg-muted rounded-xl hover:bg-secondary transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   data-testid="stat-experience"
                 >
-                  <div className="text-3xl font-bold text-primary mb-2">2+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <div className="text-2xl font-bold text-primary mb-1">2+</div>
+                  <div className="text-xs text-muted-foreground">Years Experience</div>
                 </motion.div>
                 <motion.div
-                  className="text-center p-6 bg-muted rounded-xl hover:bg-secondary transition-colors duration-300"
+                  className="text-center p-4 bg-muted rounded-xl hover:bg-secondary transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   data-testid="stat-projects"
                 >
-                  <div className="text-3xl font-bold text-accent mb-2">10+</div>
-                  <div className="text-sm text-muted-foreground">Projects & Events Completed</div>
+                  <div className="text-2xl font-bold text-accent mb-1">10+</div>
+                  <div className="text-xs text-muted-foreground">Projects & Events</div>
                 </motion.div>
               </div>
             </motion.div>

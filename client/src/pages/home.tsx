@@ -10,10 +10,13 @@ import NewsSection from "@/components/news-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import MusicPlayer from "@/components/music-player";
+import BackgroundAnimation from "@/components/ui/BackgroundAnimation";
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
+    <div className="text-foreground relative min-h-screen">
+      {/* Interactive AI Background Animation */}
+      <BackgroundAnimation />
       <Navigation />
       {/* Background Music Player - Place your audio file in /public/music/ */}
       <MusicPlayer audioSrc="/music/background.mp3" defaultVolume={0.3} />
