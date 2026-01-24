@@ -29,6 +29,18 @@ const projects: Project[] = [
     liveUrl: "https://fit-ai-ibm.netlify.app",
   },
   {
+    title: "Business Process Analysis - DFD & ERD",
+    description:
+      "Comprehensive analysis of business processes using Data Flow Diagrams (DFD) and Entity-Relationship Diagrams (ERD) to optimize workflows and data management.",
+    image:
+      "/images/UAS_PROSESBISNIS.png",
+    technologies: [
+      { name: "React", color: "primary" },
+      { name: "IBM Replicate", color: "accent" },
+    ],
+    liveUrl: "https://drive.google.com/file/d/17LwvxDB9uCbMyBPyFKmNzd54Jkhb0TE6/view?usp=drive_link",
+  },
+  {
     title: "SmartDev Academic",
     description:
       "Interactive platform for academic research and collaboration between students, parents, and educators.",

@@ -156,6 +156,16 @@ const newsItems: NewsItem[] = [
         link: "https://github.com/Shenhan01-sys/Project_lmsRPL3_SmartDev-Academic?tab=readme-ov-file#-smartdev-academic-lms",
         tags: ["Laravel", "LMS", "Education"],
     },
+    {
+        type: "custom",
+        title: "🌐 DutaWacana.Web3 Study Group",
+        description:
+            "Preparing for join the base blockchain hackathon by forming a study group at Universitas Kristen Duta Wacana. Focusing on building mini apps using Base SDK.",
+        date: "2026-01-23",
+        image: "/images/DutaWacanaWeb3_Study1.jpeg",
+        link: "https://www.instagram.com/stories/highlights/18088726982047605/?__pwa=1",
+        tags: ["Mini Apps", "Base SDK", "Education", "Hackathon"],
+    },
 ];
 
 // Helper function to format date for display

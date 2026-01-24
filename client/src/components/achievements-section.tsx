@@ -22,6 +22,22 @@ const achievementsData: Achievement[] = [
     fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
   },
   {
+    title: "CodePolitan Completion Scholarship Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Build & Deploy webiste on EdgeOne",
+    icon: "fas fa-code",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/CodepolitanSertif_HansGunawan_organized (1).pdf"
+  },
+  {
+    title: "Educative Completion MCP Building AI Agent Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building AI Agents with LLMs",
+    icon: "fas fa-square-binary",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/MCP_BuildingAIAgents - Hans Gunawan.pdf"
+  },
+  {
     title: "Outstanding Student - Unit Klinik Tani 2022",
     category: "Paper Competition",
     description: "2nd Place scientific paper competition",
