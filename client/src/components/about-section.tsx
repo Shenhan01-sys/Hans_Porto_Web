@@ -76,7 +76,7 @@ export default function AboutSection() {
               transition={{ delay: 0.3 }}
             >
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-1">
-                I am a Management student (HRM) and 2nd Winner of PILMAPRES UKDW 2025, dedicated to bridging organizational strategy with cutting-edge IT. 
+                I am a Information System Student and 2nd Winner of PILMAPRES UKDW 2025, dedicated to bridging organizational strategy with cutting-edge IT. 
                 I have evolved from Full-stack development (React/TS/Laravel) to engineering Agentic AI systems using the Model Context Protocol (MCP) to build modular, 
                 intelligent agents.
               </p>
@@ -84,7 +84,7 @@ export default function AboutSection() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed" data-testid="about-paragraph-2">
                 As the Technical Coordinator of the DutaWacana Web3 Community, I specialize in Web3 Engineering (Move/Sui & Base L2), 
                 developing decentralized solutions like Progressive Escrow, 
-                Fit-AI Evolution, and Secure Onchain Vault (utilizing x402 and Privy).
+                Gym3, and SentryGate (utilizing x402 and Privy).
               </p>
 
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed" data-testid="about-paragraph-3">
