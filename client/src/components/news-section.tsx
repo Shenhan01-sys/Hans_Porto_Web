@@ -147,6 +147,15 @@ const newsItems: NewsItem[] = [
         description:
             "Successfully deployed Payshield, a milestone-based payment platform powered by Sui blockchain. Features include secure escrow, privy authentication, and progressive payment releases.",
         date: "2026-01-20",
+        image: "/images/DIcodingMiniScholarship.png",
+        tags: ["Next.js", "Scholarship", "Dicoding", "Full-Stack Development"],
+    },
+    {
+        type: "custom",
+        title: "🎉 Dicoding Progresive Scholarship Grantee",
+        description:
+            "Awarded the Dicoding Progressive Scholarship for outstanding achievements in Full-Stack Web Developer Program Coding Camp 2026 powered by DBS Foundation.",
+        date: "2026-02-06",
         image: "/images/EscrowProfilePicture.png",
         link: "https://pixel-perfect-hans.vercel.app/",
         tags: ["Blockchain", "Sui", "Web3", "DeFi"],
