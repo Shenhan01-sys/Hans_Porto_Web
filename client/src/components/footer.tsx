@@ -3,10 +3,10 @@ import { fadeInVariants } from "@/lib/animations";
 
 export default function Footer() {
   return (
-  <footer className="bg-card py-8 border-t border-gray-700">
-      <div className="container mx-auto px-6 text-center">
+  <footer className="bg-card py-6 sm:py-8 border-t border-gray-700">
+      <div className="container mx-auto px-4 sm:px-6 text-center">
         <motion.p 
-          className="text-muted-foreground"
+          className="text-muted-foreground text-xs sm:text-sm md:text-base"
           variants={fadeInVariants}
           initial="initial"
           whileInView="animate"

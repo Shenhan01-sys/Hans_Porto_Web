@@ -12,6 +12,9 @@ interface Project {
   technologies: Array<{ name: string; color: string }>;
   liveUrl?: string;
   githubUrl?: string;
+  mobileAppsUrl?: string;
+  Docs?: string;
+  Detail?: string;
 }
 
 const projects: Project[] = [
@@ -49,6 +52,11 @@ const projects: Project[] = [
       { name: "Laravel", color: "accent" },
       { name: "MySQL", color: "primary" },
       { name: "Chart.js", color: "accent" },
+      { name: "Vanilla.js", color: "primary" },
+      { name: "Tailwind CSS", color: "accent" },
+      { name: "JWT Auth", color: "primary" },
+      { name: "RestAPI", color: "accent" },
+      { name: "Microservices", color: "primary" },
     ],
     githubUrl:
       "https://portohansgunawan.my.id/docs/frontend-guiding/testing_landingPage/index.html",
@@ -67,35 +75,38 @@ const projects: Project[] = [
       "https://github.com/Shenhan01-sys/Mobile_Integrasi-API-upload-dengan-Camera_72230649?tab=readme-ov-file#-studibase-mobile-app",
   },
   {
-    title: "Data Insights Platform",
+    title: "Gym3",
     description:
-      "Interactive data visualization platform for business intelligence and predictive analytics.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400",
-    technologies: [
-      { name: "MERN Stack", color: "primary" },
-      { name: "D3.js", color: "accent" },
-      { name: "MongoDB", color: "primary" },
-    ],
-    liveUrl: "coming soon!",
-  },
-  {
-    title: "Fit AI Evolution pwa",
-    description:
-      "Our fitness PWA redefines home workouts by combining Groq AI-powered coaching with real-time camera pose detection. We leverage the Base blockchain to reward progress with NFT badges, providing a seamless, installable app experience without the need for an app store.",
+      "Hackathon project about fitness PWA redefines home workouts by combining Groq AI-powered coaching with real-time camera pose detection. We leverage the Base blockchain to reward progress with NFT badges, providing a seamless, installable app experience without the need for an app store.",
     image:
       "/images/fit-ai-evolution-pwa-main-profile.png",
     technologies: [
       { name: "React", color: "primary" },
-      { name: "IBM Replicate", color: "accent" },
+      { name: "Groq AI API Integration", color: "accent" },
       { name: "Base smart contract", color: "accent" },
       { name: "Node.js", color: "primary" },
       { name: "MediaPipe", color: "accent" },
       { name: "Base blockchain", color: "primary" },
       { name: "Tailwind CSS", color: "accent" },
-      { name: "YOLO11n", color: "primary" },
+      { name: "YOLO26n", color: "primary" },
     ],
-    githubUrl: "https://github.com/Shenhan01-sys/fit-ai-evolution-pwa?tab=readme-ov-file#%EF%B8%8F-fitai-evolution---ai-powered-fitness-pwa",
+    githubUrl: " https://github.com/Shenhan01-sys/FitnessAI_Hackathon",
+  },
+  {
+    title: "Tekoperakku - capstone group project",
+    description:
+      "Capstone project web platform that serves as a center for documentation and promotion of the local silver industry through an integrated data management system, artisan profiles, and product catalog.",
+    image:
+      "/images/TekoperakkuProfilePicture.png",
+    technologies: [
+      { name: "Laravel 12", color: "primary" },
+      { name: "Monolithic", color: "accent" },
+      { name: "Tailwind CSS", color: "accent" },
+      { name: "MySQL", color: "primary" },
+    ],
+    githubUrl: " https://github.com/Shenhan01-sys/FitnessAI_Hackathon",
+    Detail: "https://kotagedekec.jogjakota.go.id/detail/index/35940/kemantren-kotagede-dan-ukdw-lakukan-penjajagan-kerjasama-inovasi-teko-perakku-dalam-pelestarian-identitas-kotagede-sebagai-kota-perak-2024-10-10",
+    Docs: "https://drive.google.com/file/d/1BBZqa4VlMnz_XAu7eXd6j1bI9n2hxxhe/view?usp=drive_link",
   },
   {
     title: "Payshield - Progressive Escrow",
@@ -113,15 +124,54 @@ const projects: Project[] = [
     ],
     liveUrl: "https://pixel-perfect-hans.vercel.app/",
   },
+  {
+    title: "SentryGate - Smart & Transparent Digital Vault",
+    description:
+      "SentryGate is an Onchain Mini App built on the Base network that redefines how we store and verify our most critical documents. By combining military-grade encryption with decentralized storage and a seamless onchain payment gateway, SentryGate turns your wallet into a bulletproof digital vault",
+    image:
+      "/images/SentryGateProfilePicture.png",
+    technologies: [
+      { name: "React", color: "primary" },
+      { name: "Solidity Smart Contract", color: "accent" },
+      { name: "Node.js", color: "primary" },
+      { name: "MySQL", color: "accent" },
+      { name: "Base Blockchain", color: "primary" },
+      { name: "Tailwind CSS", color: "accent" },
+      { name: "IPFS Storage", color: "primary" },
+      { name: "AES-256 Encryption", color: "accent" },
+      { name: "Express.js", color: "primary" },
+    ],
+    liveUrl: "https://sentry-gate-app.vercel.app/",
+    mobileAppsUrl: "https://base.app/app/https:/sentry-gate-app.vercel.app",
+    Docs: "https://shenhan.gitbook.io/sentrygate-dos/",
+  },
+  {
+    title: "SimpleLMS Microservice with Nest.js",
+    description:
+      "A Backend microservice for managing online courses and learning materials, built with modern tech stack and enterprise-grade security with Nest.js environment.",
+    image:
+      "/images/simpleLMSProfilePicture.png",
+    technologies: [
+      { name: "Nest.js", color: "primary" },
+      { name: "RestAPI", color: "accent" },
+      { name: "SweaggerUI", color: "accent" },
+      { name: "Node.js", color: "primary" },
+      { name: "Microservices", color: "accent" },
+      { name: "PostgreSQL", color: "primary" },
+      { name: "Supabase", color: "primary" },
+      { name: "JWT Auth", color: "accent" },
+    ],
+    githubUrl: "https://github.com/Shenhan01-sys/SimpleMicroserviceWithNetJS",
+  },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-card">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 bg-card">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
@@ -132,7 +182,7 @@ export default function ProjectsSection() {
           </motion.h2>
 
           <motion.div
-            className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+            className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 space-y-4 sm:space-y-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -150,29 +200,29 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={`${project.title} Interface`}
-                    className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+                    className="w-full h-36 sm:h-40 md:h-48 object-cover transition-transform duration-500 hover:scale-110"
                     data-testid={`project-image-${index}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
-                <div className="p-6">
+                <div className="p-4 sm:p-5 md:p-6">
                   <h3
-                    className="heading-font text-xl font-semibold mb-3 text-foreground"
+                    className="heading-font text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 text-foreground"
                     data-testid={`project-title-${index}`}
                   >
                     {project.title}
                   </h3>
                   <p
-                    className="text-muted-foreground mb-4 text-sm leading-relaxed"
+                    className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed"
                     data-testid={`project-description-${index}`}
                   >
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={tech.name}
-                        className={`bg-${tech.color}/10 text-${tech.color} px-3 py-1 rounded-full text-xs font-medium`}
+                        className={`bg-${tech.color}/10 text-${tech.color} px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium`}
                         data-testid={`project-tech-${index}-${techIndex}`}
                       >
                         {tech.name}
@@ -208,14 +258,45 @@ export default function ProjectsSection() {
                         See GitHub Repo
                       </motion.a>
                     )}
-                    <motion.button
-                      className="flex-1 min-w-[100px] border border-border text-foreground py-2 px-4 rounded-lg font-medium hover:bg-secondary/50 transition-colors duration-300 text-center text-sm"
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                      data-testid={`project-details-${index}`}
-                    >
-                      Details
-                    </motion.button>
+                    {project.mobileAppsUrl && (
+                      <motion.a
+                        href={project.mobileAppsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[120px] bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 text-center text-sm"
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        data-testid={`project-mobile-app-${index}`}
+                      >
+                        <i className="fas fa-mobile-alt mr-1"></i> Mini App
+                      </motion.a>
+                    )}
+                    {project.Docs && (
+                      <motion.a
+                        href={project.Docs}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[100px] bg-accent/20 text-accent py-2 px-4 rounded-lg font-medium hover:bg-accent/30 transition-colors duration-300 text-center text-sm"
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        data-testid={`project-docs-${index}`}
+                      >
+                        <i className="fas fa-book mr-1"></i> Docs
+                      </motion.a>
+                    )}
+                    {project.Detail && (
+                      <motion.a
+                        href={project.Detail}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[100px] border border-border text-foreground py-2 px-4 rounded-lg font-medium hover:bg-secondary/50 transition-colors duration-300 text-center text-sm"
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        data-testid={`project-details-${index}`}
+                      >
+                        <i className="fas fa-info-circle mr-1"></i> Details
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </motion.div>

@@ -108,6 +108,11 @@ const newsItems: NewsItem[] = [
         date: "2024-09-15",
     },
     {
+        type: "instagram",
+        postUrl: "https://www.instagram.com/p/DUQKLp4k6RV/",
+        date: "2025-10-20",
+    },
+    {
         type: "linkedin",
         postUrn: "urn:li:ugcPost:7417940591713443840",
         title: "LinkedIn Update",

@@ -113,22 +113,22 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             data-testid="skills-title"
           >
-            Keahlian Teknis
+            Technical Skills
           </motion.h2>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -137,16 +137,16 @@ export default function SkillsSection() {
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
-                className="bg-card rounded-xl p-8 hover:bg-secondary transition-colors duration-300"
+                className="bg-card rounded-xl p-4 sm:p-6 md:p-8 hover:bg-secondary transition-colors duration-300"
                 variants={fadeInVariants}
                 whileHover={{ scale: 1.02 }}
                 data-testid={`skill-category-${categoryIndex}`}
               >
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i className={`${category.icon} ${category.iconColor} text-2xl`}></i>
+                <div className="text-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <i className={`${category.icon} ${category.iconColor} text-lg sm:text-xl md:text-2xl`}></i>
                   </div>
-                  <h3 className="heading-font text-xl font-semibold mb-2">{category.title}</h3>
+                  <h3 className="heading-font text-base sm:text-lg md:text-xl font-semibold mb-2">{category.title}</h3>
                 </div>
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
@@ -176,17 +176,17 @@ export default function SkillsSection() {
 
           {/* Technology Icons */}
           <motion.div 
-            className="mt-16 text-center"
+            className="mt-8 sm:mt-12 md:mt-16 text-center"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.5 }}
           >
-            <h3 className="heading-font text-xl font-semibold mb-8 text-muted-foreground">
+            <h3 className="heading-font text-base sm:text-lg md:text-xl font-semibold mb-4 sm:mb-6 md:mb-8 text-muted-foreground">
               Technologies I Work With
             </h3>
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               {techIcons.map((tech, index) => (
                 <motion.div
                   key={index}
@@ -198,7 +198,7 @@ export default function SkillsSection() {
                   }}
                   data-testid={`tech-icon-${index}`}
                 >
-                  <i className={`${tech.icon} text-4xl text-muted-foreground group-hover:${tech.color} transition-colors duration-300`}></i>
+                  <i className={`${tech.icon} text-2xl sm:text-3xl md:text-4xl text-muted-foreground group-hover:${tech.color} transition-colors duration-300`}></i>
                 </motion.div>
               ))}
             </div>

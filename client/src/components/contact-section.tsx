@@ -103,11 +103,11 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.h2 
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
@@ -117,7 +117,7 @@ export default function ContactSection() {
             Let's Collaborate
           </motion.h2>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {/* Contact Info */}
             <motion.div
               variants={fadeInVariants}
@@ -125,44 +125,44 @@ export default function ContactSection() {
               whileInView="animate"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h3 className="heading-font text-2xl font-semibold mb-6" data-testid="contact-info-title">
+              <h3 className="heading-font text-xl sm:text-2xl font-semibold mb-4 sm:mb-6" data-testid="contact-info-title">
                 Get In Touch
               </h3>
-              <p className="text-lg text-muted-foreground mb-8" data-testid="contact-info-description">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8" data-testid="contact-info-description">
                 I'm always open to discussing collaboration opportunities, interesting projects, or simply having a conversation about technology and data.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={link.title}
                     href={link.href}
-                    className="flex items-center gap-4 hover:opacity-80 transition-opacity duration-300"
+                    className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity duration-300"
                     whileHover={{ x: 10 }}
                     data-testid={`contact-link-${index}`}
                   >
-                    <div className={`w-12 h-12 ${link.color} rounded-full flex items-center justify-center`}>
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${link.color} rounded-full flex items-center justify-center text-sm sm:text-base`}>
                       <i className={link.icon}></i>
                     </div>
                     <div>
-                      <div className="font-semibold">{link.title}</div>
-                      <div className="text-muted-foreground">{link.value}</div>
+                      <div className="font-semibold text-sm sm:text-base">{link.title}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm break-all">{link.value}</div>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
               {/* Social Media Links */}
-              <div className="mt-8">
-                <h4 className="font-semibold mb-4" data-testid="social-media-title">Follow Me</h4>
-                <div className="flex gap-4">
+              <div className="mt-6 sm:mt-8">
+                <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base" data-testid="social-media-title">Follow Me</h4>
+                <div className="flex gap-3 sm:gap-4">
                   {socialMediaLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon w-12 h-12 bg-card rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      className="social-icon w-10 h-10 sm:w-12 sm:h-12 bg-card rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                       whileHover={{ 
                         scale: 1.2,
                         y: -5,
@@ -171,9 +171,9 @@ export default function ContactSection() {
                       data-testid={`social-link-${index}`}
                     >
                       {social.icon === "x-twitter" ? (
-                        <XIcon className="w-4 h-4" />
+                        <XIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       ) : (
-                        <i className={social.icon}></i>
+                        <i className={`${social.icon} text-sm sm:text-base`}></i>
                       )}
                     </motion.a>
                   ))}

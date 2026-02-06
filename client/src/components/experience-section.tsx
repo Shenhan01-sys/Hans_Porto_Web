@@ -13,9 +13,60 @@ interface Experience {
 const experienceData: Experience[] = [
   {
     company: "FTI UKDW",
-    position: "Teacher Assistant - Database System Design",
+    position: "Lecturer Assistant - Database System Design",
+    period: "January 2026 - Present",
+    icon: "AssistantLecturer.png",
+    responsibilities: [
+      "Guided students to understand relational tables and business rules will be provided to students",
+      "Visualization skills using ER Diagrams will be developed to represent complex database structures",
+      "Proficiency in query languages will be established as a core competency of this course"
+    ],
+    skills: ["SQL", "Oracle", "Database Fundamentals"]
+  },
+  {
+    company: "FTI UKDW",
+    position: "Fullstack Developer (MBKM) - Building ERP for MBG Management System",
+    period: "February 2026 - March 2026",
+    icon: "Developer.png",
+    responsibilities: [
+      "Build a MVP of ERP system for MBG Management System using Laravel 12 with microservices architecture",
+      "Using PostgreSQL as the central database system for the ERP system",
+      "Implement RESTful APIs to facilitate communication between microservices",
+    ],
+    skills: ["PostgreSQL", "Laravel 12", "Microservices", "RestAPI", "ERP Development"]
+  },
+  {
+    company: "FTI UKDW",
+    position: "Project Manager & Fullstack Developer - SmartDev Academic (software engineering course)",
     period: "August 2025 - December 2025",
-    icon: "🎓",
+    icon: "Developer.png",
+    responsibilities: [
+      "Guided students in advanced SQL implementations and PL/SQL development",
+      "Designed technical modules for relational modeling and database objects",
+      "Managed database security and integrity during lab sessions and exams"
+    ],
+    skills: ["MySQL", "RestAPI", "Microservices","Laravel 12", "VanillaJS", "Database Design", "Project Management", "Team Leadership", "Agile Methodologies"]
+  },
+  {
+    company: "FTI UKDW",
+    position: "Project Manager - Dabminton Open Challenge \"King of the Court\" (Project Management course)",
+    period: "August 2025 - December 2025",
+    icon: "ProjectManager.png",
+    responsibilities: [
+      "Led a team of Information Systems and IT students to organize a badminton festival for 100 participants",
+      "Managed the end-to-end project lifecycle using formal instruments, including Project Charter, WBS, and Gantt Chart for strategic mapping",
+      "Managed an IDR 4.1M operational budget and achieved an IDR 937K surplus through effective fundraising and sponsorship strategies",
+      "Liaised with external partners, venue managers, and coordinated 6 marquee players (\"Kings\") to enhance the event's scale",
+      "Resolved inter-divisional conflicts objectively by adhering to the professional standards defined in the Project Charter",
+      "Attained a 90% participant satisfaction rate through professional and highly organized event execution"
+    ],
+    skills: ["WBS", "Gantt Chart", "Project Charter", "Budget Management", "Stakeholder Communication", "Conflict Resolution", "Event Planning", "Team Leadership"]
+  },
+  {
+    company: "FTI UKDW",
+    position: "Lecturer Assistant - Database System Design",
+    period: "August 2025 - December 2025",
+    icon: "AssistantLecturer.png",
     responsibilities: [
       "Guided students in advanced SQL implementations and PL/SQL development",
       "Designed technical modules for relational modeling and database objects",
@@ -26,8 +77,8 @@ const experienceData: Experience[] = [
   {
     company: "Marketing UKDW",
     position: "Student Staff",
-    period: "April 2025 - Present",
-    icon: "📢",
+    period: "April 2025 - January 2026",
+    icon: "ssIcon.png",
     responsibilities: [
       "Assisted in handling inquiries from prospective students via social media and messaging apps",
       "Supported administrative tasks and admission data entry",
@@ -39,7 +90,7 @@ const experienceData: Experience[] = [
     company: "Biro III",
     position: "Student Staff",
     period: "August 2024 - December 2024",
-    icon: "📋",
+    icon: "ssIcon.png",
     responsibilities: [
       "Take care of the room loan letter",
       "Manage the sports hall loan schedule",
@@ -51,7 +102,7 @@ const experienceData: Experience[] = [
     company: "Physical Fitness & Gym",
     position: "Operational Staff & Coach",
     period: "December 2023 - Present",
-    icon: "💪",
+    icon: "ssIcon.png",
     responsibilities: [
       "Take care of administration in the gym",
       "Maintain equipment condition",
@@ -64,7 +115,7 @@ const experienceData: Experience[] = [
     company: "Galeri Oma Vintage Store",
     position: "Operational Staff",
     period: "June 2023 - August 2023",
-    icon: "🛍️",
+    icon: "ssIcon.png",
     responsibilities: [
       "Create contents of the products in social media",
       "Provide solutions to customers regarding what products to buy",
@@ -171,9 +222,13 @@ export default function ExperienceSection() {
                       >
                         {/* Icon */}
                         <div
-                          className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center text-3xl sm:text-4xl flex-shrink-0 bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-primary/20 group-hover:scale-105 transition-transform duration-300"
+                          className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-primary/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden p-2 sm:p-3"
                         >
-                          {exp.icon}
+                          <img 
+                            src={`/images/${exp.icon}`} 
+                            alt={exp.position}
+                            className="w-full h-full object-contain"
+                          />
                         </div>
                         <div className={!isRight ? "lg:text-right" : ""}>
                           <h3

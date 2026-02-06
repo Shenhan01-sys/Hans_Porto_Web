@@ -161,7 +161,7 @@ const achievementsData: Achievement[] = [
 
 export default function AchievementsSection() {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", speed: 6 });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
@@ -175,11 +175,11 @@ export default function AchievementsSection() {
   }, [emblaApi]);
 
   return (
-    <section id="achievements" className="py-20 bg-card">
-      <div className="container mx-auto px-6">
+    <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-card">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
@@ -190,47 +190,47 @@ export default function AchievementsSection() {
           </motion.h2>
 
           {/* Slider dengan tombol navigasi kiri-kanan */}
-          <div className="relative mb-4">
+          <div className="relative mb-4 px-8 sm:px-10 md:px-12">
             {/* Left Button */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-secondary hover:bg-primary/80 transition text-sm sm:text-base"
               aria-label="Previous"
             >
-              {"<"}
+              <i className="fas fa-chevron-left"></i>
             </button>
             {/* Right Button */}
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-secondary hover:bg-primary/80 transition text-sm sm:text-base"
               aria-label="Next"
             >
-              {">"}
+              <i className="fas fa-chevron-right"></i>
             </button>
             {/* Embla Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-6 pr-6">
+              <div className="flex gap-3 sm:gap-4 md:gap-6">
                 {achievementsData.map((achievement, index) => (
                   <motion.div
                     key={index}
-                    className={`min-w-[300px] max-w-xs flex-shrink-0 bg-background rounded-xl p-6 hover:bg-secondary transition-colors duration-300 ${index === achievementsData.length - 1 ? "mr-8 md:mr-6" : ""}`}
+                    className={`min-w-[260px] sm:min-w-[280px] md:min-w-[300px] max-w-[85vw] sm:max-w-xs flex-shrink-0 bg-background rounded-xl p-4 sm:p-5 md:p-6 hover:bg-secondary transition-colors duration-300 ${index === achievementsData.length - 1 ? "mr-4 sm:mr-6 md:mr-8" : ""}`}
                     variants={fadeInVariants}
                     whileHover={{ scale: 1.02, y: -5 }}
                     data-testid={`achievement-item-${index}`}
                   >
-                    <div className="text-center mb-4">
-                      <div className={`w-16 h-16 bg-${achievement.color}/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                        <i className={`${achievement.icon} text-${achievement.color} text-2xl`}></i>
+                    <div className="text-center mb-3 sm:mb-4">
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${achievement.color}/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                        <i className={`${achievement.icon} text-${achievement.color} text-lg sm:text-xl md:text-2xl`}></i>
                       </div>
-                      <span className={`bg-${achievement.color}/20 text-${achievement.color} px-3 py-1 rounded-full text-xs font-medium`} data-testid={`achievement-category-${index}`}>
+                      <span className={`bg-${achievement.color}/20 text-${achievement.color} px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium`} data-testid={`achievement-category-${index}`}>
                         {achievement.category}
                       </span>
                     </div>
-                    <h3 className="heading-font text-lg font-semibold mb-3 text-center" data-testid={`achievement-title-${index}`}>
+                    <h3 className="heading-font text-sm sm:text-base md:text-lg font-semibold mb-2 sm:mb-3 text-center line-clamp-2" data-testid={`achievement-title-${index}`}>
                       {achievement.title}
                     </h3>
                     {achievement.description && (
-                      <p className="text-muted-foreground text-sm text-center leading-relaxed mb-4" data-testid={`achievement-description-${index}`}>
+                      <p className="text-muted-foreground text-xs sm:text-sm text-center leading-relaxed mb-3 sm:mb-4 line-clamp-3" data-testid={`achievement-description-${index}`}>
                         {achievement.description}
                       </p>
                     )}
@@ -241,7 +241,7 @@ export default function AchievementsSection() {
                           href={achievement.fileUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`text-xs font-medium text-${achievement.color} border border-${achievement.color} px-4 py-2 rounded-full hover:bg-${achievement.color} hover:text-background transition-colors duration-300 flex items-center gap-2`}
+                          className={`text-[10px] sm:text-xs font-medium text-${achievement.color} border border-${achievement.color} px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-${achievement.color} hover:text-background transition-colors duration-300 flex items-center gap-1.5 sm:gap-2`}
                         >
                           <i className="fas fa-eye"></i> View Certificate
                         </a>
