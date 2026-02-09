@@ -22,6 +22,30 @@ const achievementsData: Achievement[] = [
     fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
   },
   {
+    title: "Claude Code Completion Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building AI Agent Applications with Claude Code",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Sertifikat Claude Code Action_Anthopic Academy - Hans Gunawan.pdf"
+  },
+  {
+    title: "Dicoding Basic Web Programming Completion Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building Mini Portfolio Website",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Sertifikat Basic Web Programming_DIcoding - Hans Gunawan.pdf"
+  },
+  {
+    title: "Outstanding Student (Pilmapres) 2025",
+    category: "Academic Excellence",
+    description: "2nd Place at university level, represented at LLDIKTI Region V",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
+  },
+  {
     title: "CodePolitan Completion Scholarship Course",
     category: "Academic Excellence",
     description: "Lesson Completion Certificate : Build & Deploy webiste on EdgeOne",

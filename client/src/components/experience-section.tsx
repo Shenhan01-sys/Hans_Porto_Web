@@ -25,8 +25,20 @@ const experienceData: Experience[] = [
   },
   {
     company: "FTI UKDW",
+    position: "Lecturer Assistant - Web Framework Programming",
+    period: "January 2026 - Present",
+    icon: "AssistantLecturer.png",
+    responsibilities: [
+      "Guided students to understand Framework Architecture and MVC Concepts will be provided to students",
+      "Database Integration & ORM Usage Assistance will be developed to represent complex database structures",
+      "Environment Setup & Framework Installation Support to assist students in setting up their development environments"
+    ],
+    skills: ["MySQL", "CodeIgniter", "Database Fundamentals", "MVC Architecture", "ORM", "Laravel", "Git", "VanillaJS", "Bootstrap", "TailwindCSS"]
+  },
+  {
+    company: "FTI UKDW",
     position: "Fullstack Developer (MBKM) - Building ERP for MBG Management System",
-    period: "February 2026 - March 2026",
+    period: "February 2026 - Present",
     icon: "Developer.png",
     responsibilities: [
       "Build a MVP of ERP system for MBG Management System using Laravel 12 with microservices architecture",
