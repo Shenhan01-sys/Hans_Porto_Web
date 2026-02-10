@@ -13,7 +13,7 @@ interface Experience {
 const experienceData: Experience[] = [
   {
     company: "FTI UKDW",
-    position: "Lecturer Assistant - Database System Design",
+    position: "Lecturer Assistant - Database System",
     period: "January 2026 - Present",
     icon: "AssistantLecturer.png",
     responsibilities: [
