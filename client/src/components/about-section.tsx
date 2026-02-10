@@ -53,7 +53,7 @@ export default function AboutSection() {
                     Download my full CV to view details of my experience and education
                   </p>
                   <motion.a
-                    href="https://drive.google.com/drive/folders/1_ikUUYvJKa7HAe2zxSa4FNTuRSui6ffI"
+                    href="https://drive.google.com/file/d/1dihWP6ZqN92dJ22ayx3HafEGknS3wSoh/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-accent/90 transition-all duration-300 glow-effect text-sm sm:text-base"
