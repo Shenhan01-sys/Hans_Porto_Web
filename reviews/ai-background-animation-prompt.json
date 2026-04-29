@@ -1,0 +1,246 @@
+{
+  "prompt": {
+    "title": "Interactive AI & Technology Canvas Background Animation",
+    "description": "Create a full-screen, interactive canvas-based background animation with an AI and Technology theme. The animation should run on the lowest z-index layer (behind all website content) and respond to user interactions (click, hover, touch).",
+    
+    "requirements": {
+      "core_functionality": [
+        "Full viewport canvas element that auto-resizes on window resize",
+        "Positioned with z-index: -1 or as a fixed background layer",
+        "Smooth 60fps animation using requestAnimationFrame",
+        "Must not interfere with website content interactions (pointer-events: none on canvas, but capture clicks via event delegation)",
+        "Responsive to both desktop and mobile devices",
+        "Performance optimized - pause animation when tab is not visible"
+      ],
+      
+      "visual_elements": {
+        "neural_network_nodes": {
+          "description": "Floating circular nodes representing AI neurons/data points",
+          "count": "50-100 nodes depending on screen size",
+          "size_range": "3px - 8px radius",
+          "movement": "Slow, organic floating motion with slight randomness",
+          "glow_effect": "Subtle outer glow matching node color"
+        },
+        
+        "connection_lines": {
+          "description": "Dynamic lines connecting nearby nodes, simulating neural network connections",
+          "max_distance": "150-200px connection threshold",
+          "style": "Gradient lines with varying opacity based on distance",
+          "animation": "Pulse effect - opacity fluctuation to simulate data transfer",
+          "line_width": "0.5px - 2px based on proximity"
+        },
+        
+        "geometric_shapes": {
+          "description": "Floating geometric shapes (hexagons, triangles, squares) representing technology/data",
+          "count": "10-15 shapes",
+          "size_range": "20px - 60px",
+          "style": "Wireframe/outline only, not filled",
+          "rotation": "Slow continuous rotation",
+          "movement": "Gentle drift across screen"
+        },
+        
+        "particle_trails": {
+          "description": "Small particles that occasionally travel along connection lines",
+          "size": "2px - 4px",
+          "speed": "Fast movement along paths",
+          "frequency": "Random intervals, 2-5 active at any time"
+        },
+        
+        "binary_rain": {
+          "description": "Subtle falling binary digits (0 and 1) in the background",
+          "opacity": "Very low (0.03 - 0.08)",
+          "font": "Monospace",
+          "speed": "Slow fall",
+          "density": "Sparse - not distracting"
+        },
+        
+        "grid_pattern": {
+          "description": "Very subtle grid/circuit pattern as base layer",
+          "opacity": "0.02 - 0.05",
+          "style": "Dashed or dotted lines forming a perspective grid"
+        }
+      },
+      
+      "interaction_effects": {
+        "click_interaction": {
+          "description": "When user clicks anywhere on the background",
+          "effects": [
+            "Ripple wave effect expanding from click point",
+            "Nearby nodes get pushed away momentarily then return (magnetic repulsion)",
+            "Spawn 10-20 burst particles that fade out",
+            "Connection lines near click point briefly intensify/glow",
+            "Create a temporary 'energy burst' ring animation"
+          ],
+          "duration": "1-2 seconds animation"
+        },
+        
+        "mouse_hover_interaction": {
+          "description": "Continuous effect as mouse moves across screen",
+          "effects": [
+            "Nodes within 100px radius gently attract toward cursor",
+            "Increase connection line opacity near cursor",
+            "Subtle glow/light source following cursor",
+            "Particles orbit around cursor position"
+          ]
+        },
+        
+        "touch_interaction": {
+          "description": "Mobile touch support",
+          "effects": [
+            "Same as click effects on touch",
+            "Support multi-touch for multiple ripple points"
+          ]
+        }
+      }
+    },
+    
+    "color_palette": {
+      "description": "Colors optimized for Hans Gunawan's portfolio dark theme",
+      "primary_colors": {
+        "cyan_primary": {
+          "hex": "#40E0D0",
+          "hsl": "hsl(175, 80%, 55%)",
+          "usage": "Main nodes, primary connection lines, interaction highlights"
+        },
+        "orange_accent": {
+          "hex": "#E8963A",
+          "hsl": "hsl(28, 85%, 60%)",
+          "usage": "Secondary nodes, geometric shapes, particle bursts"
+        }
+      },
+      "secondary_colors": {
+        "teal_glow": {
+          "hex": "#00CED1",
+          "rgba": "rgba(0, 206, 209, 0.6)",
+          "usage": "Node glow effects, hover highlights"
+        },
+        "electric_blue": {
+          "hex": "#00BFFF",
+          "rgba": "rgba(0, 191, 255, 0.5)",
+          "usage": "Connection lines, data transfer particles"
+        },
+        "soft_purple": {
+          "hex": "#9370DB",
+          "rgba": "rgba(147, 112, 219, 0.4)",
+          "usage": "Geometric shapes, variety in visual elements"
+        },
+        "warm_gold": {
+          "hex": "#FFD700",
+          "rgba": "rgba(255, 215, 0, 0.3)",
+          "usage": "Accent particles, click burst effects"
+        }
+      },
+      "background_colors": {
+        "base_dark": {
+          "hex": "#0D1117",
+          "hsl": "hsl(220, 20%, 8%)",
+          "usage": "Canvas background (if needed)"
+        },
+        "gradient_overlay": {
+          "value": "radial-gradient(ellipse at center, rgba(0, 206, 209, 0.03) 0%, transparent 70%)",
+          "usage": "Subtle center glow effect"
+        }
+      },
+      "interaction_colors": {
+        "click_ripple": {
+          "value": "rgba(64, 224, 208, 0.4)",
+          "usage": "Click ripple ring effect"
+        },
+        "hover_glow": {
+          "value": "rgba(64, 224, 208, 0.2)",
+          "usage": "Mouse hover area glow"
+        },
+        "burst_particles": {
+          "value": ["#40E0D0", "#E8963A", "#00BFFF", "#FFD700"],
+          "usage": "Random colors for click burst particles"
+        }
+      }
+    },
+    
+    "technical_specifications": {
+      "canvas_setup": {
+        "position": "fixed",
+        "top": "0",
+        "left": "0",
+        "width": "100vw",
+        "height": "100vh",
+        "z_index": "-1",
+        "pointer_events": "none (use window event listeners instead)"
+      },
+      
+      "performance_optimizations": [
+        "Use requestAnimationFrame for smooth animation loop",
+        "Implement object pooling for particles",
+        "Use spatial hashing or quadtree for efficient proximity detection",
+        "Throttle mouse move events (every 16ms / 60fps)",
+        "Pause animation when document is hidden (visibilitychange event)",
+        "Reduce particle count on mobile devices",
+        "Use devicePixelRatio for crisp rendering on high-DPI displays"
+      ],
+      
+      "responsive_behavior": {
+        "desktop": "Full particle/node count",
+        "tablet": "Reduce to 70% particles",
+        "mobile": "Reduce to 50% particles, disable binary rain"
+      }
+    },
+    
+    "code_structure": {
+      "suggested_classes": [
+        "Node - Represents a floating neural network node",
+        "Connection - Manages line connections between nodes",
+        "GeometricShape - Floating wireframe shapes",
+        "Particle - Fast-moving data particles",
+        "RippleEffect - Click interaction ripple animation",
+        "BinaryRain - Falling binary text effect",
+        "AnimationController - Main orchestrator class"
+      ],
+      
+      "suggested_methods": [
+        "init() - Initialize canvas and elements",
+        "animate() - Main animation loop",
+        "handleClick(x, y) - Process click interactions",
+        "handleMouseMove(x, y) - Process hover effects",
+        "handleResize() - Recalculate on window resize",
+        "spawnBurstParticles(x, y, count) - Create click particles",
+        "updateConnections() - Recalculate node connections",
+        "render() - Draw all elements to canvas"
+      ]
+    },
+    
+    "integration_notes": {
+      "react_integration": [
+        "Create as a React component with useRef for canvas",
+        "Use useEffect for initialization and cleanup",
+        "Handle resize with window event listener",
+        "Cleanup animation frame on component unmount"
+      ],
+      "placement": "Render as first child in main App component or inside the Home page component before other sections",
+      "css_requirement": "Ensure parent container has position: relative and the main content has position: relative with z-index: 1 or higher"
+    },
+    
+    "example_interaction_flow": {
+      "scenario": "User clicks on the background",
+      "steps": [
+        "1. Capture click event coordinates",
+        "2. Create RippleEffect at click position with cyan_primary color",
+        "3. Calculate nodes within 150px radius",
+        "4. Apply temporary velocity to push nodes away (physics simulation)",
+        "5. Spawn 15 burst particles with random velocities and colors",
+        "6. Intensify connection lines near click point (increase opacity to 0.8)",
+        "7. After 300ms, nodes begin returning to original drift pattern",
+        "8. Particles fade out over 1 second",
+        "9. Ripple expands and fades over 1.5 seconds",
+        "10. Return to normal animation state"
+      ]
+    }
+  },
+  
+  "metadata": {
+    "created_for": "Hans Gunawan Portfolio Website",
+    "website_theme": "Dark theme with cyan (#40E0D0) and orange (#E8963A) accent colors",
+    "target_frameworks": ["Vanilla JavaScript", "React + TypeScript"],
+    "created_date": "2026-01-23",
+    "version": "1.0"
+  }
+}

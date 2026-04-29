@@ -12,6 +12,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
+// X (Twitter) SVG Icon Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    className={className}
+    fill="currentColor"
+    width="16"
+    height="16"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
 const socialLinks = [
   {
     icon: "fas fa-envelope",
@@ -37,9 +50,9 @@ const socialLinks = [
 ];
 
 const socialMediaLinks = [
-  { icon: "fab fa-twitter", href: "#" },
-  { icon: "fab fa-instagram", href: "#" },
-  { icon: "fab fa-youtube", href: "#" },
+  { icon: "x-twitter", href: "https://x.com/HGunawan07" },
+  { icon: "fab fa-instagram", href: "https://www.instagram.com/shen_han01/" },
+  { icon: "fab fa-linkedin", href: "https://www.linkedin.com/in/hans-gunawan01/" },
 ];
 
 export default function ContactSection() {
@@ -90,21 +103,21 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.h2 
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             data-testid="contact-title"
           >
-            Mari Berkolaborasi
+            Let's Collaborate
           </motion.h2>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {/* Contact Info */}
             <motion.div
               variants={fadeInVariants}
@@ -112,42 +125,44 @@ export default function ContactSection() {
               whileInView="animate"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h3 className="heading-font text-2xl font-semibold mb-6" data-testid="contact-info-title">
-                Hubungi Saya
+              <h3 className="heading-font text-xl sm:text-2xl font-semibold mb-4 sm:mb-6" data-testid="contact-info-title">
+                Get In Touch
               </h3>
-              <p className="text-lg text-muted-foreground mb-8" data-testid="contact-info-description">
-                Saya selalu terbuka untuk membahas peluang kolaborasi, proyek menarik, atau sekadar berbincang tentang teknologi dan data.
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8" data-testid="contact-info-description">
+                I'm always open to discussing collaboration opportunities, interesting projects, or simply having a conversation about technology and data.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {socialLinks.map((link, index) => (
                   <motion.a
                     key={link.title}
                     href={link.href}
-                    className="flex items-center gap-4 hover:opacity-80 transition-opacity duration-300"
+                    className="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity duration-300"
                     whileHover={{ x: 10 }}
                     data-testid={`contact-link-${index}`}
                   >
-                    <div className={`w-12 h-12 ${link.color} rounded-full flex items-center justify-center`}>
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${link.color} rounded-full flex items-center justify-center text-sm sm:text-base`}>
                       <i className={link.icon}></i>
                     </div>
                     <div>
-                      <div className="font-semibold">{link.title}</div>
-                      <div className="text-muted-foreground">{link.value}</div>
+                      <div className="font-semibold text-sm sm:text-base">{link.title}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm break-all">{link.value}</div>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
               {/* Social Media Links */}
-              <div className="mt-8">
-                <h4 className="font-semibold mb-4" data-testid="social-media-title">Follow Me</h4>
-                <div className="flex gap-4">
+              <div className="mt-6 sm:mt-8">
+                <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base" data-testid="social-media-title">Follow Me</h4>
+                <div className="flex gap-3 sm:gap-4">
                   {socialMediaLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.href}
-                      className="social-icon w-12 h-12 bg-card rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-icon w-10 h-10 sm:w-12 sm:h-12 bg-card rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                       whileHover={{ 
                         scale: 1.2,
                         y: -5,
@@ -155,7 +170,11 @@ export default function ContactSection() {
                       }}
                       data-testid={`social-link-${index}`}
                     >
-                      <i className={social.icon}></i>
+                      {social.icon === "x-twitter" ? (
+                        <XIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      ) : (
+                        <i className={`${social.icon} text-sm sm:text-base`}></i>
+                      )}
                     </motion.a>
                   ))}
                 </div>
@@ -172,11 +191,11 @@ export default function ContactSection() {
             >
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" data-testid="contact-form">
                 <div>
-                  <Label htmlFor="name">Nama Lengkap</Label>
+                  <Label htmlFor="name">Full Name</Label>
                   <Input
                     id="name"
                     {...register("name")}
-                    placeholder="Masukkan nama lengkap Anda"
+                    placeholder="Enter your full name"
                     className="contact-input mt-2"
                     data-testid="input-name"
                   />
@@ -193,7 +212,7 @@ export default function ContactSection() {
                     id="email"
                     type="email"
                     {...register("email")}
-                    placeholder="nama@example.com"
+                    placeholder="name@example.com"
                     className="contact-input mt-2"
                     data-testid="input-email"
                   />
@@ -205,12 +224,12 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Pesan</Label>
+                  <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
                     {...register("message")}
                     rows={5}
-                    placeholder="Ceritakan tentang proyek atau kolaborasi yang Anda inginkan..."
+                    placeholder="Tell me about the project or collaboration you have in mind..."
                     className="contact-input mt-2 resize-none"
                     data-testid="input-message"
                   />
@@ -230,17 +249,17 @@ export default function ContactSection() {
                   {contactMutation.isPending ? (
                     <>
                       <i className="fas fa-spinner fa-spin mr-2"></i>
-                      Mengirim...
+                      Sending...
                     </>
                   ) : isSubmitted ? (
                     <>
                       <i className="fas fa-check mr-2"></i>
-                      Terkirim!
+                      Sent!
                     </>
                   ) : (
                     <>
                       <i className="fas fa-paper-plane mr-2"></i>
-                      Kirim Pesan
+                      Send Message
                     </>
                   )}
                 </Button>

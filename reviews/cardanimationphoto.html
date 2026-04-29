@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Profile Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+    @keyframes glow-pulse {
+      0%, 100% { 
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4),
+                    0 0 40px rgba(0, 255, 255, 0.2),
+                    inset 0 0 20px rgba(0, 255, 255, 0.1);
+      }
+      50% { 
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.8),
+                    0 0 80px rgba(0, 255, 255, 0.4),
+                    inset 0 0 20px rgba(0, 255, 255, 0.2);
+      }
+    }
+
+    @keyframes border-glow {
+      0% {
+        border-color: #00ffff;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      }
+      50% {
+        border-color: #8b5cf6;
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+      }
+      100% {
+        border-color: #00ffff;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      }
+    }
+
+    @keyframes scan-line {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    @keyframes neon-text {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+                     0 0 20px rgba(0, 255, 255, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+                     0 0 40px rgba(0, 255, 255, 0.5),
+                     0 0 60px rgba(139, 92, 246, 0.3);
+      }
+    }
+
+    @keyframes rotate-orbit {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes float-up {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+    }
+
+    @keyframes orbit-reverse {
+      0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(180px) rotate(360deg); }
+    }
+
+    @keyframes pulse-scale {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes float-bounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes glow-tech {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.4),
+                    0 0 20px rgba(0, 255, 255, 0.2);
+        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+                    0 0 40px rgba(0, 255, 255, 0.4);
+        filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.6));
+      }
+    }
+
+    @keyframes speak {
+      0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+      10% { opacity: 1; transform: scale(1) translateY(0px); }
+      90% { opacity: 1; transform: scale(1) translateY(0px); }
+      100% { opacity: 0; transform: scale(0.8) translateY(10px); }
+    }
+
+    .orbit-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .tech-orbit {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: orbit 20s linear infinite;
+    }
+
+    .tech-orbit.reverse {
+      animation: orbit-reverse 25s linear infinite;
+    }
+
+    .tech-logo {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(139, 92, 246, 0.15));
+      border: 2px solid rgba(0, 255, 255, 0.4);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: glow-tech 3s ease-in-out infinite;
+      left: -30px;
+      top: -30px;
+      backdrop-filter: blur(5px);
+    }
+
+    .tech-logo:hover {
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(139, 92, 246, 0.3));
+      border-color: #00ffff;
+      transform: scale(1.3);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    }
+
+    .speak-bubble {
+      position: absolute;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(139, 92, 246, 0.7));
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: bold;
+      border: 1px solid rgba(0, 255, 255, 0.6);
+      white-space: nowrap;
+      animation: speak 2.5s ease-out forwards;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .speak-bubble::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: inherit;
+      border: 1px solid rgba(0, 255, 255, 0.6);
+      border-radius: 50%;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .profile-card {
+      position: relative;
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 3/4;
+      border-radius: 20px;
+      overflow: hidden;
+      animation: border-glow 4s ease-in-out infinite;
+    }
+
+    .card-background {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0f0a1a 100%);
+      z-index: 1;
+    }
+
+    .card-border-glow {
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #00ffff, #8b5cf6, #00ffff) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .scan-effect {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00ffff, transparent);
+      animation: scan-line 3s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .card-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    .photo-area {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 200px;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+      animation: glow-pulse 4s ease-in-out infinite;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 60%,
+        rgba(0, 0, 0, 0.8) 100%);
+      z-index: 4;
+    }
+
+    .title-section {
+      position: relative;
+      z-index: 5;
+      padding: 30px 25px;
+      text-align: center;
+    }
+
+    .profile-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: #00ffff;
+      letter-spacing: 2px;
+      animation: neon-text 3s ease-in-out infinite, float-up 3s ease-in-out infinite;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #000000 0%, #0a0520 50%, #000000 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .profile-card {
+        max-width: 100%;
+      }
+
+      .profile-title {
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+
+      .title-section {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="container">
+   <div class="profile-card">
+    <div class="card-background"></div>
+    <div class="card-border-glow"></div>
+    <div class="scan-effect"></div>
+    <div class="orbit-container"><!-- First Orbit Layer -->
+     <div class="tech-orbit">
+      <div class="tech-logo" data-tech="react" title="React">
+       <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:32px;height:32px;color:#61dafb;">
+        <circle cx="12" cy="12" r="3" /><path d="M12 15a8 8 0 0 1 6-7.93M12 15a8 8 0 0 0-6-7.93M12 3v6m5-5.07l-4.24 4.24M6.93 8.93l4.24 4.24" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="laravel" title="Laravel" style="transform: rotate(90deg) translateX(180px) rotate(-90deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#ff2d20;">
+        <path d="M21.79 3.64c-.4-.64-.97-.97-1.6-.97-.64 0-1.2.33-1.6.97L3.64 19.5c-.4.64-.4 1.57 0 2.21.4.64.97.97 1.6.97h14.52c.64 0 1.2-.33 1.6-.97l14.52-15.86c.4-.64.4-1.57 0-2.21zm-8.16 13.7H5.24l8.16-8.93h8.39L13.63 17.34z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="next" title="Next.js" style="transform: rotate(180deg) translateX(180px) rotate(-180deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#000;background:white;border-radius:4px;padding:2px;">
+        <path d="M11.5 0c-6.3 0-11.5 5.2-11.5 11.5s5.2 11.5 11.5 11.5 11.5-5.2 11.5-11.5-5.2-11.5-11.5-11.5zm-5 16.5l10-14h-3l-7 10v4z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="dotnet" title=".NET" style="transform: rotate(270deg) translateX(180px) rotate(-270deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#512bd4;">
+        <path d="M1.125 0C.504 0 0 .504 0 1.125v21.75C0 23.496.504 24 1.125 24h21.75c.621 0 1.125-.504 1.125-1.125V1.125C24 .504 23.496 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.294a3.86 3.86 0 0 0-.756-.383 5.654 5.654 0 0 0-1.176-.124c-.804 0-1.429.144-1.876.432-.446.288-.75.693-.911 1.215-.159.522-.24 1.274-.24 2.253v5.073c0 .35-.078.645-.237.887-.159.243-.38.426-.67.548-.291.122-.645.184-1.063.184-.418 0-.772-.062-1.063-.184a1.258 1.258 0 0 1-.67-.548c-.159-.242-.237-.537-.237-.887V9.75h-2.571V24h2.571v-.52c0-.281.06-.562.184-.84.124-.28.306-.514.543-.702.237-.188.526-.282.868-.282.779 0 1.35.salvage 1.712.708.362.426.543 1.063.543 1.91v.52h2.571V9.75z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="chatbot" title="ChatBot" style="transform: rotate(45deg) translateX(180px) rotate(-45deg);">
+       <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:32px;height:32px;color:#10b981;">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><circle cx="9" cy="10" r="1" fill="currentColor" /><circle cx="12" cy="10" r="1" fill="currentColor" /><circle cx="15" cy="10" r="1" fill="currentColor" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="database" title="Database" style="transform: rotate(135deg) translateX(180px) rotate(-135deg);">
+       <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:32px;height:32px;color:#f59e0b;">
+        <ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14a9 3 0 0 0 18 0V5" /><path d="M3 12a9 3 0 0 0 18 0" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="web3" title="Web3" style="transform: rotate(225deg) translateX(180px) rotate(-225deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#627eea;">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5m-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11m3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
+       </svg>
+      </div>
+     </div><!-- Second Orbit Layer (Reverse) -->
+     <div class="tech-orbit reverse" style="width: 320px; height: 320px;">
+      <div class="tech-logo" data-tech="vue" title="Vue.js" style="transform: rotate(0deg) translateX(160px) rotate(0deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;color:#42b983;">
+        <path d="M0 0h24v24H0z" fill="none" /><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" fill="currentColor" opacity=".3" /><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm3.5 11H13v3h-2v-3H8.5v-2H11V8h2v3h2.5v2z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="typescript" title="TypeScript" style="transform: rotate(60deg) translateX(160px) rotate(-60deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;color:#3178c6;">
+        <rect x="0" y="0" width="24" height="24" fill="#3178c6" /><text x="50%" y="50%" font-size="16" font-weight="bold" fill="white" text-anchor="middle" dy=".3em">
+         TS
+        </text>
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="python" title="Python" style="transform: rotate(120deg) translateX(160px) rotate(-120deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;color:#3776ab;">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m-1.5-13c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0 11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="docker" title="Docker" style="transform: rotate(180deg) translateX(160px) rotate(-180deg);">
+       <svg viewbox="0 0 24 24" fill="currentColor" style="width:28px;height:28px;color:#2496ed;">
+        <path d="M2 7h4v4H2zm6-2h4v4H8zM2 1h4v4H2zm12-1h4v4h-4zm-6 1h4v4h-4zm12 1h4v4h-4zm-6 2h4v4h-4zm-6 2h4v4H8zm12 2h4v4h-4zm-6 2h4v4h-4z" />
+       </svg>
+      </div>
+      <div class="tech-logo" data-tech="blockchain" title="Blockchain" style="transform: rotate(240deg) translateX(160px) rotate(-240deg);">
+       <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px;color:#f7931a;">
+        <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><line x1="10" y1="6.5" x2="14" y2="6.5" /><line x1="10" y1="17.5" x2="14" y2="17.5" /><line x1="6.5" y1="10" x2="6.5" y2="14" /><line x1="17.5" y1="10" x2="17.5" y2="14" />
+       </svg>
+      </div>
+     </div>
+    </div>
+    <div class="card-content">
+     <div class="photo-area" id="photo-area">
+      📸
+     </div>
+     <div class="overlay"></div>
+     <div class="title-section">
+      <h1 class="profile-title" id="profile-title">YOUR NAME</h1>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      profile_title: 'YOUR NAME'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Initialize Element SDK
+    function onConfigChange(updatedConfig) {
+      config = { ...config, ...updatedConfig };
+
+      const titleEl = document.getElementById('profile-title');
+      if (titleEl) titleEl.textContent = config.profile_title || defaultConfig.profile_title;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (cfg) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (cfg) => new Map([
+          ['profile_title', cfg.profile_title || defaultConfig.profile_title]
+        ])
+      });
+    }
+
+    // Tech speak messages
+    const techMessages = {
+      react: ['⚛️ React magic!', '🔄 Component power!', '⚛️ State & Props!'],
+      laravel: ['🐘 Laravel flow!', '✨ Elegant code!', '🔐 Secure backend!'],
+      next: ['▶️ Next.js fast!', '⚡ SSR power!', '🎯 Full-stack!'],
+      dotnet: ['🔷 .NET strength!', '💪 Enterprise!', '🏗️ Solid foundation!'],
+      chatbot: ['🤖 AI chat!', '💬 Smart talk!', '🧠 Learning mode!'],
+      database: ['🗄️ Data storage!', '📊 DB power!', '🔗 Queries fast!'],
+      web3: ['⛓️ Web3 power!', '🔗 Decentralized!', '💎 Blockchain!'],
+      vue: ['💚 Vue smooth!', '🎨 Beautiful UI!', '⚡ Reactive!'],
+      typescript: ['📘 Type safe!', '✅ No bugs!', '🛡️ Type guard!'],
+      python: ['🐍 Python power!', '🎨 ML magic!', '🔬 Data science!'],
+      docker: ['🐳 Container magic!', '📦 Deployment!', '🔧 DevOps!'],
+      blockchain: ['⛓️ Blockchain!', '🔐 Secure!', '💰 Crypto!']
+    };
+
+    function showSpeakBubble(logo) {
+      const tech = logo.dataset.tech;
+      const messages = techMessages[tech] || ['Tech Stack!'];
+      const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+
+      const rect = logo.getBoundingClientRect();
+      const bubble = document.createElement('div');
+      bubble.className = 'speak-bubble';
+      bubble.textContent = randomMsg;
+
+      // Calculate position relative to the container
+      const container = document.querySelector('.container');
+      const containerRect = container.getBoundingClientRect();
+
+      bubble.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+      bubble.style.top = (rect.top - containerRect.top - 60) + 'px';
+      bubble.style.transform = 'translateX(-50%)';
+
+      container.appendChild(bubble);
+
+      setTimeout(() => bubble.remove(), 2700);
+    }
+
+    // Tech logo interactions
+    document.querySelectorAll('.tech-logo').forEach(logo => {
+      logo.addEventListener('click', function() {
+        showSpeakBubble(this);
+
+        // Add pulse effect
+        this.style.animation = 'none';
+        setTimeout(() => {
+          this.style.animation = '';
+        }, 10);
+      });
+
+      // Auto speak on hover
+      logo.addEventListener('mouseenter', function() {
+        setTimeout(() => {
+          if (this.matches(':hover')) {
+            showSpeakBubble(this);
+          }
+        }, 300);
+      });
+    });
+
+    // Random auto-speak every 5 seconds
+    setInterval(() => {
+      const allLogos = document.querySelectorAll('.tech-logo');
+      const randomLogo = allLogos[Math.floor(Math.random() * allLogos.length)];
+      if (randomLogo) {
+        showSpeakBubble(randomLogo);
+      }
+    }, 5000);
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c252e15b24fa2fd',t:'MTc2OTE0OTE3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
-    role: "user" | "model";
+    role: "user" | "assistant";
     parts: string;
     timestamp: Date;
 }
@@ -12,8 +13,8 @@ export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
         {
-            role: "model",
-            parts: "Halo! 👋 Saya asisten AI untuk portfolio Hans Gunawan. Ada yang ingin kamu tanyakan tentang Hans? 😊",
+            role: "assistant",
+            parts: "Hello! 👋 I'm the AI assistant for Hans Gunawan's portfolio. Feel free to ask me anything about Hans! 😊",
             timestamp: new Date(),
         },
     ]);
@@ -90,7 +91,7 @@ export default function Chatbot() {
             setMessages((prev) => [
                 ...prev,
                 {
-                    role: "model",
+                    role: "assistant",
                     parts: "",
                     timestamp: new Date(),
                 },
@@ -114,7 +115,7 @@ export default function Chatbot() {
                                     setMessages((prev) => {
                                         const newMessages = [...prev];
                                         newMessages[aiMessageIndex] = {
-                                            role: "model",
+                                            role: "assistant",
                                             parts: fullResponse,
                                             timestamp: new Date(),
                                         };
@@ -138,8 +139,8 @@ export default function Chatbot() {
             setMessages((prev) => [
                 ...prev,
                 {
-                    role: "model",
-                    parts: "Maaf, terjadi kesalahan. Silakan coba lagi. 😔",
+                    role: "assistant",
+                    parts: "Sorry, an error occurred. Please try again. 😔",
                     timestamp: new Date(),
                 },
             ]);
@@ -160,12 +161,9 @@ export default function Chatbot() {
             {/* Floating Action Button */}
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-6 right-6 z-50 bg-primary text-primary-foreground rounded-full p-4 shadow-2xl hover:shadow-primary/50 transition-shadow"
+                className="fixed bottom-6 right-6 z-[9999] bg-primary text-primary-foreground rounded-full p-4 shadow-2xl hover:shadow-primary/50 transition-shadow"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
             >
                 <AnimatePresence mode="wait">
                     {isOpen ? (
@@ -206,7 +204,7 @@ export default function Chatbot() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className="fixed bottom-24 right-6 z-40 w-[95vw] sm:w-96 h-[500px] bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+                        className="fixed bottom-24 right-6 z-[9998] w-[95vw] sm:w-96 h-[500px] bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
                     >
                         {/* Header */}
                         <div className="bg-gradient-to-r from-primary/20 to-accent/20 p-4 border-b border-border">
@@ -219,7 +217,7 @@ export default function Chatbot() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-foreground">Hans AI Assistant</h3>
-                                    <p className="text-xs text-muted-foreground">Online • Siap membantu</p>
+                                    <p className="text-xs text-muted-foreground">Online • Ready to help</p>
                                 </div>
                             </div>
                         </div>
@@ -236,11 +234,16 @@ export default function Chatbot() {
                                 >
                                     <div
                                         className={`max-w-[80%] rounded-2xl px-4 py-2 ${msg.role === "user"
-                                                ? "bg-primary text-primary-foreground"
-                                                : "bg-muted text-foreground"
+                                            ? "bg-primary text-primary-foreground"
+                                            : "bg-muted text-foreground"
                                             }`}
                                     >
-                                        <p className="text-sm whitespace-pre-wrap break-words">{msg.parts}</p>
+                                        <div
+                                            className="text-sm prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-0 prose-headings:text-inherit prose-p:text-inherit prose-strong:text-inherit prose-li:text-inherit prose-a:text-inherit"
+                                            style={{ color: msg.role === "user" ? "black" : "white" }}
+                                        >
+                                            <ReactMarkdown>{msg.parts}</ReactMarkdown>
+                                        </div>
                                         <span className="text-xs opacity-60 mt-1 block">
                                             {msg.timestamp.toLocaleTimeString("id-ID", {
                                                 hour: "2-digit",
@@ -290,7 +293,7 @@ export default function Chatbot() {
                                     value={inputValue}
                                     onChange={handleTextareaChange}
                                     onKeyPress={handleKeyPress}
-                                    placeholder="Tanya tentang Hans..."
+                                    placeholder="Ask about Hans..."
                                     disabled={isLoading}
                                     className="flex-1 bg-muted border border-border rounded-xl px-4 py-2 text-sm resize-none max-h-24 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50"
                                     rows={1}

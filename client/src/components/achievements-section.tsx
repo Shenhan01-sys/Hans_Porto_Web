@@ -9,7 +9,7 @@ interface Achievement {
   description?: string;
   icon: string;
   color: string;
-  fileUrl?: string; // Menambahkan properti fileUrl untuk link PDF
+  fileUrl?: string; // Add fileUrl property for PDF links
 }
 
 const achievementsData: Achievement[] = [
@@ -19,7 +19,47 @@ const achievementsData: Achievement[] = [
     description: "2nd Place at university level, represented at LLDIKTI Region V",
     icon: "fas fa-trophy",
     color: "primary",
-    fileUrl: "/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
+  },
+  {
+    title: "Claude Code Completion Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building AI Agent Applications with Claude Code",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Sertifikat Claude Code Action_Anthopic Academy - Hans Gunawan.pdf"
+  },
+  {
+    title: "Dicoding Basic Web Programming Completion Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building Mini Portfolio Website",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Sertifikat Basic Web Programming_DIcoding - Hans Gunawan.pdf"
+  },
+  {
+    title: "Outstanding Student (Pilmapres) 2025",
+    category: "Academic Excellence",
+    description: "2nd Place at university level, represented at LLDIKTI Region V",
+    icon: "fas fa-trophy",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf"
+  },
+  {
+    title: "CodePolitan Completion Scholarship Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Build & Deploy webiste on EdgeOne",
+    icon: "fas fa-code",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/CodepolitanSertif_HansGunawan_organized (1).pdf"
+  },
+  {
+    title: "Educative Completion MCP Building AI Agent Course",
+    category: "Academic Excellence",
+    description: "Lesson Completion Certificate : Building AI Agents with LLMs",
+    icon: "fas fa-square-binary",
+    color: "primary",
+    fileUrl: "/DataSet/achievements/MCP_BuildingAIAgents - Hans Gunawan.pdf"
   },
   {
     title: "Outstanding Student - Unit Klinik Tani 2022",
@@ -27,7 +67,7 @@ const achievementsData: Achievement[] = [
     description: "2nd Place scientific paper competition",
     icon: "fas fa-trophy",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 2 Lomba Karya Tulis Ilmiah_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 2 Lomba Karya Tulis Ilmiah_Hans Gunawan.pdf"
   },
   {
     title: "Outstanding Student - PHI 2021",
@@ -35,7 +75,7 @@ const achievementsData: Achievement[] = [
     description: "3rd Place scientific paper competition",
     icon: "fas fa-trophy",
     color: "accent",
-    fileUrl: "/achievements/Piagam Penghargaan Lomba Karya Tulis Ilmiah PHI 2021_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Piagam Penghargaan Lomba Karya Tulis Ilmiah PHI 2021_Hans Gunawan.pdf"
   },
   {
     title: "Publications: Repetition on Virtual Tourism",
@@ -51,7 +91,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-robot",
     color: "accent",
-    fileUrl: "/achievements/Maju Bareng AI -  Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Maju Bareng AI -  Hans Gunawan.pdf"
   },
   {
     title: "IBM SkillsBuild: Code Gen & Optimization",
@@ -59,7 +99,7 @@ const achievementsData: Achievement[] = [
     description: "Using IBM Granite",
     icon: "fas fa-code-branch",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat IBM SkillsBuild - Code Generation and Optimization Using IBM Granite_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat IBM SkillsBuild - Code Generation and Optimization Using IBM Granite_Hans Gunawan.pdf"
   },
   {
     title: "SAP Overview EDUGATE",
@@ -67,7 +107,7 @@ const achievementsData: Achievement[] = [
     description: "Course Completion Certificate",
     icon: "fas fa-certificate",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat SAP Overview EDUGATE_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat SAP Overview EDUGATE_Hans Gunawan.pdf"
   },
   {
     title: "Workshop Time Series APTIKOM 2025",
@@ -75,7 +115,7 @@ const achievementsData: Achievement[] = [
     description: "Participant",
     icon: "fas fa-chart-line",
     color: "primary",
-    fileUrl: "/achievements/Workshop Time Series APTIKOM 2025 - Sertifikat Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Workshop Time Series APTIKOM 2025 - Sertifikat Hans Gunawan.pdf"
   },
   {
     title: "Liaison Officer - BK2-PTKI 2025",
@@ -83,7 +123,7 @@ const achievementsData: Achievement[] = [
     description: "National Meeting Committee",
     icon: "fas fa-handshake",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Liaison Officer Pertemuan Nasional BK2-PTKI 2025_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Liaison Officer Pertemuan Nasional BK2-PTKI 2025_Hans Gunawan.pdf"
   },
   {
     title: "PERKAM Division - ISCD 2024",
@@ -91,7 +131,7 @@ const achievementsData: Achievement[] = [
     description: "Committee Member",
     icon: "fas fa-users-cog",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Divisi PERKAM ISCD 2024_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Divisi PERKAM ISCD 2024_Hans Gunawan.pdf"
   },
   {
     title: "2nd Place - Rector Cup 2023",
@@ -99,7 +139,7 @@ const achievementsData: Achievement[] = [
     description: "Achievement in University Basketball Tournament",
     icon: "fas fa-basketball-ball",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf"
   },
   {
     title: "3rd Place - Rector Cup 2024",
@@ -107,7 +147,7 @@ const achievementsData: Achievement[] = [
     description: "Achievement in University Basketball Tournament",
     icon: "fas fa-basketball-ball",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf"
   },
   {
     title: "LIGA MAHASISWA Basketball 2023",
@@ -115,7 +155,7 @@ const achievementsData: Achievement[] = [
     description: "Player Participation",
     icon: "fas fa-basketball-ball",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Liga Mahasiswa Basket 2023_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Liga Mahasiswa Basket 2023_Hans Gunawan.pdf"
   },
   {
     title: "Biofair 2022",
@@ -123,7 +163,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-leaf",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat Peserta Biofair 2022_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Peserta Biofair 2022_Hans Gunawan.pdf"
   },
   {
     title: "Science Film Festival 2021",
@@ -131,7 +171,7 @@ const achievementsData: Achievement[] = [
     description: "Certificate of Participation",
     icon: "fas fa-film",
     color: "primary",
-    fileUrl: "/achievements/Sertifikat Partisipasi Science Film Festival 2021_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat Partisipasi Science Film Festival 2021_Hans Gunawan.pdf"
   },
   {
     title: "School Visit UNY Münster",
@@ -139,13 +179,13 @@ const achievementsData: Achievement[] = [
     description: "Visit Certificate",
     icon: "fas fa-plane",
     color: "accent",
-    fileUrl: "/achievements/Sertifikat School Visit UNY Münster_Hans Gunawan.pdf"
+    fileUrl: "/DataSet/achievements/Sertifikat School Visit UNY Münster_Hans Gunawan.pdf"
   }
 ];
 
 export default function AchievementsSection() {
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", speed: 6 });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
@@ -154,67 +194,67 @@ export default function AchievementsSection() {
     if (!emblaApi) return;
     const interval = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 2500); // Ganti 2500 ke ms yang diinginkan
+    }, 2500); // Change 2500 to desired ms
     return () => clearInterval(interval);
   }, [emblaApi]);
 
   return (
-    <section id="achievements" className="py-20 bg-card">
-      <div className="container mx-auto px-6">
+    <section id="achievements" className="py-12 sm:py-16 md:py-20 bg-card">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="heading-font text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+            className="heading-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 gradient-text"
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             data-testid="achievements-title"
           >
-            Prestasi & Penghargaan
+            Achievements & Awards
           </motion.h2>
 
           {/* Slider dengan tombol navigasi kiri-kanan */}
-          <div className="relative mb-4">
-            {/* Tombol kiri */}
+          <div className="relative mb-4 px-8 sm:px-10 md:px-12">
+            {/* Left Button */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
-              aria-label="Sebelumnya"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-secondary hover:bg-primary/80 transition text-sm sm:text-base"
+              aria-label="Previous"
             >
-              {"<"}
+              <i className="fas fa-chevron-left"></i>
             </button>
-            {/* Tombol kanan */}
+            {/* Right Button */}
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded bg-secondary hover:bg-primary/80 transition"
-              aria-label="Berikutnya"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-secondary hover:bg-primary/80 transition text-sm sm:text-base"
+              aria-label="Next"
             >
-              {">"}
+              <i className="fas fa-chevron-right"></i>
             </button>
             {/* Embla Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex gap-6 pr-6">
+              <div className="flex gap-3 sm:gap-4 md:gap-6">
                 {achievementsData.map((achievement, index) => (
                   <motion.div
                     key={index}
-                    className={`min-w-[300px] max-w-xs flex-shrink-0 bg-background rounded-xl p-6 hover:bg-secondary transition-colors duration-300 ${index === achievementsData.length - 1 ? "mr-8 md:mr-6" : ""}`}
+                    className={`min-w-[260px] sm:min-w-[280px] md:min-w-[300px] max-w-[85vw] sm:max-w-xs flex-shrink-0 bg-background rounded-xl p-4 sm:p-5 md:p-6 hover:bg-secondary transition-colors duration-300 ${index === achievementsData.length - 1 ? "mr-4 sm:mr-6 md:mr-8" : ""}`}
                     variants={fadeInVariants}
                     whileHover={{ scale: 1.02, y: -5 }}
                     data-testid={`achievement-item-${index}`}
                   >
-                    <div className="text-center mb-4">
-                      <div className={`w-16 h-16 bg-${achievement.color}/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                        <i className={`${achievement.icon} text-${achievement.color} text-2xl`}></i>
+                    <div className="text-center mb-3 sm:mb-4">
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-${achievement.color}/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                        <i className={`${achievement.icon} text-${achievement.color} text-lg sm:text-xl md:text-2xl`}></i>
                       </div>
-                      <span className={`bg-${achievement.color}/20 text-${achievement.color} px-3 py-1 rounded-full text-xs font-medium`} data-testid={`achievement-category-${index}`}>
+                      <span className={`bg-${achievement.color}/20 text-${achievement.color} px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium`} data-testid={`achievement-category-${index}`}>
                         {achievement.category}
                       </span>
                     </div>
-                    <h3 className="heading-font text-lg font-semibold mb-3 text-center" data-testid={`achievement-title-${index}`}>
+                    <h3 className="heading-font text-sm sm:text-base md:text-lg font-semibold mb-2 sm:mb-3 text-center line-clamp-2" data-testid={`achievement-title-${index}`}>
                       {achievement.title}
                     </h3>
                     {achievement.description && (
-                      <p className="text-muted-foreground text-sm text-center leading-relaxed mb-4" data-testid={`achievement-description-${index}`}>
+                      <p className="text-muted-foreground text-xs sm:text-sm text-center leading-relaxed mb-3 sm:mb-4 line-clamp-3" data-testid={`achievement-description-${index}`}>
                         {achievement.description}
                       </p>
                     )}
@@ -225,7 +265,7 @@ export default function AchievementsSection() {
                           href={achievement.fileUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`text-xs font-medium text-${achievement.color} border border-${achievement.color} px-4 py-2 rounded-full hover:bg-${achievement.color} hover:text-background transition-colors duration-300 flex items-center gap-2`}
+                          className={`text-[10px] sm:text-xs font-medium text-${achievement.color} border border-${achievement.color} px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-${achievement.color} hover:text-background transition-colors duration-300 flex items-center gap-1.5 sm:gap-2`}
                         >
                           <i className="fas fa-eye"></i> View Certificate
                         </a>
