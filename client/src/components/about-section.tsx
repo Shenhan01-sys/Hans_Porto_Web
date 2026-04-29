@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { fadeInVariants, slideUpVariants } from "@/lib/animations";
-import ProfileCard from "@/components/ui/ProfileCard";
 
 export default function AboutSection() {
   return (
@@ -25,11 +24,15 @@ export default function AboutSection() {
               whileInView="animate"
               viewport={{ once: true, margin: "-100px" }}
             >
-              {/* Interactive Profile Card with Tech Orbit */}
-              <ProfileCard 
-                imageSrc="/images/profile_image.png" 
-                name="Hans Gunawan" 
-              />
+              <div className="relative items-start gap-8">
+                <img
+                  src="/images/profile_image.png"
+                  alt="Hans Gunawan - Professional Portrait"
+                  className="rounded-2xl shadow-2xl w-full max-w-sm self-start lg:max-w-none"
+                  data-testid="profile-image"
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
+              </div>
 
               {/* CV Download Section */}
               <motion.div
