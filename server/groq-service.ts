@@ -160,6 +160,37 @@ Hans aktif berkontribusi dalam riset teknologi tingkat internasional sebagai pen
 V. Daftar Lengkap Penghargaan dan Sertifikasi (Dataset Detail)
 Dataset Anda mencatatkan rekam jejak prestasi yang sangat ekstensif di berbagai bidang:
 
+VII. Web3 Expertise & Blockchain Engineering (The Frontier)
+Hans's technical capacity is not limited to traditional Web2 architecture; it has expanded deeply into the decentralized ecosystem (Web3). He possesses specialized mastery of the Move and Solidity programming languages, making him a highly relevant talent for high-performance ecosystems such as Movement M2, Monad, 0G Labs, and Base.
+
+YieldLift (The Verifiable Agentic Fitness Protocol): Architected a Health-DePIN (Decentralized Physical Infrastructure Network) protocol currently migrating to the Movement M2 network to leverage MoveVM's mathematical security and Ethereum's liquidity. The protocol orchestrates Edge AI (MediaPipe) for real-time client-side form analysis, Decentralized ML (Allora Network) for yield prediction, and Verifiable Computation (FABRIC/ZK-SNARKs) for cryptographic proof generation. YieldLift successfully transforms human physical output into a verifiable on-chain asset within a sustainable Agentic Economy.
+
+zer0Gig (0G Global Hackathon - April 2026): Architected a decentralized Agent-as-a-Service marketplace infrastructure on the 0G network. This project solves the human-in-the-loop verification bottleneck by utilizing multi-agent consensus and the x402 protocol for autonomous Machine-to-Machine (M2M) micropayments. He integrated a Progressive Escrow validated by 175,000 0G Alignment Nodes and secured with ECIES encryption, creating a fully trustless digital labor economy.
+
+KopiLoyalty (Monad Blitz Hackathon): Built a trustless Web3 loyalty ecosystem on the high-performance Monad network. Engineered a gas-optimized smart contract (via Foundry/Solady) utilizing the ERC-1155 standard to manage both fungible reward points and non-fungible tier badges simultaneously. Implemented deterministic badge minting using keccak256 and a consumer-protection claimRefund() mechanism backed by native MON deposits.
+
+SentryGate (Base Indonesia Hackathon - Early 2026): A secure on-chain vault application designed with an absolute focus on pure cryptographic security and asset protection utility. SentryGate was built with a solid security architecture without incorporating any gamification elements, proving Hans's acumen in designing fundamental and essential financial protocols.
+
+VIII. Advanced AI Architecture & Enterprise Systems Engineering
+Beyond standard LLM API integration, Hans specializes in designing, orchestrating, and scaling complex business logic and Artificial Intelligence workflows (Agentic Workflows) for enterprise-grade applications.
+
+AEGIS-ERP (PKM-KI - April 2026): Acted as the Systems Architect and Lead Developer in designing an autonomous Enterprise Resource Planning system aimed at Food & Beverage MSMEs. This system integrates Multi-Agent AI technology (utilizing frameworks like Paperclip AI and PicoClaw) where various agents collaborate to automate planning, supply chain management, and operational oversight, while strictly maintaining Human-in-the-Loop protocols for final validation.
+
+ERP-MBG (Free Nutritious Meal Management System): Led the backend architecture for a large-scale enterprise kitchen management system as part of the MBKM program. Built using Laravel 12 with a strict Service Pattern architecture to ensure extreme modularity and scalability. Engineered complex business logic, including automated nutritional value computation, highly critical FIFO/FEFO logistics management for perishable goods, and a comprehensive payroll system. Orchestrated a highly structured multi-role workflow (SPPG Head, Accounting, Nutritionist) to ensure absolute transparency in mass-scale operations.
+
+IX. Professional Validation and Technical Leadership (Industry & Academic Validation)
+Hans's technical capabilities are directly validated through academic and professional roles in the industry, proving his ability to transfer technical knowledge and execute projects in large-scale environments:
+
+Computer Science & Information Systems Assistant Lecturer (August 2024 - Present): Entrusted by the Faculty of Information Technology at UKDW to instruct and mentor students across multiple advanced technical courses. His teaching portfolio covers both backend architecture and frontend implementation:
+
+Database System Design & Database Systems: Guided students in advanced relational modeling, the strict implementation of business rules via PL/SQL (Oracle), and complex SQL query optimization to ensure databases are structured for enterprise-scale scalability.
+
+Web Framework Programming: Instructed the practical application of MVC architectures and modern Object-Relational Mapping (ORM) paradigms using Laravel and TailwindCSS, ensuring students adhere to rigorous, modern software engineering standards.
+
+Developer Internship at Baliola / Mandala Chain (Started March 2026): Dived directly into enterprise-level Web3 infrastructure and financial technology. Through this professional internship, Hans is actively involved in the development of the MyBaliola project, adapting to the strict rhythm of industry workflows (including rigorous weekly reviews), and ensuring production-grade code quality standards.
+
+Project Management and Team Orchestration: Hans combines the "1L + 5C" principle with tactical project management methodologies. As the Lead Developer of AEGIS-ERP, he formulated the organizational chart and precisely allocated architectural workloads to his development team (Sean, Claudy, and Jimmy). Beyond the scope of software, he also proved his managerial leadership capacity as the Project Manager of the Dabminton Open Challenge (Late 2025), where he led cross-divisional coordination, designed the Work Breakdown Structure (WBS), and oversaw the Gantt Chart to ensure the success of the regional-scale sports tournament.
+
 Prestasi Akademik:
 Juara 2 Seleksi Kandidat Pemilihan Mahasiswa Berprestasi (Pilmapres) Tingkat Internal UKDW 2025.
 Juara 2 Lomba Karya Tulis Ilmiah.
