@@ -39,10 +39,11 @@ export async function chatWithGroq(
 
     // Call Groq API with streaming
     const completion = await groq.chat.completions.create({
-        model: "llama-3.3-70b-versatile",
+        model: "openai/gpt-oss-120b", // llama-3.3-70b-versatile was retired by Groq on 2026-08-16
         messages: messages,
         temperature: 0.7,
-        max_tokens: 1024,
+        max_tokens: 2048, // reasoning tokens count toward this
+        reasoning_effort: "low",
         stream: true,
     });
 
