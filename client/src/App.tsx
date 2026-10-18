@@ -1,11 +1,15 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { MotionConfig } from "framer-motion";
+import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Chatbot from "@/components/chatbot";
+import { SmoothScroll } from "@/components/fx/smooth-scroll";
+import { Cursor } from "@/components/fx/cursor";
+import { Intro } from "@/components/fx/intro";
 
 function Router() {
   return (
@@ -19,11 +23,18 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-        <Chatbot />
-      </TooltipProvider>
+      <MotionConfig reducedMotion="user">
+        <TooltipProvider>
+          <SmoothScroll>
+            <Toaster />
+            <Router />
+            <Chatbot />
+            <Cursor />
+            {/* Intro mounts last so every section has subscribed to its reveal event. */}
+            <Intro />
+          </SmoothScroll>
+        </TooltipProvider>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }
