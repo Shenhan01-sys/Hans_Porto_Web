@@ -2,19 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Hans Gunawan | Full-Stack Developer & Data Analyst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Hans Gunawan | AI agents, Web3 apps and the systems under them</title>
+    <meta name="description" content="Hans Gunawan, Information Systems student at UKDW Yogyakarta. I build MCP-based AI agents, Web3 apps on Sui, Base and Mantle, and Laravel ERP systems." />
+    <meta name="theme-color" content="#040008" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hans Gunawan" />
+    <meta property="og:description" content="AI agents, Web3 apps and the data systems under them." />
+    <meta property="og:image" content="/images/work/applify.jpg" />
     <link rel="icon" href="/images/download (6).png" />
-    <meta name="description" content="Portfolio of Hans Gunawan - Full-Stack Developer and aspiring Data Analyst specializing in React, Node.js, Laravel, and data visualization." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@300..700&display=swap" rel="stylesheet" />
+    <script>
+      // Hold the first paint behind the intro once per session, unless the visitor asked for less motion.
+      (function () {
+        try {
+          var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduce && sessionStorage.getItem("hg-intro") !== "1") {
+            document.documentElement.classList.add("intro-pending");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
 </html>

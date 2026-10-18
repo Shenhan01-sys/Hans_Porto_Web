@@ -1,34 +1,33 @@
-import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-section";
-import EducationSection from "@/components/education-section";
-import SkillsSection from "@/components/skills-section";
-import ExperienceSection from "@/components/experience-section";
-import AchievementsSection from "@/components/achievements-section";
-import ProjectsSection from "@/components/projects-section";
-import NewsSection from "@/components/news-section";
-import ContactSection from "@/components/contact-section";
-import Footer from "@/components/footer";
+import { SiteNav } from "@/components/site/site-nav";
+import { Hero } from "@/components/site/hero";
+import { About } from "@/components/site/about";
+import { Work } from "@/components/site/work";
+import { Recognition } from "@/components/site/recognition";
+import { Experience } from "@/components/site/experience";
+import { Stack } from "@/components/site/stack";
+import { McpSection } from "@/components/site/mcp-section";
+import { Updates } from "@/components/site/updates";
+import { Contact } from "@/components/site/contact";
+import { SiteFooter } from "@/components/site/site-footer";
 import MusicPlayer from "@/components/music-player";
 
 export default function Home() {
   return (
-    <div className="text-foreground relative min-h-screen">
-      <Navigation />
-      {/* Background Music Player - Place your audio file in /public/music/ */}
-      <MusicPlayer audioSrc="/music/background.mp3" defaultVolume={0.3} />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <EducationSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <AchievementsSection />
-        <ProjectsSection />
-        <NewsSection />
-        <ContactSection />
+    <>
+      <SiteNav />
+      <main id="main" tabIndex={-1} className="outline-none">
+        <Hero />
+        <About />
+        <Work />
+        <Recognition />
+        <Experience />
+        <Stack />
+        <McpSection />
+        <Updates />
+        <Contact />
       </main>
-      <Footer />
-    </div>
+      <SiteFooter />
+      <MusicPlayer audioSrc="/music/background.mp3" defaultVolume={0.3} />
+    </>
   );
 }

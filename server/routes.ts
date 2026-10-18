@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { z } from "zod";
 import { chatWithGroq, getProfileContext } from "./groq-service";
+import { handleMcpHttp } from "../client/src/content/portfolio-mcp";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -41,6 +42,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Read-only MCP endpoint (same logic as the Vercel functions)
+  app.all("/api/mcp", (req, res) => {
+    const out = handleMcpHttp(req.method, req.body);
+    res.set(out.headers).status(out.status);
+    if (out.body) res.send(out.body);
+    else res.end();
+  });
+
   // Gemini Chat Endpoint with SSE streaming
   app.post("/api/chat", async (req, res) => {
     try {
@@ -75,6 +84,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Debug endpoint to view loaded context
   app.get("/api/chat/context", async (req, res) => {
+    if (process.env.NODE_ENV !== "development") return res.status(404).end();
     try {
       const context = await getProfileContext();
       res.json({ context });
