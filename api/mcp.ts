@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { handleMcpHttp } from "../client/src/content/portfolio-mcp";
+import { handleMcpHttp } from "../client/src/content/portfolio-mcp.js";
 
 // Read-only MCP endpoint for this portfolio. Logic lives in client/src/content/portfolio-mcp.ts.
 export default function handler(req: VercelRequest, res: VercelResponse) {

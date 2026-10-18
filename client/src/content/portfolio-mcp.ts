@@ -15,7 +15,7 @@ import {
   publications,
   socials,
   stackPlates,
-} from "./site";
+} from "./site.js";
 
 export const MCP_SERVER_INFO = { name: "hans-gunawan-portfolio", title: "Hans Gunawan portfolio", version: "1.0.0" };
 const PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26", "2024-11-05"];

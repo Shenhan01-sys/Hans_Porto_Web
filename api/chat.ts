@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { CONTEXT_ACK, PROFILE_CONTEXT, SYSTEM_INSTRUCTION } from "./_profile-context";
+import { CONTEXT_ACK, PROFILE_CONTEXT, SYSTEM_INSTRUCTION } from "./_profile-context.js";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
