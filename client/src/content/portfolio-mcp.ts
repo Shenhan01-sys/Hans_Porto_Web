@@ -149,7 +149,7 @@ function callTool(name: string, args: Json): { text: string; isError?: boolean }
           "Prizes and programs:",
           ...awards.map((a) => `- ${a.year}: ${a.result}, ${a.event}${a.project ? ` (${a.project})` : ""}${a.proof?.href.startsWith("http") ? ` ${a.proof.href}` : ""}`),
           "Papers:",
-          ...publications.map((p) => `- ${p.year}: "${p.title}". ${p.venue}. ${p.role}${p.link?.href.startsWith("http") ? ` ${p.link.href}` : ""}`),
+          ...publications.map((p) => `- ${p.year}: "${p.title}". ${p.venue}. ${p.role}${p.status ? ` (${p.status})` : ""}${p.link?.href.startsWith("http") ? ` ${p.link.href}` : ""}`),
           "Education:",
           ...education.map((e) => `- ${e.years}: ${e.school}. ${e.detail}`),
           "Certificates:",

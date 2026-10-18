@@ -42,7 +42,7 @@ export const about = {
   lede:
     "I build systems that humans and AI can both understand. Agents that apply for jobs but wait for your approval. Contracts that release money only when the work is verified. ERPs that keep every kitchen's stock honest.",
   paragraphs: [
-    "I am a third-year Information Systems student at Universitas Kristen Duta Wacana. In 2026 my teams took 1st place at the Solve-It Challenge and in a track of the Mantle Turing Test Hackathon, and two of my projects reached the final 10 of the Indonesia Web3 Hackathon. The Applify agent also became my first-author paper at ICIC-APTIKOM 2026.",
+    "I am a third-year Information Systems student at Universitas Kristen Duta Wacana. In 2026 my teams took 1st place at the Solve-It Challenge and in a track of the Mantle Turing Test Hackathon, and two of my projects reached the final 10 of the Indonesia Web3 Hackathon. The Applify agent also became my first-author paper, presented at ICIC-APTIKOM 2026 and soon published in IEEE Xplore.",
     "Outside the code I lead student teams, assist lab classes at the Faculty of Information Technology, and coach members at PF Gym & Fitness. I was formed at Kolese De Britto by 1L+5C: leadership, with competence, conscience, compassion, commitment and consistency.",
   ],
   facts: [
@@ -272,6 +272,7 @@ export interface Award {
 
 export const awards: Award[] = [
   { year: "2026", result: "Two projects in the final 10", event: "Indonesia Web3 Hackathon 2026, 228 submissions, Binance Academy and BNB Chain", project: "Fabius and Lencana", proof: { label: "Finalist post", href: "https://www.instagram.com/p/DejfuU4EzpC/" }, image: "/images/social/ig-DejfuU4EzpC.jpg", imageAlt: "Indonesia Web3 Hackathon cover, co-hosted by Binance Academy, BNB Chain and Coinvestasi, with participants working on laptops.", fit: "screen" },
+  { year: "2026", result: "Paper presented, first author", event: "ICIC 2026, the 11th International Conference on Informatics and Computing, Universitas Atma Jaya Yogyakarta. Soon in IEEE Xplore.", project: "Applify", proof: { label: "Certificate", href: "/images/proof/cert-icic-2026.jpg" }, image: "/images/proof/cert-icic-2026.jpg", imageAlt: "ICIC 2026 certificate of appreciation for Hans Gunawan's paper on an applicant-centered autonomous AI agent for job applications.", fit: "paper" },
   { year: "2026", result: "1st place, Consumer & Viral DApps track", event: "Mantle Turing Test Hackathon, $8,500 prize", project: "Cult of the Digital Oracle", proof: { label: "Mantle post", href: "https://x.com/Mantle_Official/status/2075596029408514552" }, image: "/images/work/cult-oracle.jpg", imageAlt: "Cult of the Digital Oracle temple screen.", fit: "screen" },
   { year: "2026", result: "1st place", event: "Solve-It Challenge 2026, UKRIDA", project: "Applify", proof: { label: "UKDW news", href: "https://ukdw.ac.id/tim-triple-a-ukdw-raih-juara-1-solve-it-challenge-2026-lewat-inovasi-ai-applify/" }, image: "/images/work/applify.jpg", imageAlt: "Applify landing page.", fit: "screen" },
   { year: "2026", result: "Accepted, cohort 10", event: "Uniswap Hook Incubator, Atrium Academy and Uniswap Foundation", project: "Fluxa", image: "/images/work/uhi10-square.jpg", imageAlt: "Uniswap Hook Incubator cohort 10 acceptance graphic with Hans's photo.", fit: "paper" },
@@ -294,6 +295,8 @@ export interface Paper {
   /** first page of the paper; papers without one get a typeset title page */
   page?: string;
   figure?: string;
+  /** short badge for a paper that is not out yet, such as "Soon published" */
+  status?: string;
 }
 
 export const publications: Paper[] = [
@@ -301,8 +304,10 @@ export const publications: Paper[] = [
     year: "2026",
     title: "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application",
     venue: "ICIC-APTIKOM 2026, Yogyakarta",
-    role: "First author. Accepted for oral presentation.",
-    figure: "/images/work/applify.jpg",
+    role: "First author. Presented on 8 to 9 October 2026, to be published in IEEE Xplore.",
+    status: "Soon published",
+    link: { label: "Certificate", href: "/images/proof/cert-icic-2026.jpg" },
+    page: "/images/proof/paper-icic-2026.jpg",
   },
   {
     year: "2025",

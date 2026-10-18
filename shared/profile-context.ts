@@ -31,7 +31,7 @@ export const PROFILE_CONTEXT = `# Hans Gunawan: profile
 - Finalist with two projects, Fabius and Lencana, in the final 10 of the Indonesia Web3 Hackathon 2026 (228 submissions; co-hosted by Binance Academy, BNB Chain and Coinvestasi). The finalists were announced on 16 October 2026; the final round, with $5,000 in total prizes, had not been decided when this profile was written.
 - 1st place, Consumer & Viral DApps track, Mantle Turing Test Hackathon 2026, prize $8,500, with the team project Cult of the Digital Oracle. Announced on Mantle's official X account.
 - 1st place (college/university category), Solve-It Challenge 2026 at UKRIDA, with Applify (team "Triple A").
-- First-author paper "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application", accepted for oral presentation at ICIC-APTIKOM 2026.
+- First-author paper "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application", presented at ICIC-APTIKOM 2026 (the 11th International Conference on Informatics and Computing, 8 to 9 October 2026, Universitas Atma Jaya Yogyakarta). Accepted for publication in IEEE Xplore, not yet published.
 - Accepted into the Uniswap Hook Incubator, cohort 10 (Atrium Academy and Uniswap Foundation). Capstone: Fluxa.
 - Top 80 of 300+ teams, 0G APAC Hackathon 2026, Agentic Economy track, with zer0Gig.
 - 3rd place, Udayana Business Plan Competition 2026, with Applify (from his CV).
@@ -92,7 +92,7 @@ export const PROFILE_CONTEXT = `# Hans Gunawan: profile
 - Delivery: project charter, WBS, Gantt and risk logs; led teams of 4 to 25.
 
 ## Publications
-- "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application", ICIC-APTIKOM 2026, first author, accepted for oral presentation.
+- "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application", ICIC-APTIKOM 2026, first author, presented on 8 to 9 October 2026. Soon published in IEEE Xplore. Co-authors from UKDW, Chulalongkorn University, Hallym University and Christ University.
 - "A Study of Repetition on Virtual Tourism: Understanding the Effect on Memory and Visit Intention", IEEE, 2025, co-author with UKDW and National Tsing Hua University researchers. https://ieeexplore.ieee.org/document/11101036
 - "Metaverse and Behavioral Change Toward a Pro-Environmental Behavior: the Role of Avatar", co-author with NTHU, UKDW and Chulalongkorn University researchers.
 
