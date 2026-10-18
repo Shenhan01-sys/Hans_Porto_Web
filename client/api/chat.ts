@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import Groq from "groq-sdk";
-import { CONTEXT_ACK, PROFILE_CONTEXT, SYSTEM_INSTRUCTION } from "./_profile-context";
+import { CONTEXT_ACK, PROFILE_CONTEXT, SYSTEM_INSTRUCTION } from "./_profile-context.js";
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || "" });
 
