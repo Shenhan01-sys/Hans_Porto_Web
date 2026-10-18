@@ -16,11 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@300..700&display=swap" rel="stylesheet" />
     <script>
-      // Hold the first paint behind the intro once per session, unless the visitor asked for less motion.
+      // Hold the first paint behind the intro on every load, unless the visitor asked for less motion.
       (function () {
         try {
           var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (!reduce && sessionStorage.getItem("hg-intro") !== "1") {
+          if (!reduce) {
             document.documentElement.classList.add("intro-pending");
           }
         } catch (e) {}

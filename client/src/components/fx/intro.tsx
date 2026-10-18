@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { bezier, bezierFn, prefersReducedMotion } from "@/lib/motion";
 
-// Tile-wipe intro, once per session (MASTER section 5). Two layers of tiles: Deep Night on top,
+// Tile-wipe intro, on every load (MASTER section 5). Two layers of tiles: Deep Night on top,
 // Electric violet 200ms behind it; each tile shrinks toward its bottom-right corner on softLand
 // along a diagonal wave, and the page arrives underneath. Any key, click or wheel skips it.
 
-const KEY = "hg-intro";
 const CELL_MS = 1000;
 const WAVE_MS = 1200;
 const LAG_MS = 200;
@@ -101,11 +100,6 @@ export function Intro() {
     window.addEventListener("touchstart", skip, { once: true, passive: true });
 
     function finish(instant: boolean) {
-      try {
-        sessionStorage.setItem(KEY, "1");
-      } catch {
-        /* storage blocked: the intro may play again next load */
-      }
       root.classList.remove("intro-pending");
       if (instant) reveal(true);
       setDone(true);
