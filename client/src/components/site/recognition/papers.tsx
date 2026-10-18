@@ -6,8 +6,8 @@ import { dur, fmEase } from "@/lib/motion";
 
 // Three papers lie stacked on the desk and fan out as the block scrolls into view (scrubbed, linear).
 // The list and the sheets are linked: pointing at either brings that paper to the front.
-// The first page of each paper is the real page; the ICIC-APTIKOM paper, which has no public PDF yet,
-// gets a typeset title page with its real title, venue and the Applify screen as Figure 1.
+// The first page of each paper is the real page; a paper without one gets a typeset title page.
+// A paper that is accepted but not out yet carries its status on the list and on the sheet.
 
 export function Papers() {
   const stage = useRef<HTMLDivElement>(null);
@@ -30,8 +30,9 @@ export function Papers() {
               onBlurCapture={() => setActive(null)}
               className={`grid gap-1 border-l-2 pl-s-2 transition-colors duration-fade ease-inout ${active === i ? "border-violet-hi" : "border-line"}`}
             >
-              <span className="font-mono text-small text-ink-3">
+              <span className="flex flex-wrap items-center gap-x-s-2 gap-y-1 font-mono text-small text-ink-3">
                 {p.year}. {p.venue}
+                {p.status && <StatusBadge text={p.status} />}
               </span>
               <span className="text-ink">{p.title}</span>
               <span className="text-ink-2">{p.role}</span>
@@ -76,16 +77,17 @@ function Sheet({
   active: number | null;
   onHover: (i: number | null) => void;
 }) {
-  const offset = i - (n - 1) / 2; // -1, 0, 1
+  // the newest paper lies in the middle, on top; older ones fan out left, right, left...
+  const offset = i === 0 ? 0 : i % 2 ? -Math.ceil(i / 2) : Math.ceil(i / 2);
   const x = useTransform(spread, [0, 1], ["0%", `${offset * 62}%`]);
-  const y = useTransform(spread, [0, 1], [`${i * 2}%`, `${Math.abs(offset) * 7}%`]);
+  const y = useTransform(spread, [0, 1], [`${(n - 1 - i) * 2}%`, `${Math.abs(offset) * 7}%`]);
   const rotate = useTransform(spread, [0, 1], [offset * 3, offset * 8]);
   const lifted = active === i;
 
   return (
     <motion.div
       className="absolute left-[28%] top-[6%] w-[44%]"
-      style={{ x, y, rotate, zIndex: lifted ? 10 : i === 1 ? 3 : 2 }}
+      style={{ x, y, rotate, zIndex: lifted ? 10 : n - i }}
       onPointerEnter={() => onHover(i)}
       onPointerLeave={() => onHover(null)}
     >
@@ -100,8 +102,18 @@ function Sheet({
           <TitlePage p={p} />
         )}
         <span className={`absolute inset-0 transition-colors duration-fade ease-inout ${lifted ? "bg-transparent" : "bg-ground/25"}`} />
+        {p.status && <StatusBadge text={p.status} className="absolute bottom-[3%] right-[5%]" />}
       </motion.div>
     </motion.div>
+  );
+}
+
+function StatusBadge({ text, className = "" }: { text: string; className?: string }) {
+  return (
+    <span className={`inline-flex items-center gap-1.5 border border-violet-hi bg-ground px-2 py-0.5 font-mono text-small text-violet-hi ${className}`}>
+      <span aria-hidden="true" className="h-1.5 w-1.5 bg-violet-hi" />
+      {text}
+    </span>
   );
 }
 
