@@ -15,7 +15,7 @@ export const person = {
   role: "I build AI agents, on-chain apps and the data systems under them.",
   study: "Information Systems at UKDW, Yogyakarta.",
   email: "hansgunawan775@gmail.com",
-  cv: "https://drive.google.com/file/d/1dihWP6ZqN92dJ22ayx3HafEGknS3wSoh/view?usp=drive_link",
+  cv: "/CV_HansGunawan.pdf",
   location: "Yogyakarta, Indonesia",
 };
 
