@@ -111,6 +111,24 @@ export const featured: FeaturedProject[] = [
     ],
   },
   {
+    id: "printpitt",
+    title: "PrintPitt",
+    outcome: "2nd place, Monad Blitz Jogja Vol. 2, Monad Foundation and Dev Web3 Jogja, 24 October 2026.",
+    summary:
+      "Print shops race to claim a customer's print job on Monad. The payout falls every second and the late part returns to the customer as cashback. Orders are gasless, documents are encrypted, and the customer gets an NFT receipt at pickup. Live on Monad mainnet.",
+    role: "Contracts, backend and infrastructure, in a team of 3 with Dave Aryanda Agape and Dex Bennett",
+    date: "Oct 2026",
+    stack: ["Solidity", "Foundry", "Node", "Envio", "React"],
+    image: "/images/work/printpitt.jpg",
+    imageAlt: "PrintPitt landing page: the headline 'The onchain print shop on Monad' beside an isometric photocopier.",
+    links: [
+      { label: "Live app", href: "https://printpitt-app.vercel.app" },
+      { label: "Landing page", href: "https://printpitt-landing.vercel.app" },
+      { label: "GitHub", href: "https://github.com/PrintPitt" },
+      { label: "Mainnet contract", href: "https://monadscan.com/address/0x4b453b395eEa830C5CB208551A0326f6cd976f12#code" },
+    ],
+  },
+  {
     id: "fabius",
     title: "Fabius",
     outcome: "Finalist, top 10 of 228 submissions, Indonesia Web3 Hackathon 2026 (Binance Academy, BNB Chain, Coinvestasi).",
@@ -237,7 +255,6 @@ export interface ArchiveProject {
 }
 
 export const archive: ArchiveProject[] = [
-  { year: "2026", title: "PrintPitt", what: "Print shops race to claim a customer's print job on Monad. Payout falls every second and the late part returns to the customer as cashback. 2nd place at Monad Blitz Jogja Vol. 2. Team of 3: Hans Gunawan built the contracts, backend and infrastructure, with Dave Aryanda Agape and Dex Bennett on the front end.", stack: "Solidity, Foundry, Node, Envio, React", image: "/images/work/printpitt.jpg", link: { label: "Live app", href: "https://printpitt-app.vercel.app" } },
   { year: "2026", title: "Reeve", what: "Turns a business procedure written in plain language into code that runs on its own. An independent auditor tests the code with mutation testing before any money moves. Solo entry for the CreateOS and Stripe hackathon.", stack: "TypeScript, Python, Claude, CreateOS, Stripe" },
   { year: "2026", title: "JitsuinFi", what: "Private invoice financing on Zcash testnet that stops one invoice from being financed twice. Rust and WebAssembly; in development for ZECATHON 2026.", stack: "Rust, WebAssembly, Zcash" },
   { year: "2026", title: "Nusastakes", what: "A 3D city you can save in: each city is a yield vault on Monad testnet run by its mayor, with passkey sign-in and gas paid for you. Solo entry for Monad Metropolis.", stack: "Next.js, three.js, Solidity, Chainlink CRE", image: "/images/work/nusastakes.jpg", link: { label: "Live app", href: "https://nusastakes.vercel.app" } },
