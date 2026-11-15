@@ -49,18 +49,18 @@ export const PROFILE_CONTEXT = `# Hans Gunawan: profile
 - JitsuinFi (October 2026, in development). Private invoice financing on Zcash testnet that prevents double financing, built with Rust and WebAssembly for ZECATHON 2026.
 - zer0Gig (March to May 2026). A marketplace where AI agents with on-chain identities take paid jobs; escrow pays out only when the work is verified; new users can start in rupiah over QRIS. Role: PM, team lead and full-stack developer. Stack: 0G, ERC-7857, MCP agents, Supabase. Live: https://zer0gig.vercel.app . Docs: https://stylenecy.gitbook.io/zer0gig . GitHub: https://github.com/zer0Gig . Demo: https://youtu.be/7c46_zbH2iY
 - SentryGate (January 2026). A document vault: files are encrypted in the browser, stored on IPFS and anchored on Base; access is paid per use with x402 in a rupiah stablecoin. Solo build, full-stack and contracts. Stack: Next.js, Solidity, Foundry, IPFS (Pinata), Privy, Express. Live: https://sentry-gate-app.vercel.app/ . Docs: https://shenhan.gitbook.io/sentrygate-dos/ . Repo: https://github.com/Shenhan01-sys/SentryGate_Hackathon
-- ERP MBG (February to 8 May 2026). A multi-kitchen ERP for Indonesia's national free-meals program, built during a national internship program at Synapse Labs. Each kitchen sees only its own data; stock follows FIFO and FEFO. Hans was project manager and lead architect of 6 engineers and delivered a tested 10-module MVP. Stack: Laravel 12 with a service pattern, PostgreSQL multi-tenancy, RBAC, Sanctum, Docker. Internal system, no public link.
+- ERP MBG (February to 8 May 2026). A multi-kitchen ERP for Indonesia's national free-meals program, built during a national internship program at Synapse Labs. Each kitchen sees only its own data; stock follows FIFO and FEFO. Hans was lead engineer of a team of 6 and delivered a tested 10-module MVP. Stack: Laravel 12 with a service pattern, PostgreSQL multi-tenancy, RBAC, Sanctum, Docker. Internal system, no public link.
 - HeliQuant (2026). A regime-aware AI trading agent that started at the Mantle Turing Test Hackathon and grew into a multi-desk trading system with a TimesFM volatility forecast. Stack: Python, XGBoost, Solidity, Foundry, Pyth, Allora, Next.js. GitHub: https://github.com/HeliQuant . Demo: https://youtu.be/DKTNGtcDRj4 . It did not win the $8,500 prize; that was Cult of the Digital Oracle.
 - Payshield (January 2026). Milestone escrow on Sui; people without a wallet sign in with Privy. Built after the Sui developer workshop at Gadjah Mada University. Stack: React, Move, Sui, Turso. Live: https://pixel-perfect-hans.vercel.app/
 
 ## More projects
 - Nusastakes (October 2026): a 3D city you can save in. Each city is an ERC-4626 vault on Monad testnet run by its mayor; sign-in uses passkeys and a relayer pays gas; a Chainlink CRE guardian can only move funds to idle. Solo entry for Monad Metropolis; result not known yet. Live: https://nusastakes.vercel.app . Code: https://github.com/nusastakes
-- Fluxa (2026): Uniswap v4 hook that gives real-world-asset tokens an exit-liquidity path with three pricing modes; UHI10 capstone; 59 of 59 tests passing. Solidity, Foundry.
+- Fluxa (2026): Uniswap v4 hook that gives real-world-asset tokens an exit-liquidity path with three pricing modes; UHI10 capstone; 47 of 47 tests passing. Solidity, Foundry.
 - AMPERA (2026, founder and CEO): crowdfunding that routes investor money into village solar, micro-hydro and biomass with AI site surveys. Entered PLN ICE 2026 and did not pass the qualification round. Repo: https://github.com/AetherSolar/frontend
 - Pacifica Colosseum (2026): battle-royale trading game on Pacifica's perpetuals DEX, Solana testnet. Team build. Live: https://pacifica-colosseum.vercel.app
 - AVAL (2026): AI agent that verifies and prices B2B invoices so suppliers get stablecoin credit early. Casper, x402. Repo: https://github.com/AVALcspr/AVAL
 - AEGIS-ERP (January to May 2026): autonomous ERP for catering MSMEs with MCP agents and human approval gates; Hans led a team of 4 for the PKM-KI national student competition.
-- POS KebayaOma (2026, freelance): tablet point of sale for a kebaya shop with a QR label per garment, dynamic QRIS, thermal receipts and offline mode. Front end delivered; backend integration in progress.
+- POS KebayaOma (July 2026 to now, paid freelance): tablet point of sale for a kebaya shop with a QR label per garment, dynamic QRIS checkout, rentals with WhatsApp reminders, thermal receipts and offline mode. Live at the shop.
 - KopiLoyalty (2026): coffee loyalty app on Monad: pay by QR, earn points, find cafes nearby.
 - Confidential OTC Desk (2026): two institutions trade a tokenized asset for tokenized cash in one private settlement on Canton; Hans wrote the Daml contracts and tests.
 - Gym3 (2026): fitness PWA with an AI coach (Groq), camera pose checks (MediaPipe, YOLO26n) and progress badges on Base. Repo: https://github.com/Shenhan01-sys/FitnessAI_Hackathon
@@ -77,8 +77,8 @@ export const PROFILE_CONTEXT = `# Hans Gunawan: profile
 - Founder and CEO, AMPERA (January 2026 to now).
 - Fitness Coach, PF Gym & Fitness (December 2023 to now).
 - Web3 Developer internship, PT Baliola (February to August 2026, ended): owned the multi-approver document stamping module in SignBaliola, with an immutable event log, live status over server-sent events, browser-side hashing and QR verification.
-- Project Manager and Lead Architect, ERP MBG, Synapse Labs national internship program (February to May 2026), team of 6.
-- Freelance full-stack developer, Kebaya Oma (2026).
+- Lead Engineer, ERP MBG, Synapse Labs national internship program (February to May 2026), team of 6.
+- Freelance full-stack developer, Kebaya Oma, paid client (July 2026 to now).
 - Project Lead, AEGIS-ERP, PKM-KI 2026 (January to May 2026), team of 4.
 - Hackathon builder (January to October 2026): shipped on Base, Sui, Mantle, BNB Chain, 0G, Solana testnet, Canton, Casper and Monad.
 - Guest speaker at the UKDW Information Systems new-student orientation (2026), talk on using coursework as a starting point for hackathons, research and self-taught skills.
