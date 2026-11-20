@@ -42,11 +42,11 @@ export const about = {
   lede:
     "I build systems that humans and AI can both understand. Agents that apply for jobs but wait for your approval. Contracts that release money only when the work is verified. ERPs that keep every kitchen's stock honest.",
   paragraphs: [
-    "I am a third-year Information Systems student at Universitas Kristen Duta Wacana. In 2026 my teams took 1st place at the Solve-It Challenge and in a track of the Mantle Turing Test Hackathon, and two of my projects reached the final 10 of the Indonesia Web3 Hackathon. The Applify agent also became my first-author paper, presented at ICIC-APTIKOM 2026 and soon published in IEEE Xplore.",
+    "I am a final-year Information Systems student at Universitas Kristen Duta Wacana. In 2026 my teams took 1st place at the Solve-It Challenge and in a track of the Mantle Turing Test Hackathon, and two of my projects placed at the Indonesia Web3 Hackathon: Lencana 2nd in the Consumer Apps track and Fabius 3rd in the AI Agents track. The Applify agent also became my first-author paper, presented orally at ICIC-APTIKOM 2026 and soon published in IEEE Xplore.",
     "Outside the code I lead student teams, assist lab classes at the Faculty of Information Technology, and coach members at PF Gym & Fitness. I was formed at Kolese De Britto by 1L+5C: leadership, with competence, conscience, compassion, commitment and consistency.",
   ],
   facts: [
-    { k: "Study", v: "B.Sc. Information Systems, UKDW, 2023 to 2027" },
+    { k: "Study", v: "B.Sc. Information Systems, UKDW, 2023 to expected Mar 2027" },
     { k: "GPA", v: "3.79 / 4.00" },
     { k: "Focus", v: "Agentic AI, smart contracts, ERP and data" },
     { k: "Languages", v: "Indonesian, English, basic Mandarin" },
@@ -131,7 +131,7 @@ export const featured: FeaturedProject[] = [
   {
     id: "fabius",
     title: "Fabius",
-    outcome: "Finalist, top 10 of 228 submissions, Indonesia Web3 Hackathon 2026 (Binance Academy, BNB Chain, Coinvestasi).",
+    outcome: "3rd place, AI Agents track, Indonesia Web3 Hackathon 2026 (228 submissions; Binance Academy, BNB Chain, Coinvestasi).",
     summary:
       "Paper-trading bots that seal every signal on BNB Chain before the market moves. Anyone can check a signal without a key or gas, pay per signal with x402, or pull signals into their own AI over MCP.",
     role: "Solo build",
@@ -149,7 +149,7 @@ export const featured: FeaturedProject[] = [
   {
     id: "lencana",
     title: "Lencana",
-    outcome: "Finalist, top 10 of 228 submissions, Indonesia Web3 Hackathon 2026, Consumer Apps track.",
+    outcome: "2nd place, Consumer Apps track, Indonesia Web3 Hackathon 2026 (228 submissions).",
     summary:
       "Learners sign in with email, pay for a micro-course without gas, take quizzes and essays, and earn an Open Badges 3.0 credential anyone can verify from one link. AI agents propose essay grades; a human reviewer approves them.",
     role: "Lead builder of a team of 3: contracts, credential signer and verifier",
@@ -205,7 +205,7 @@ export const featured: FeaturedProject[] = [
     outcome: "Led 6 engineers to a tested 10-module MVP in a national internship at Synapse Labs.",
     summary:
       "A multi-kitchen ERP for Indonesia's national free-meals program. Each kitchen sees only its own data, and stock moves first in, first out, or first to expire.",
-    role: "Project manager and lead architect, team of 6",
+    role: "Lead engineer, team of 6",
     date: "Feb to May 2026",
     stack: ["Laravel 12", "PostgreSQL", "RBAC", "Docker"],
     image: "/images/work/erp-mbg.jpg",
@@ -255,7 +255,7 @@ export interface ArchiveProject {
 }
 
 export const archive: ArchiveProject[] = [
-  { year: "2026", title: "Reeve", what: "Turns a business procedure written in plain language into code that runs on its own. An independent auditor tests the code with mutation testing before any money moves. Solo entry for the CreateOS and Stripe hackathon.", stack: "TypeScript, Python, Claude, CreateOS, Stripe" },
+  { year: "2026", title: "Reeve", what: "Turns a business procedure written in plain language into code that runs on its own. An independent auditor tests the code with mutation testing before any money moves. First built as a solo entry for the CreateOS and Stripe hackathon. 4th place (Juara Harapan I, Rp 10 million), AI & Digitalization challenge, SENO Hackathon 2026, ITS.", stack: "TypeScript, Python, Claude, CreateOS, Stripe" },
   { year: "2026", title: "JitsuinFi", what: "Private invoice financing on Zcash testnet that stops one invoice from being financed twice. Rust and WebAssembly; in development for ZECATHON 2026.", stack: "Rust, WebAssembly, Zcash" },
   { year: "2026", title: "Nusastakes", what: "A 3D city you can save in: each city is a yield vault on Monad testnet run by its mayor, with passkey sign-in and gas paid for you. Solo entry for Monad Metropolis.", stack: "Next.js, three.js, Solidity, Chainlink CRE", image: "/images/work/nusastakes.jpg", link: { label: "Live app", href: "https://nusastakes.vercel.app" } },
   { year: "2026", title: "Fluxa", what: "Uniswap v4 hook that gives real-world-asset tokens a path to exit liquidity. UHI10 capstone.", stack: "Solidity, Foundry, Uniswap v4", image: "/images/work/fluxa.jpg" },
@@ -263,7 +263,7 @@ export const archive: ArchiveProject[] = [
   { year: "2026", title: "Pacifica Colosseum", what: "Battle-royale trading game on Pacifica's perpetuals DEX. Team build on Solana testnet.", stack: "Next.js, Three.js, Solana", image: "/images/work/pacifica.jpg", link: { label: "Live app", href: "https://pacifica-colosseum.vercel.app" } },
   { year: "2026", title: "AVAL", what: "AI agent that verifies and prices B2B invoices so suppliers get stablecoin credit early.", stack: "Casper, x402", image: "/images/work/aval.jpg", link: { label: "Repository", href: "https://github.com/AVALcspr/AVAL" } },
   { year: "2026", title: "AEGIS-ERP", what: "Autonomous ERP for catering businesses with human approval gates. Led a team of 4 for PKM-KI.", stack: "Multi-agent AI, MCP", image: "/images/work/aegis-erp.jpg" },
-  { year: "2026", title: "POS KebayaOma", what: "Tablet point of sale for a kebaya shop: QR label per garment, QRIS, offline mode. Freelance.", stack: "Next.js PWA, Supabase, Xendit", image: "/images/work/pos-kebaya.jpg" },
+  { year: "2026", title: "POS KebayaOma", what: "Tablet point of sale live at a kebaya shop: QR label per garment, QRIS checkout, WhatsApp rental reminders, offline mode. Paid freelance.", stack: "Next.js PWA, Supabase, Xendit", image: "/images/work/pos-kebaya.jpg" },
   { year: "2026", title: "KopiLoyalty", what: "Coffee loyalty app: pay by QR, earn points, find cafes nearby.", stack: "Monad, Solidity", image: "/images/work/kopiloyalty.jpg" },
   { year: "2026", title: "Confidential OTC Desk", what: "Two institutions trade a tokenized asset for tokenized cash in one private settlement.", stack: "Canton, Daml" },
   { year: "2026", title: "Gym3", what: "Fitness PWA with an AI coach, camera pose checks and progress badges on Base.", stack: "React, Groq, MediaPipe, Base", image: "/images/work/gym3.jpg", link: { label: "Repository", href: "https://github.com/Shenhan01-sys/FitnessAI_Hackathon" } },
@@ -291,15 +291,17 @@ export interface Award {
 }
 
 export const awards: Award[] = [
+  { year: "2026", result: "4th place (Juara Harapan I, Rp 10 million), AI & Digitalization challenge", event: "SENO Hackathon 2026, ITS Surabaya, 11 to 12 November 2026. Team entry, Hans was the sole developer", project: "Reeve" },
   { year: "2026", result: "2nd place", event: "Monad Blitz Jogja Vol. 2, Monad Foundation and Dev Web3 Jogja, Garuda Spark Innovation Hub, 24 October 2026", project: "PrintPitt", image: "/images/work/printpitt.jpg", imageAlt: "PrintPitt landing page: the headline 'The onchain print shop on Monad' beside an isometric photocopier.", fit: "screen" },
-  { year: "2026", result: "Two projects in the final 10", event: "Indonesia Web3 Hackathon 2026, 228 submissions, Binance Academy and BNB Chain", project: "Fabius and Lencana", proof: { label: "Finalist post", href: "https://www.instagram.com/p/DejfuU4EzpC/" }, image: "/images/social/ig-DejfuU4EzpC.jpg", imageAlt: "Indonesia Web3 Hackathon cover, co-hosted by Binance Academy, BNB Chain and Coinvestasi, with participants working on laptops.", fit: "screen" },
-  { year: "2026", result: "Paper presented, first author", event: "ICIC 2026, the 11th International Conference on Informatics and Computing, Universitas Atma Jaya Yogyakarta. Soon in IEEE Xplore.", project: "Applify", proof: { label: "Certificate", href: "/images/proof/cert-icic-2026.jpg" }, image: "/images/proof/cert-icic-2026.jpg", imageAlt: "ICIC 2026 certificate of appreciation for Hans Gunawan's paper on an applicant-centered autonomous AI agent for job applications.", fit: "paper" },
+  { year: "2026", result: "2nd and 3rd place, two tracks", event: "Indonesia Web3 Hackathon 2026, 228 submissions, Binance Academy and BNB Chain. Lencana 2nd, Consumer Apps track. Fabius 3rd, AI Agents track", project: "Fabius and Lencana", proof: { label: "Finalist post", href: "https://www.instagram.com/p/DejfuU4EzpC/" }, image: "/images/social/ig-DejfuU4EzpC.jpg", imageAlt: "Indonesia Web3 Hackathon cover, co-hosted by Binance Academy, BNB Chain and Coinvestasi, with participants working on laptops.", fit: "screen" },
+  { year: "2026", result: "Paper presented orally, first author", event: "ICIC 2026, the 11th International Conference on Informatics and Computing, Universitas Atma Jaya Yogyakarta. Soon in IEEE Xplore.", project: "Applify", proof: { label: "Certificate", href: "/images/proof/cert-icic-2026.jpg" }, image: "/images/proof/cert-icic-2026.jpg", imageAlt: "ICIC 2026 certificate of appreciation for Hans Gunawan's paper on an applicant-centered autonomous AI agent for job applications.", fit: "paper" },
   { year: "2026", result: "1st place, Consumer & Viral DApps track", event: "Mantle Turing Test Hackathon, $8,500 prize", project: "Cult of the Digital Oracle", proof: { label: "Mantle post", href: "https://x.com/Mantle_Official/status/2075596029408514552" }, image: "/images/work/cult-oracle.jpg", imageAlt: "Cult of the Digital Oracle temple screen.", fit: "screen" },
   { year: "2026", result: "1st place", event: "Solve-It Challenge 2026, UKRIDA", project: "Applify", proof: { label: "UKDW news", href: "https://ukdw.ac.id/tim-triple-a-ukdw-raih-juara-1-solve-it-challenge-2026-lewat-inovasi-ai-applify/" }, image: "/images/work/applify.jpg", imageAlt: "Applify landing page.", fit: "screen" },
   { year: "2026", result: "Accepted, cohort 10", event: "Uniswap Hook Incubator, Atrium Academy and Uniswap Foundation", project: "Fluxa", image: "/images/work/uhi10-square.jpg", imageAlt: "Uniswap Hook Incubator cohort 10 acceptance graphic with Hans's photo.", fit: "paper" },
   { year: "2026", result: "Top 80 of 300+ teams", event: "0G APAC Hackathon, Agentic Economy track", project: "zer0Gig", proof: { label: "HackQuest", href: "https://www.hackquest.io/projects/zer0Gig" }, image: "/images/work/zer0gig.jpg", imageAlt: "zer0Gig landing page over a dark galaxy.", fit: "screen" },
   { year: "2026", result: "3rd place", event: "Udayana Business Plan Competition", project: "Applify" },
   { year: "2026", result: "Progressive Scholarship", event: "Dicoding Coding Camp, DBS Foundation", image: "/images/work/dicoding-camp.jpg", imageAlt: "Coding Camp 2026 powered by DBS Foundation banner.", fit: "paper" },
+  { year: "2026", result: "2nd place, Outstanding Student (Pilmapres)", event: "UKDW" },
   { year: "2025", result: "2nd place, Outstanding Student (Pilmapres)", event: "UKDW, delegate to LLDIKTI Region V", proof: { label: "Certificate, PDF", href: "/DataSet/achievements/Juara 2_Seleksi kandidat Pilmapres_Hans Gunawan.pdf" }, image: "/images/proof/pilmapres-2025.jpg", imageAlt: "Pilmapres 2025 certificate, 2nd place.", fit: "paper" },
   { year: "2024", result: "3rd place, men's basketball", event: "Rector's Cup, UKDW", proof: { label: "Certificate, PDF", href: "/DataSet/achievements/Sertifikat Juara 3 Basket Rector Cup 2024_Hans Gunawan.pdf" }, image: "/images/proof/rector-cup-2024.jpg", imageAlt: "Rector's Cup 2024 certificate, 3rd place men's basketball.", fit: "paper" },
   { year: "2023", result: "2nd place, men's basketball", event: "Rector's Cup, UKDW", proof: { label: "Certificate, PDF", href: "/DataSet/achievements/Sertifikat Juara 2 Basket Rector Cup 2023_Hans Gunawan.pdf" }, image: "/images/proof/rector-cup-2023.jpg", imageAlt: "Rector's Cup 2023 certificate, 2nd place men's basketball.", fit: "paper" },
@@ -325,7 +327,7 @@ export const publications: Paper[] = [
     year: "2026",
     title: "Development of an Applicant-Centered Autonomous AI Agent for Job Vacancy Application",
     venue: "ICIC-APTIKOM 2026, Yogyakarta",
-    role: "First author. Presented on 8 to 9 October 2026, to be published in IEEE Xplore.",
+    role: "First author. Presented orally on 8 to 9 October 2026, to be published in IEEE Xplore.",
     status: "Soon published",
     link: { label: "Certificate", href: "/images/proof/cert-icic-2026.jpg" },
     page: "/images/proof/paper-icic-2026.jpg",
@@ -360,7 +362,7 @@ export interface School {
 
 export const education: School[] = [
   { years: "2020 to 2023", school: "Kolese De Britto", detail: "Mathematics and Computer Science track. Formed by 1L+5C: leadership, with competence, conscience, compassion, commitment and consistency.", logo: "/images/debrittoLogo.png", logoAlt: "Kolese De Britto crest", kind: "mark" },
-  { years: "2023 to 2027", school: "Universitas Kristen Duta Wacana", detail: "B.Sc. Information Systems, Faculty of Information Technology. GPA 3.79 / 4.00. Teaching assistant since 2025.", logo: "/images/ukdwLogo.png", logoAlt: "Universitas Kristen Duta Wacana crest", kind: "mark" },
+  { years: "2023 to expected Mar 2027", school: "Universitas Kristen Duta Wacana", detail: "B.Sc. Information Systems, Faculty of Information Technology. GPA 3.79 / 4.00. Teaching assistant since 2025.", logo: "/images/ukdwLogo.png", logoAlt: "Universitas Kristen Duta Wacana crest", kind: "mark" },
   { years: "2026", school: "Dicoding Coding Camp", detail: "Full-Stack Web Developer track, powered by DBS Foundation. Progressive Scholarship.", logo: "/images/work/dicoding-camp.jpg", logoAlt: "Coding Camp 2026 banner", kind: "photo" },
   { years: "2026", school: "Uniswap Hook Incubator, cohort 10", detail: "Atrium Academy and Uniswap Foundation. Capstone: Fluxa, an exit-liquidity hook for real-world-asset tokens.", logo: "/images/work/uhi10-square.jpg", logoAlt: "Uniswap Hook Incubator acceptance graphic", kind: "photo" },
 ];
@@ -407,6 +409,7 @@ export const experience: { group: string; roles: Role[] }[] = [
       { dates: "Aug 2025 to now", title: "Teaching Assistant", org: "Faculty of Information Technology, UKDW", text: "Runs lab sessions on database design, SQL and web frameworks, and checks student work in labs and exams.", tags: ["SQL", "PL/SQL", "Laravel"] },
       { dates: "Oct 2025 to now", title: "Technical Division", org: "BCC UKDW, Blockchain Club Community", text: "Runs Web3 study groups on Move, Sui and Base, including a Base mini-app group before a Base hackathon in January 2026.", tags: ["Sui", "Base"], link: { label: "bccukdw.xyz", href: "https://bccukdw.xyz/" } },
       { dates: "Jan 2026 to now", title: "Founder", org: "AMPERA", text: "Designed a crowdfunding model that routes investor money into village solar, micro-hydro and biomass, with AI site surveys. The PLN ICE 2026 entry did not pass qualification.", tags: ["Energy", "Fintech"] },
+      { dates: "Jul 2026 to now", title: "Freelance Full-stack Developer", org: "Kebaya Oma", text: "Specified and built a tablet point of sale, paid and live at the shop, with QRIS checkout, rentals with WhatsApp reminders, thermal receipts and offline sync.", tags: ["Next.js", "Supabase"] },
       { dates: "Dec 2023 to now", title: "Fitness Coach", org: "PF Gym & Fitness", text: "Coaches members on technique and training programs, and looks after administration and equipment." },
     ],
   },
@@ -414,10 +417,9 @@ export const experience: { group: string; roles: Role[] }[] = [
     group: "2026",
     roles: [
       { dates: "Feb to Aug 2026", title: "Web3 Developer, internship", org: "PT Baliola", text: "Owned the multi-approver document stamping module in SignBaliola: an immutable event log, live status over server-sent events, browser-side hashing and QR verification.", tags: ["Smart contracts", "SSE", "Playwright"] },
-      { dates: "Feb to May 2026", title: "Project Manager and Lead Architect", org: "Synapse Labs, national internship program", text: "Led 6 engineers to a tested 10-module ERP for the national free-meals program. Designed per-kitchen data isolation in PostgreSQL and FIFO and FEFO stock on Laravel 12.", tags: ["Laravel 12", "PostgreSQL", "Leadership"] },
-      { dates: "2026", title: "Freelance Full-stack Developer", org: "Kebaya Oma", text: "Specified and built the front end of a tablet point of sale with QRIS payments, thermal receipts and offline sync. Backend integration is in progress.", tags: ["Next.js", "Supabase"] },
+      { dates: "Feb to May 2026", title: "Lead Engineer", org: "Synapse Labs, national internship program", text: "Led 6 engineers to a tested 10-module ERP for the national free-meals program. Designed per-kitchen data isolation in PostgreSQL and FIFO and FEFO stock on Laravel 12.", tags: ["Laravel 12", "PostgreSQL", "Leadership"] },
       { dates: "Jan to May 2026", title: "Project Lead", org: "AEGIS-ERP, PKM-KI 2026", text: "Led 4 students designing an autonomous catering ERP with MCP agents and human approval gates.", tags: ["MCP", "Multi-agent"] },
-      { dates: "Jan to Oct 2026", title: "Hackathon builder", org: "Independent and team entries", text: "Shipped on Base, Sui, Mantle, BNB Chain, 0G, Solana testnet, Canton, Casper and Monad. Two finalists at the Indonesia Web3 Hackathon 2026." },
+      { dates: "Jan to Oct 2026", title: "Hackathon builder", org: "Independent and team entries", text: "Shipped on Base, Sui, Mantle, BNB Chain, 0G, Solana testnet, Canton, Casper and Monad. 2nd and 3rd place at the Indonesia Web3 Hackathon 2026." },
       { dates: "2026", title: "Guest Speaker", org: "Information Systems orientation, UKDW", text: "Talk for new students on using coursework as a starting point for hackathons, research and self-taught skills." },
     ],
   },
@@ -496,7 +498,7 @@ export interface Update {
 }
 
 export const updates: Update[] = [
-  { date: "2026-10-16", title: "Fabius and Lencana reach the Indonesia Web3 Hackathon final", text: "Two of the final 10 projects, out of 228 submissions, at the hackathon co-hosted by Binance Academy, BNB Chain and Coinvestasi.", image: "/images/work/fabius.jpg", imageAlt: "Fabius landing page.", link: { label: "Finalist post on Instagram", href: "https://www.instagram.com/p/DejfuU4EzpC/" } },
+  { date: "2026-10-16", title: "Fabius and Lencana reach the Indonesia Web3 Hackathon final", text: "Two of the final 10 projects, out of 228 submissions, at the hackathon co-hosted by Binance Academy, BNB Chain and Coinvestasi. Final result: Lencana took 2nd place in the Consumer Apps track and Fabius 3rd place in the AI Agents track.", image: "/images/work/fabius.jpg", imageAlt: "Fabius landing page.", link: { label: "Finalist post on Instagram", href: "https://www.instagram.com/p/DejfuU4EzpC/" } },
   { date: "2026-10-14", title: "Nusastakes submitted to Monad Metropolis", text: "A city you can save in: yield vaults on Monad testnet, passkey sign-in, gas paid for you.", image: "/images/work/nusastakes.jpg", imageAlt: "Nusastakes landing page with a floating 3D city tile.", link: { label: "Open Nusastakes", href: "https://nusastakes.vercel.app" } },
   { date: "2026-06-26", title: "Accepted into the Uniswap Hook Incubator", text: "Cohort 10, run by Atrium Academy and the Uniswap Foundation. Capstone: Fluxa, an exit-liquidity hook for real-world-asset tokens.", image: "/images/work/uhi10.jpg", imageAlt: "Uniswap Hook Incubator cohort 10 acceptance graphic with Hans's photo." },
   { date: "2026-06-18", title: "Applify wins the Solve-It Challenge 2026", text: "Team Triple A took 1st place with an MCP job-application agent that asks before it submits.", image: "/images/work/applify.jpg", imageAlt: "Applify landing page.", link: { label: "Read on ukdw.ac.id", href: "https://ukdw.ac.id/tim-triple-a-ukdw-raih-juara-1-solve-it-challenge-2026-lewat-inovasi-ai-applify/" } },
@@ -523,7 +525,7 @@ export type Embed = {
 
 // Covers were saved to /images/social so the page sends nothing to the networks until a visitor asks.
 export const embeds: Embed[] = [
-  { kind: "instagram", url: "https://www.instagram.com/p/DejfuU4EzpC/", date: "2026-10-16", title: "Indonesia Web3 Hackathon 2026 finalists, with Fabius and Lencana", cover: "/images/social/ig-DejfuU4EzpC.jpg", coverAlt: "Indonesia Web3 Hackathon cover with participants working on laptops.", shape: "square" },
+  { kind: "instagram", url: "https://www.instagram.com/p/DejfuU4EzpC/", date: "2026-10-16", title: "Indonesia Web3 Hackathon 2026 finalists, with Fabius and Lencana (final result: Lencana 2nd, Fabius 3rd)", cover: "/images/social/ig-DejfuU4EzpC.jpg", coverAlt: "Indonesia Web3 Hackathon cover with participants working on laptops.", shape: "square" },
   { kind: "instagram", url: "https://www.instagram.com/p/DUQKLp4k6RV/", date: "2026-02-02", title: "Rector's Cup 2025: Information Systems A takes 3rd in men's basketball", cover: "/images/social/ig-DUQKLp4k6RV.jpg", coverAlt: "Rector's Cup 2025 poster with the Duta Wacana and Rector Cup logos.", shape: "square" },
   { kind: "x", url: "https://twitter.com/Moving_03/status/2013842227274108993", date: "2026-01-21", title: "Sui dev workshop at Gadjah Mada University, where Payshield started", shape: "text" },
   { kind: "instagram", url: "https://www.instagram.com/p/DTuce7zEw_b/", date: "2026-01-21", title: "UGM Blockchain Club and Sui Indonesia workshop", cover: "/images/social/ig-DTuce7zEw_b.jpg", coverAlt: "Event poster with the UGM Blockchain Club and Sui Indonesia logos and two participants.", shape: "square" },
